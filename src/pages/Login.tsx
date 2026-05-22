@@ -195,7 +195,7 @@ export const Login: React.FC = () => {
             {/* Submit button */}
             <button
               type="submit"
-              className="w-full py-3 bg-brand-primary hover:bg-brand-dark hover:scale-[1.01] text-slate-950 text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer flex items-center justify-center gap-1 rounded-lg"
+              className="w-full py-3 bg-brand-primary hover:bg-brand-dark hover:scale-[1.01] text-white text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer flex items-center justify-center gap-1 rounded-lg"
               id="login_submit_btn"
             >
               <span>{t('loginLink').toUpperCase()}</span>

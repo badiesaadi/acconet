@@ -222,7 +222,7 @@ export const Search: React.FC = () => {
                     </div>
                     <button 
                       onClick={handleResetFilters}
-                      className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-slate-950 font-mono text-[10px] font-bold uppercase tracking-widest cursor-pointer rounded-lg"
+                      className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white font-mono text-[10px] font-bold uppercase tracking-widest cursor-pointer rounded-lg"
                     >
                       Reset Filter Parameters
                     </button>

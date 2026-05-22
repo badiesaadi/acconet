@@ -143,7 +143,7 @@ export const Landing: React.FC = () => {
               <div className="flex flex-wrap gap-4 select-none">
                 <button 
                   onClick={() => navigate('/search')}
-                  className="px-5 py-3.5 bg-brand-primary hover:bg-brand-dark hover:shadow-glow text-slate-950 font-mono text-[11px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 rounded-lg"
+                  className="px-5 py-3.5 bg-brand-primary hover:bg-brand-dark hover:shadow-glow text-white font-mono text-[11px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 rounded-lg"
                 >
                   <span>{t('findProButton')}</span>
                   {direction === 'rtl' ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -230,7 +230,7 @@ export const Landing: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleContactSofi}
-                  className="w-full py-2.5 bg-brand-primary hover:bg-brand-dark hover:shadow-glow text-slate-950 font-mono text-[10px] font-bold uppercase tracking-widest transition-all duration-200 rounded-lg cursor-pointer text-center"
+                  className="w-full py-2.5 bg-brand-primary hover:bg-brand-dark hover:shadow-glow text-white font-mono text-[10px] font-bold uppercase tracking-widest transition-all duration-200 rounded-lg cursor-pointer text-center"
                 >
                   {t('contactTheExpert')}
                 </button>
@@ -331,7 +331,7 @@ export const Landing: React.FC = () => {
             {/* Direct Action */}
             <button 
               type="submit"
-              className="md:col-span-2 w-full py-2 bg-brand-primary hover:bg-brand-dark text-slate-950 text-[10px] font-mono uppercase tracking-widest transition duration-205 cursor-pointer flex items-center justify-center gap-1.5 font-bold rounded-xl"
+              className="md:col-span-2 w-full py-2 bg-brand-primary hover:bg-brand-dark text-white text-[10px] font-mono uppercase tracking-widest transition duration-205 cursor-pointer flex items-center justify-center gap-1.5 font-bold rounded-xl"
             >
               <span>{t('searchBtnText')}</span>
               {direction === 'rtl' ? <ArrowLeft className="w-3.5 h-3.5" /> : <ArrowRight className="w-3.5 h-3.5" />}
@@ -431,7 +431,7 @@ export const Landing: React.FC = () => {
               </p>
               <button 
                 onClick={() => navigate('/tools')}
-                className="px-5 py-3.5 bg-brand-primary text-slate-950 hover:bg-brand-dark hover:shadow-glow text-[10px] uppercase font-mono font-bold tracking-widest transition duration-150 cursor-pointer rounded-lg"
+                className="px-5 py-3.5 bg-brand-primary text-white hover:bg-brand-dark hover:shadow-glow text-[10px] uppercase font-mono font-bold tracking-widest transition duration-150 cursor-pointer rounded-lg"
               >
                 {t('sandboxButton')}
               </button>

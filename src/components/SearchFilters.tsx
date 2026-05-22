@@ -163,10 +163,10 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
               <button
                 key={rating}
                 onClick={() => setMinRating(rating)}
-                className={`py-2 border text-xs font-mono font-bold text-center cursor-pointer transition flex flex-col items-center justify-center rounded-lg ${minRating === rating ? 'bg-brand-primary border-brand-primary text-slate-950 shadow-glow' : 'border-white/5 hover:glass/5 text-slate-400 bg-slate-900/20'}`}
+                className={`py-2 border text-xs font-mono font-bold text-center cursor-pointer transition flex flex-col items-center justify-center rounded-lg ${minRating === rating ? 'bg-brand-primary border-brand-primary text-white shadow-glow' : 'border-white/5 hover:glass/5 text-slate-400 bg-slate-900/20'}`}
                 title={`Show professionals rated ${rating}+`}
               >
-                <Star className={`w-3 h-3 mb-0.5 ${minRating === rating ? 'fill-slate-950 text-slate-950' : 'text-amber-500 fill-amber-500'}`} />
+                <Star className={`w-3 h-3 mb-0.5 ${minRating === rating ? 'fill-slate-950 text-white' : 'text-amber-500 fill-amber-500'}`} />
                 <span>{rating}</span>
               </button>
             ))}

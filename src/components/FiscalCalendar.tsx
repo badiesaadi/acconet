@@ -94,7 +94,7 @@ export const FiscalCalendar: React.FC = () => {
               {language === 'ar' ? 'الروزنامة الجبائية والمالية — 2026' : 'Calendrier Fiscal Réglementaire — 2026'}
             </h3>
           </div>
-          <p className="text-[10px] text-gray-400 mt-1 font-mono">
+          <p className="text-[10px] text-slate-400 mt-1 font-mono">
             Conforme au CIDTA & Arrêtés ONEC/ONCC du Système Comptable Financier (SCF)
           </p>
         </div>
@@ -103,7 +103,7 @@ export const FiscalCalendar: React.FC = () => {
         <select 
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(Number(e.target.value))}
-          className="border border-[#CFCFC4] px-3 py-1.5 bg-[#FAF9F5] text-xs font-mono font-bold text-gray-700 outline-none focus:border-brand-primary cursor-pointer rounded-none"
+          className="border border-[#CFCFC4] px-3 py-1.5 bg-[#FAF9F5] text-xs font-mono font-bold text-slate-300 outline-none focus:border-brand-primary cursor-pointer rounded-none"
         >
           {monthNamesFR.map((name, idx) => (
             <option key={idx} value={idx}>
@@ -139,7 +139,7 @@ export const FiscalCalendar: React.FC = () => {
                     ⏱️ EXIGIBLE : {deadline.computedDue}
                   </span>
                   
-                  <span className="px-1.5 py-0.5 bg-white/5 border border-white/10 text-gray-500 text-[8px] font-mono uppercase">
+                  <span className="px-1.5 py-0.5 glass/5 border border-white/10 text-slate-400 text-[8px] font-mono uppercase">
                     {deadline.frequency}
                   </span>
                 </div>
@@ -148,7 +148,7 @@ export const FiscalCalendar: React.FC = () => {
                   {deadline.label}
                 </h4>
                 
-                <p className="text-[11px] leading-relaxed text-gray-600">
+                <p className="text-[11px] leading-relaxed text-slate-300">
                   {deadline.description}
                 </p>
 
@@ -196,7 +196,7 @@ export const FiscalCalendar: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center py-8 border border-dashed border-[#CFCFC4] text-gray-400 font-mono text-xs">
+          <div className="text-center py-8 border border-dashed border-[#CFCFC4] text-slate-400 font-mono text-xs">
             Aucun dépôt ou taxe obligatoire répertorié pour {getMonthName(selectedMonth)} 2026.
           </div>
         )}

@@ -385,7 +385,7 @@ export const Register: React.FC = () => {
           {/* Stepper overview for Mobile rendering */}
           {!registrationSuccess && (
             <div className="block lg:hidden mt-2 p-3 glass/5 border border-white/10">
-              <div className="flex justify-between text-xs font-mono text-gray-300">
+              <div className="flex justify-between text-xs font-mono text-slate-400">
                 <span>Étape {currentStep} sur {activeStepsDef.length}</span>
                 <span className="text-brand-accent font-bold">
                   {activeStepsDef[currentStep - 1]?.title} ({activeStepsDef[currentStep-1]?.titleAR})
@@ -403,7 +403,7 @@ export const Register: React.FC = () => {
         </div>
 
         {/* Footnote */}
-        <div className="pt-6 border-t border-white/10 text-[10px] text-gray-400 font-mono space-y-1.5 text-left rtl:text-right">
+        <div className="pt-6 border-t border-white/10 text-[10px] text-slate-400 font-mono space-y-1.5 text-left rtl:text-right">
           <p className="font-bold flex items-center gap-1 text-[#F59E0B]">
             <Scale className="w-3.5 h-3.5" />
             <span>LOI INDUSTRIELLE & CODE CIVIL</span>
@@ -421,8 +421,8 @@ export const Register: React.FC = () => {
         {!registrationSuccess && currentStep === 1 && (
           <div className="glass border-b border-[#CFCFC4] px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
-              <p className="text-[9px] font-mono font-bold text-gray-400 uppercase tracking-widest">{t('accountTypeLabel')}</p>
-              <h2 className="text-xs text-gray-700 font-mono mt-0.5">Choisissez le profil adapté à votre activité sur la plateforme AccoNet.</h2>
+              <p className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">{t('accountTypeLabel')}</p>
+              <h2 className="text-xs text-slate-300 font-mono mt-0.5">Choisissez le profil adapté à votre activité sur la plateforme AccoNet.</h2>
             </div>
 
             <div className="flex gap-2 p-1 bg-[#FAF9F5] border border-[#CFCFC4] select-none shrink-0">
@@ -432,7 +432,7 @@ export const Register: React.FC = () => {
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'client' 
                     ? 'glass text-brand-primary border border-[#CFCFC4] font-black' 
-                    : 'text-gray-500 hover:text-white'
+                    : 'text-slate-400 hover:text-white'
                 }`}
               >
                 <Building2 className="w-4 h-4 text-[#0F6E56]" />
@@ -445,7 +445,7 @@ export const Register: React.FC = () => {
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'professional' 
                     ? 'glass text-indigo-700 border border-[#CFCFC4] font-black' 
-                    : 'text-gray-500 hover:text-white'
+                    : 'text-slate-400 hover:text-white'
                 }`}
               >
                 <UserCheck className="w-4 h-4 text-indigo-700" />
@@ -470,11 +470,11 @@ export const Register: React.FC = () => {
                 <span className="px-2.5 py-1 bg-brand-primary/10 border border-brand-primary/20 text-[#0F6E56] text-[10px] font-mono font-bold uppercase tracking-widest">
                   {language === 'ar' ? 'تم استلام الملف بنجاح' : 'Dossier Enregistré avec Succès'}
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-serif font-black text-gray-901 tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-serif font-black text-white tracking-tight">
                   {language === 'ar' ? 'تم رفع طلب الانضمام والتحقق' : 'Demande d\'adhésion soumise !'}
                 </h1>
                 
-                <p className="text-xs text-gray-500 max-w-xl mx-auto font-sans leading-relaxed">
+                <p className="text-xs text-slate-400 max-w-xl mx-auto font-sans leading-relaxed">
                   {language === 'ar' 
                     ? 'تم تسجيل ملف السجل ووثائق الاعتماد الخاصة بكم بدقة في مخزن البيانات الجزائري المشفر. ستتم مطابقة البيانات مع سجلات الهيئات الوطنية (ONEC/ONCC) خلال 48 ساعة.' 
                     : "Votre dossier est en cours de vérification. Vous recevrez une notification d'activation réglementaire sous 48 heures ouvrables."}
@@ -483,7 +483,7 @@ export const Register: React.FC = () => {
 
               {/* Reference ID Block */}
               <div className="bg-[#FAF9F5] border border-[#CFCFC4] p-4 max-w-md mx-auto">
-                <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">RÉFÉRENCE DU DOSSIER D\'AGRÉMENT</p>
+                <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">RÉFÉRENCE DU DOSSIER D\'AGRÉMENT</p>
                 <p className="text-xl font-mono font-black text-[#0F6E56] mt-1 tracking-wider select-all">{registrationSuccess}</p>
               </div>
 
@@ -496,7 +496,7 @@ export const Register: React.FC = () => {
                   <span>Accéder à ma démo immédiate</span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
-                <Link to="/" className="block text-xs font-bold text-gray-400 hover:text-white font-mono">
+                <Link to="/" className="block text-xs font-bold text-slate-400 hover:text-white font-mono">
                   Retourner à l'accueil
                 </Link>
               </div>
@@ -545,7 +545,7 @@ export const Register: React.FC = () => {
                     
                     {/* Full Name */}
                     <div className="space-y-1.5 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         {regRole === 'professional' ? "Nom complet de l'Expert (النسب واللقب)" : "Nom et prénom du responsable légal (النسب واللقب للمسير)"}
                         <span className="text-red-500"> *</span>
                       </label>
@@ -561,7 +561,7 @@ export const Register: React.FC = () => {
 
                     {/* Email address */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         E-mail professionnel (البريد الإلكتروني للعمل)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -573,14 +573,14 @@ export const Register: React.FC = () => {
                           placeholder="direction@cabinet.dz"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full text-xs text-gray-750 bg-transparent focus:outline-none focus:ring-0"
+                          className="w-full text-xs text-slate-300 bg-transparent focus:outline-none focus:ring-0"
                         />
                       </div>
                     </div>
 
                     {/* Phone Number with Algerian flag prefix operator selector */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro de Téléphone (رقم الهاتف الجوال)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -589,11 +589,11 @@ export const Register: React.FC = () => {
                         {/* Operator select prefix */}
                         <div className="bg-[#FAF9F5]/85 border-r border-[#CFCFC4] px-2.5 flex items-center gap-1 shrink-0 select-none">
                           <span className="text-[13px]" title="Algérie">🇩🇿</span>
-                          <span className="text-[10px] font-mono font-bold text-gray-600">+213</span>
+                          <span className="text-[10px] font-mono font-bold text-slate-300">+213</span>
                           <select
                             value={phoneOperator}
                             onChange={(e) => setPhoneOperator(e.target.value)}
-                            className="bg-transparent text-xs font-mono font-bold text-gray-700 outline-none cursor-pointer"
+                            className="bg-transparent text-xs font-mono font-bold text-slate-300 outline-none cursor-pointer"
                           >
                             <option value="06">06 (Mobilis)</option>
                             <option value="07">07 (Djezzy)</option>
@@ -608,15 +608,15 @@ export const Register: React.FC = () => {
                           placeholder="54859012"
                           value={phoneRest}
                           onChange={(e) => setPhoneRest(e.target.value.replace(/\D/g, ''))}
-                          className="w-full text-xs font-mono tracking-widest text-gray-750 bg-transparent py-2 px-3 focus:outline-none"
+                          className="w-full text-xs font-mono tracking-widest text-slate-300 bg-transparent py-2 px-3 focus:outline-none"
                         />
                       </div>
-                      <span className="text-[9px] text-gray-400 font-mono">Format exigé: +213 [Oper] [8 chiffres]</span>
+                      <span className="text-[9px] text-slate-400 font-mono">Format exigé: +213 [Oper] [8 chiffres]</span>
                     </div>
 
                     {/* Password */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Mot de passe sécurisé (كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -628,14 +628,14 @@ export const Register: React.FC = () => {
                           placeholder="••••••••"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
-                          className="w-full text-xs text-gray-750 bg-transparent focus:outline-none"
+                          className="w-full text-xs text-slate-300 bg-transparent focus:outline-none"
                         />
                       </div>
                     </div>
 
                     {/* Confirm Password */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Confirmer le mot de passe (تأكيد كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -647,14 +647,14 @@ export const Register: React.FC = () => {
                           placeholder="••••••••"
                           value={confirmPassword}
                           onChange={(e) => setConfirmPassword(e.target.value)}
-                          className="w-full text-xs text-gray-750 bg-transparent focus:outline-none"
+                          className="w-full text-xs text-slate-300 bg-transparent focus:outline-none"
                         />
                       </div>
                     </div>
 
                     {/* Wilaya of Practice / Siege */}
                     <div className="space-y-1.5 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         {regRole === 'professional' ? 'Wilaya d\'exercice principale (ولاية ممارسة المهنة)' : 'Wilaya du siège social de l\'entreprise (ولاية المقر الاجتماعي للمؤسسة)'}
                         <span className="text-red-500"> *</span>
                       </label>
@@ -663,7 +663,7 @@ export const Register: React.FC = () => {
                         <select
                           value={selectedWilayaId}
                           onChange={(e) => setSelectedWilayaId(Number(e.target.value))}
-                          className="w-full bg-transparent text-xs text-gray-750 outline-none cursor-pointer font-serif font-black"
+                          className="w-full bg-transparent text-xs text-slate-300 outline-none cursor-pointer font-serif font-black"
                         >
                           {algerianWilayas.map((w) => (
                             <option key={w.id} value={w.id}>
@@ -692,14 +692,14 @@ export const Register: React.FC = () => {
                     
                     {/* Specialty dropdown */}
                     <div className="space-y-1.5 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Spécialité & Ordre National (التخصص المهني والهيئة القانونية)
                         <span className="text-red-500"> *</span>
                       </label>
                       <select
                         value={specialty}
                         onChange={(e) => setSpecialty(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2.5 glass text-xs font-bold text-gray-750 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
+                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2.5 glass text-xs font-bold text-slate-300 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
                       >
                         <option value="certified-accountant">Expert-Comptables (Agréé par l'ONEC)</option>
                         <option value="statutory-auditor">Commissaire aux Comptes (Agréé par l'ONCC)</option>
@@ -712,7 +712,7 @@ export const Register: React.FC = () => {
 
                     {/* Registration number Tableau National */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro d'inscription au Tableau (رقم القيد بالجدول الوطني)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -733,7 +733,7 @@ export const Register: React.FC = () => {
 
                     {/* Agrément ministériel number */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro d'agrément ministériel (رقم الإعتماد الوزاري — إن وجد)
                       </label>
                       <input 
@@ -748,7 +748,7 @@ export const Register: React.FC = () => {
                     {/* Experience slider slider: 1–40 years */}
                     <div className="space-y-2 col-span-1 sm:col-span-2 p-4 glass border border-[#CFCFC4]">
                       <div className="flex justify-between items-center">
-                        <label className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                        <label className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                           Années d'Expérience effective (سنوات الخبرة المهنية)
                         </label>
                         <span className="px-2.5 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-800 font-mono font-bold text-xs">
@@ -763,7 +763,7 @@ export const Register: React.FC = () => {
                         onChange={(e) => setYearsExperience(Number(e.target.value))}
                         className="w-full accent-indigo-700 cursor-pointer h-1 bg-[#EBEBE5]"
                       />
-                      <div className="flex justify-between text-[9px] text-gray-400 font-mono">
+                      <div className="flex justify-between text-[9px] text-slate-400 font-mono">
                         <span>1 An (Comptable junior)</span>
                         <span>40 Ans (Séniorité suprême)</span>
                       </div>
@@ -771,13 +771,13 @@ export const Register: React.FC = () => {
 
                     {/* Langues de travail Checklist */}
                     <div className="space-y-2 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest mb-1">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-1">
                         Langues de travail (لغات تسيير المعاملات وإصدار التقارير SCF)
                       </label>
                       
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.ar}
@@ -787,34 +787,34 @@ export const Register: React.FC = () => {
                           <span className="text-xs font-serif font-black text-white">Arabe (العربية)</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.fr}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, fr: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-serif font-black text-gray-905">Français</span>
+                          <span className="text-xs font-serif font-black text-white">Français</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.en}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, en: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-sans font-bold text-gray-905">English</span>
+                          <span className="text-xs font-sans font-bold text-white">English</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.tamazight}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, tamazight: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-serif font-black text-gray-905">Tamazight</span>
+                          <span className="text-xs font-serif font-black text-white">Tamazight</span>
                         </label>
 
                       </div>
@@ -837,7 +837,7 @@ export const Register: React.FC = () => {
                     
                     {/* Entity type dropdowns */}
                     <div className="space-y-1.5 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Forme juridique de l'entité (الشكل القانوني للمؤسسة)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -859,7 +859,7 @@ export const Register: React.FC = () => {
 
                     {/* Dénomination sociale in Arabic + French */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Dénomination Sociale en lettres Latines (اسم الشركة بالفرنسية)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -874,7 +874,7 @@ export const Register: React.FC = () => {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         اسم الشركة باللغة العربية (العنوان الاجتماعي)
                       </label>
                       <input 
@@ -889,7 +889,7 @@ export const Register: React.FC = () => {
 
                     {/* Registre de commerce number XX/XXXXXX/XX */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro de Registre du Commerce RC (رقم السجل التجاري)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -901,12 +901,12 @@ export const Register: React.FC = () => {
                         onChange={(e) => setRcNumber(e.target.value)}
                         className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
-                      <span className="text-[9px] text-gray-400 font-mono">Format requis par le CNRC : Wilaya/Code-Numéro-Année</span>
+                      <span className="text-[9px] text-slate-400 font-mono">Format requis par le CNRC : Wilaya/Code-Numéro-Année</span>
                     </div>
 
                     {/* NIF: 15 digits */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro d'Identification Fiscale NIF (رقم التعريف الجبائي)
                         <span className="text-red-500"> *</span>
                       </label>
@@ -924,7 +924,7 @@ export const Register: React.FC = () => {
 
                     {/* AI Optional */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Numéro d'Article d'Imposition AI (رقم المادة الضريبية — اختياري)
                       </label>
                       <input 
@@ -938,13 +938,13 @@ export const Register: React.FC = () => {
 
                     {/* Activity Sectors */}
                     <div className="space-y-1.5">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                         Secteur d'Activité principale (قطاع النشاط الرئيسي)
                       </label>
                       <select
                         value={secteurActivite}
                         onChange={(e) => setSecteurActivite(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none p-2 glass text-xs text-gray-750 focus:outline-none focus:border-[#0F6E56] cursor-pointer font-serif font-black"
+                        className="w-full border border-[#CFCFC4] rounded-none p-2 glass text-xs text-slate-300 focus:outline-none focus:border-[#0F6E56] cursor-pointer font-serif font-black"
                       >
                         <option value="Commerce de détail">Commerce de détail (تجارة التجزئة)</option>
                         <option value="Commerce de gros">Commerce de gros (تجارة الجملة)</option>
@@ -960,13 +960,13 @@ export const Register: React.FC = () => {
 
                     {/* Régime Fiscal selection */}
                     <div className="space-y-1.5 col-span-1 sm:col-span-2">
-                      <label className="block text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest mb-1">
+                      <label className="block text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-1">
                         Régime Fiscal applicable (النظام الجبائي المتبع)
                       </label>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -976,11 +976,11 @@ export const Register: React.FC = () => {
                           />
                           <div className="space-y-1 text-left rtl:text-right">
                             <span className="text-xs font-serif font-black text-white block leading-tight">Régime Réel (IBS)</span>
-                            <span className="text-[9px] text-gray-400 font-mono block">Bilan complet obligatoire, déclaration G50</span>
+                            <span className="text-[9px] text-slate-400 font-mono block">Bilan complet obligatoire, déclaration G50</span>
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -990,11 +990,11 @@ export const Register: React.FC = () => {
                           />
                           <div className="space-y-1 text-left rtl:text-right">
                             <span className="text-xs font-serif font-black text-white block leading-tight">Régime Simplifié</span>
-                            <span className="text-[9px] text-gray-400 font-mono block">Souscription comptabilité simplification</span>
+                            <span className="text-[9px] text-slate-400 font-mono block">Souscription comptabilité simplification</span>
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:bg-white/5">
+                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -1004,7 +1004,7 @@ export const Register: React.FC = () => {
                           />
                           <div className="space-y-1 text-left rtl:text-right">
                             <span className="text-xs font-serif font-black text-white block leading-tight">Auto-entrepreneur (IFU)</span>
-                            <span className="text-[9px] text-gray-400 font-mono block">CA inférieur à 30M DA, impôt unique de 5%</span>
+                            <span className="text-[9px] text-slate-400 font-mono block">CA inférieur à 30M DA, impôt unique de 5%</span>
                           </div>
                         </label>
 
@@ -1083,14 +1083,14 @@ export const Register: React.FC = () => {
 
                   {/* 3/4 documents chargés progress tracker status indicator bar */}
                   <div className="glass border p-4 flex items-center justify-between gap-4 font-mono select-none">
-                    <span className="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Rapport du dossier d'agrément</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Rapport du dossier d'agrément</span>
                     
                     {(() => {
                       const uploadedCount = [proDocs.cartePro, proDocs.identity, proDocs.attestationInsc, proDocs.decisionAgree].filter(Boolean).length;
                       return (
                         <div className="flex items-center gap-3 shrink-0">
                           <span className="text-xs font-bold text-indigo-700">{uploadedCount} / 4 Chargés</span>
-                          <div className="w-24 bg-white/5 h-2">
+                          <div className="w-24 glass/5 h-2">
                             <div className="bg-indigo-700 h-full transition-all duration-200" style={{ width: `${(uploadedCount/4)*100}%` }}></div>
                           </div>
                         </div>
@@ -1202,7 +1202,7 @@ export const Register: React.FC = () => {
                   <div className="glass border p-5 space-y-4 shadow-3xs text-left rtl:text-right">
                     <span className="text-[10px] font-mono font-bold text-[#0F6E56] uppercase tracking-wider block">Engagement de probité légale</span>
                     
-                    <label className="flex gap-2.5 cursor-pointer text-xs leading-relaxed select-none text-gray-700 font-sans">
+                    <label className="flex gap-2.5 cursor-pointer text-xs leading-relaxed select-none text-slate-300 font-sans">
                       <input 
                         type="checkbox" 
                         checked={attestHonourClient}
@@ -1234,22 +1234,22 @@ export const Register: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     <div className="glass border border-[#CFCFC4] p-5 space-y-3.5 shadow-3xs">
-                      <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">IDENITÉ & COMPTE</span>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">IDENITÉ & COMPTE</span>
                       <div className="space-y-2 text-xs">
-                        <p><strong className="text-gray-400">Nom complet/المكتب :</strong> {fullName}</p>
-                        <p><strong className="text-gray-400">E-mail :</strong> {email}</p>
-                        <p><strong className="text-gray-400">Téléphone d'exercice :</strong> +213 {phoneOperator}{phoneRest}</p>
-                        <p><strong className="text-gray-400">Wilaya principale :</strong> {algerianWilayas.find(w => w.id === selectedWilayaId)?.name.fr}</p>
+                        <p><strong className="text-slate-400">Nom complet/المكتب :</strong> {fullName}</p>
+                        <p><strong className="text-slate-400">E-mail :</strong> {email}</p>
+                        <p><strong className="text-slate-400">Téléphone d'exercice :</strong> +213 {phoneOperator}{phoneRest}</p>
+                        <p><strong className="text-slate-400">Wilaya principale :</strong> {algerianWilayas.find(w => w.id === selectedWilayaId)?.name.fr}</p>
                       </div>
                     </div>
 
                     <div className="glass border border-[#CFCFC4] p-5 space-y-3.5 shadow-3xs">
-                      <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">CREDENTIELS RECOUPÉS</span>
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">CREDENTIELS RECOUPÉS</span>
                       <div className="space-y-2 text-xs">
-                        <p><strong className="text-gray-400">Titre :</strong> {specialty.toUpperCase()}</p>
-                        <p><strong className="text-gray-400">Numéro de registre Tableau :</strong> <span className="font-mono text-brand-primary font-bold">{tableauNumber}</span></p>
-                        <p><strong className="text-gray-400">Agrément fiscal :</strong> {agreeCabinetNumber || 'Non applicable'}</p>
-                        <p><strong className="text-gray-400 text-xs">Séniorité d'exercice :</strong> {yearsExperience} Ans d'expérience</p>
+                        <p><strong className="text-slate-400">Titre :</strong> {specialty.toUpperCase()}</p>
+                        <p><strong className="text-slate-400">Numéro de registre Tableau :</strong> <span className="font-mono text-brand-primary font-bold">{tableauNumber}</span></p>
+                        <p><strong className="text-slate-400">Agrément fiscal :</strong> {agreeCabinetNumber || 'Non applicable'}</p>
+                        <p><strong className="text-slate-400 text-xs">Séniorité d'exercice :</strong> {yearsExperience} Ans d'expérience</p>
                       </div>
                     </div>
 
@@ -1257,20 +1257,20 @@ export const Register: React.FC = () => {
 
                   {/* Document checksum verification list with green checks */}
                   <div className="glass border border-[#CFCFC4] p-5 space-y-3 shadow-3xs">
-                    <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">INDEX DE VERIFIABILTÉ DU DOSSIER (ONCC CHECK)</span>
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">INDEX DE VERIFIABILTÉ DU DOSSIER (ONCC CHECK)</span>
                     
                     <div className="space-y-2.5">
                       <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Professionnelle</span>
-                        <span className="text-gray-500 text-[10px] truncate max-w-xs">{proDocs.cartePro?.name}</span>
+                        <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.cartePro?.name}</span>
                       </div>
                       <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Nationale CIN</span>
-                        <span className="text-gray-500 text-[10px] truncate max-w-xs">{proDocs.identity?.name}</span>
+                        <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.identity?.name}</span>
                       </div>
                       <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Fiche d'inscription au Tableau</span>
-                        <span className="text-gray-500 text-[10px] truncate max-w-xs">{proDocs.attestationInsc?.name}</span>
+                        <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.attestationInsc?.name}</span>
                       </div>
                     </div>
                   </div>
@@ -1279,7 +1279,7 @@ export const Register: React.FC = () => {
                   <div className="glass border p-5 space-y-4 shadow-3xs">
                     <span className="text-[10px] font-mono font-bold text-indigo-700 uppercase tracking-wider block">Déclaration de conformité pénale</span>
                     
-                    <label className="flex gap-2.5 cursor-pointer text-xs leading-relaxed select-none text-gray-700 font-sans">
+                    <label className="flex gap-2.5 cursor-pointer text-xs leading-relaxed select-none text-slate-300 font-sans">
                       <input 
                         type="checkbox" 
                         checked={attestHonourPro}
@@ -1312,10 +1312,10 @@ export const Register: React.FC = () => {
               type="button"
               disabled={currentStep === 1}
               onClick={handlePrevStep}
-              className={`px-4 py-2 text-xs font-mono font-bold uppercase transition flex items-center gap-1 hover:bg-white/5 border ${
+              className={`px-4 py-2 text-xs font-mono font-bold uppercase transition flex items-center gap-1 hover:glass/5 border ${
                 currentStep === 1 
-                  ? 'border-gray-100 text-gray-300 pointer-events-none' 
-                  : 'border-[#CFCFC4] text-gray-700 cursor-pointer'
+                  ? 'border-white/5 text-slate-400 pointer-events-none' 
+                  : 'border-[#CFCFC4] text-slate-300 cursor-pointer'
               }`}
             >
               <ArrowLeft className="w-4 h-4 shrink-0" />
@@ -1327,7 +1327,7 @@ export const Register: React.FC = () => {
               {activeStepsDef.map((st) => (
                 <div 
                   key={st.num}
-                  className={`w-2.5 h-2.5 rounded-none ${st.num === currentStep ? 'bg-[#0F6E56]' : 'bg-white/10'}`}
+                  className={`w-2.5 h-2.5 rounded-none ${st.num === currentStep ? 'bg-[#0F6E56]' : 'glass/10'}`}
                 ></div>
               ))}
             </div>

@@ -136,7 +136,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           <span className="block text-[11px] font-medium text-brand-primary/95 mt-0.5">
             {labelAR} {required && <span className="text-red-500">*</span>}
           </span>
-          <p className="text-[10px] text-gray-400 mt-1 font-sans">{description}</p>
+          <p className="text-[10px] text-slate-400 mt-1 font-sans">{description}</p>
         </div>
 
         {legalTooltip && (
@@ -151,7 +151,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
               <HelpCircle className="w-4 h-4 cursor-pointer" />
             </button>
             {showTooltip && (
-              <div className="absolute right-0 top-6 z-20 w-56 p-2.5 bg-gray-900 border border-gray-800 text-[10px] text-gray-100 leading-normal shadow-lg">
+              <div className="absolute right-0 top-6 z-20 w-56 p-2.5 glass border border-white/5 text-[10px] text-slate-400 leading-normal shadow-lg">
                 <p>{legalTooltip}</p>
               </div>
             )}
@@ -163,7 +163,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
       {isUploading && (
         <div className="border border-[#CFCFC4] bg-[#FAF9F5] p-5 text-center space-y-3">
           <UploadCloud className="w-6 h-6 text-brand-primary animate-bounce mx-auto" />
-          <p className="text-[11px] font-mono text-gray-500">Chargement du fichier en cours... {uploadProgress}%</p>
+          <p className="text-[11px] font-mono text-slate-400">Chargement du fichier en cours... {uploadProgress}%</p>
           <div className="w-full bg-[#EBEBE5] h-1.5 rounded-none overflow-hidden">
             <div className="bg-brand-primary h-full transition-all duration-150" style={{ width: `${uploadProgress}%` }}></div>
           </div>
@@ -193,7 +193,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
               <p className="text-xs font-mono font-bold text-slate-200 truncate" title={fileDetails.name}>
                 {fileDetails.name}
               </p>
-              <p className="text-[10px] font-mono text-gray-400 mt-1">{fileDetails.size}</p>
+              <p className="text-[10px] font-mono text-slate-400 mt-1">{fileDetails.size}</p>
               <div className="flex items-center gap-1.5 mt-2 text-emerald-700">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span className="text-[9px] font-mono uppercase tracking-wide font-bold">CHARGÉ / تم التحميل</span>
@@ -238,10 +238,10 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           <UploadCloud className={`w-8 h-8 ${errorMessage ? 'text-red-500' : 'text-brand-primary/60'}`} />
           
           <div className="space-y-1">
-            <p className="text-xs text-gray-700 leading-normal">
+            <p className="text-xs text-slate-300 leading-normal">
               <span className="font-bold underline text-[#0F6E56]">Faites glisser</span> ou <span className="font-bold underline text-[#0F6E56]">cliquez pour charger</span>
             </p>
-            <p className="text-[10px] text-gray-400 font-mono tracking-wide uppercase">
+            <p className="text-[10px] text-slate-400 font-mono tracking-wide uppercase">
               {normalizeExtensions.join(', ').toUpperCase()} — Max {maxSizeMB}MB
             </p>
           </div>

@@ -182,7 +182,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
 
         <Link 
           to={`/professional/${professional.id}`}
-          className="flex items-center gap-1 px-3 py-1.5 bg-brand-primary text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-brand-dark transition rounded-lg"
+          className="flex items-center gap-1 px-3 py-1.5 bg-brand-primary text-white font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-brand-dark transition rounded-lg"
           id={`view_profile_btn_${professional.id}`}
         >
           <span>Visualiser</span>

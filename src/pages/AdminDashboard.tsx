@@ -71,21 +71,21 @@ export const AdminDashboard: React.FC = () => {
               <span className="px-2.5 py-0.5 bg-[#F59E0B]/20 border border-[#F59E0B] text-[#F59E0B] text-[9px] font-mono uppercase tracking-widest">
                 {t('nationalAuditAuthority')}
               </span>
-              <span className="text-[10px] font-mono text-gray-400">{t('dgiSupervisorStatus').toUpperCase()}: INTERNAL AUDITOR</span>
+              <span className="text-[10px] font-mono text-slate-400">{t('dgiSupervisorStatus').toUpperCase()}: INTERNAL AUDITOR</span>
             </div>
             
             <h1 className="text-2xl sm:text-3xl font-serif font-black tracking-tight text-white leading-tight">
               {t('algeriaComplianceGateway')} <span className="text-brand-accent font-normal italic">أكونيت الإدارة</span>
             </h1>
             
-            <p className="text-xs text-gray-300 font-sans leading-relaxed max-w-2xl">
+            <p className="text-xs text-slate-400 font-sans leading-relaxed max-w-2xl">
               {t('supervisingCharteredCabinets')}
             </p>
           </div>
 
           <div className="px-5 py-3 glass/5 border border-white/10 flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 bg-brand-accent rounded-full animate-pulse"></span>
-            <span className="text-gray-200 font-mono text-[10px] tracking-widest uppercase">{t('boardControlOnline')}</span>
+            <span className="text-slate-400 font-mono text-[10px] tracking-widest uppercase">{t('boardControlOnline')}</span>
           </div>
         </div>
       </div>
@@ -95,36 +95,36 @@ export const AdminDashboard: React.FC = () => {
         
         <div className="glass border border-[#CFCFC4] p-5 shadow-2xs flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">{t('registeredCabinets')}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">{t('registeredCabinets')}</p>
             <p className="text-2xl font-serif font-black text-brand-primary font-mono">{cabinetList.length}</p>
-            <p className="text-[9px] text-gray-400 font-mono">{t('onccRegistered')}</p>
+            <p className="text-[9px] text-slate-400 font-mono">{t('onccRegistered')}</p>
           </div>
           <Building2 className="w-8 h-8 text-[#0F6E56]/30" />
         </div>
 
         <div className="glass border border-[#CFCFC4] p-5 shadow-2xs flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">{t('nationalSmeEnrolment')}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">{t('nationalSmeEnrolment')}</p>
             <p className="text-2xl font-serif font-black text-indigo-950 font-mono">1,845</p>
-            <p className="text-[9px] text-gray-400 font-mono">{t('activeEntities')}</p>
+            <p className="text-[9px] text-slate-400 font-mono">{t('activeEntities')}</p>
           </div>
           <Users className="w-8 h-8 text-indigo-900/30" />
         </div>
 
         <div className="glass border border-[#CFCFC4] p-5 shadow-2xs flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">{t('g50SubmissionCompliance')}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">{t('g50SubmissionCompliance')}</p>
             <p className="text-2xl font-serif font-black text-amber-900 font-mono">94.2%</p>
-            <p className="text-[9px] text-gray-400 font-mono">{t('monthlyPenetration')}</p>
+            <p className="text-[9px] text-slate-400 font-mono">{t('monthlyPenetration')}</p>
           </div>
           <TrendingUp className="w-8 h-8 text-amber-700/30" />
         </div>
 
         <div className="glass border border-[#CFCFC4] p-5 shadow-2xs flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-wider">{t('systemTrustIndex')}</p>
+            <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">{t('systemTrustIndex')}</p>
             <p className="text-2xl font-serif font-black text-emerald-800 font-mono">100%</p>
-            <p className="text-[9px] text-gray-400 font-mono">{t('secureTripleEncrypted')}</p>
+            <p className="text-[9px] text-slate-400 font-mono">{t('secureTripleEncrypted')}</p>
           </div>
           <ShieldCheck className="w-8 h-8 text-emerald-800/30" />
         </div>
@@ -139,7 +139,7 @@ export const AdminDashboard: React.FC = () => {
           
           <div className="pb-4 border-b border-[#EBEBE5] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
-              <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">{t('authorityControlBoard')}</span>
+              <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">{t('authorityControlBoard')}</span>
               <h2 className="font-serif font-semibold text-white text-base flex items-center gap-2 mt-1">
                 <FileLock className="w-5 h-5 text-[#F59E0B]" />
                 {t('proCredentialsApprovals')}
@@ -152,7 +152,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   key={filterVal}
                   onClick={() => setActiveAuditFilter(filterVal as any)}
-                  className={`px-3 py-1 cursor-pointer transition ${activeAuditFilter === filterVal ? 'bg-brand-primary text-white font-bold' : 'text-gray-500 hover:text-gray-901'}`}
+                  className={`px-3 py-1 cursor-pointer transition ${activeAuditFilter === filterVal ? 'bg-brand-primary text-white font-bold' : 'text-slate-400 hover:text-white'}`}
                 >
                   {filterVal.toUpperCase()}
                 </button>
@@ -168,7 +168,7 @@ export const AdminDashboard: React.FC = () => {
               placeholder={t('filterByCabinetName')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full text-xs text-gray-850 bg-transparent focus:outline-none placeholder-gray-400 font-sans"
+              className="w-full text-xs text-slate-200 bg-transparent focus:outline-none placeholder-gray-400 font-sans"
             />
           </div>
 
@@ -185,17 +185,17 @@ export const AdminDashboard: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="font-serif font-bold text-white text-xs sm:text-sm">{tObj(cabinet.name)}</h4>
-                        <p className="text-[10px] text-gray-400 font-mono uppercase font-semibold">{tSpec(cabinet.specialty)}</p>
+                        <p className="text-[10px] text-slate-400 font-mono uppercase font-semibold">{tSpec(cabinet.specialty)}</p>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-gray-500">
+                    <div className="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-slate-400">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5 text-brand-primary shrink-0" />
                         <span>{tObj(cabinet.wilayaName)}, Algeria</span>
                       </div>
-                      <div className="text-[11px] font-mono text-gray-400">
-                        AccNum: <span className="font-bold text-gray-750">{cabinet.accreditationNumber}</span>
+                      <div className="text-[11px] font-mono text-slate-400">
+                        AccNum: <span className="font-bold text-slate-300">{cabinet.accreditationNumber}</span>
                       </div>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export const AdminDashboard: React.FC = () => {
                 </div>
               ))
             ) : (
-              <div className="text-center py-12 text-gray-400 font-mono space-y-1">
+              <div className="text-center py-12 text-slate-400 font-mono space-y-1">
                 <span className="text-2xl">🔍</span>
                 <p className="text-xs">No registered cabinets matched your parameters.</p>
               </div>
@@ -244,8 +244,8 @@ export const AdminDashboard: React.FC = () => {
         <div className="lg:col-span-4 bg-[#FFFFFF] border border-[#CFCFC4] p-6 shadow-3xs space-y-6 text-left rtl:text-right">
           
           <div className="pb-4 border-b border-[#EBEBE5]">
-            <span className="text-[9px] font-mono text-gray-400 uppercase tracking-widest">{t('nationalFinanceActConfig')}</span>
-            <h2 className="font-serif font-semibold text-gray-901 text-sm mt-1 flex items-center gap-1.5">
+            <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">{t('nationalFinanceActConfig')}</span>
+            <h2 className="font-serif font-semibold text-white text-sm mt-1 flex items-center gap-1.5">
               <Sliders className="w-4 h-4 text-brand-primary" />
               {t('nationalFinanceActConfigSub')}
             </h2>
@@ -255,7 +255,7 @@ export const AdminDashboard: React.FC = () => {
             
             <div className="space-y-1.5">
               <div className="flex justify-between items-center text-[9px] font-mono">
-                <label className="font-bold text-gray-400 uppercase">{t('defaultTapLevyRate')}</label>
+                <label className="font-bold text-slate-400 uppercase">{t('defaultTapLevyRate')}</label>
                 <span className="font-mono font-bold text-brand-primary">{tapRate}%</span>
               </div>
               <input 
@@ -267,11 +267,11 @@ export const AdminDashboard: React.FC = () => {
                 onChange={(e) => setTapRate(Number(e.target.value))}
                 className="w-full accent-brand-primary h-1 bg-[#EBEBE5] rounded-none outline-none appearance-none cursor-pointer"
               />
-              <span className="text-[9px] text-gray-400 font-mono text-right block">Includes 1% default trade discount index limit</span>
+              <span className="text-[9px] text-slate-400 font-mono text-right block">Includes 1% default trade discount index limit</span>
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-[9px] font-mono font-bold text-gray-400 uppercase tracking-widest text-left">{t('flatIbsTaxRate')}</label>
+              <label className="block text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest text-left">{t('flatIbsTaxRate')}</label>
               <select
                 value={ibsRate}
                 onChange={(e) => setIbsRate(Number(e.target.value))}
@@ -284,8 +284,8 @@ export const AdminDashboard: React.FC = () => {
             </div>
 
             <div className="space-y-1">
-              <span className="block text-[9px] font-mono font-bold text-gray-400 uppercase tracking-widest">Regulatory Board Directives</span>
-              <div className="p-3 bg-[#FAF9F5] border border-[#CFCFC4] text-[10px] text-gray-600 space-y-1.5 leading-normal">
+              <span className="block text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">Regulatory Board Directives</span>
+              <div className="p-3 bg-[#FAF9F5] border border-[#CFCFC4] text-[10px] text-slate-300 space-y-1.5 leading-normal">
                 <p>✓ All computations adhere to general Algerian Tax Code (CIDTA).</p>
                 <p>✓ Startup labeled units bypass the 1.5% TAP levy automatically.</p>
               </div>
@@ -303,14 +303,14 @@ export const AdminDashboard: React.FC = () => {
 
           {/* Audit telemetry report */}
           <div className="pt-6 border-t border-[#EBEBE5] space-y-2.5">
-            <h3 className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest">{t('regulatoryFilingSystemLog')}</h3>
+            <h3 className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">{t('regulatoryFilingSystemLog')}</h3>
             
-            <div className="bg-gray-950 text-emerald-400 text-[10px] font-mono p-4 rounded-none leading-relaxed overflow-x-auto text-left space-y-1 border border-gray-800">
-              <p className="text-gray-500">[2026-05-22 16:12:01]</p>
+            <div className="glass text-emerald-400 text-[10px] font-mono p-4 rounded-none leading-relaxed overflow-x-auto text-left space-y-1 border border-white/5">
+              <p className="text-slate-400">[2026-05-22 16:12:01]</p>
               <p>System authenticated as General Supervisor.</p>
-              <p className="text-gray-500">[2026-05-22 16:21:40]</p>
+              <p className="text-slate-400">[2026-05-22 16:21:40]</p>
               <p>OCR parsing server checked. OK (99.4% resolution)</p>
-              <p className="text-gray-500">[2026-05-22 16:22:15]</p>
+              <p className="text-slate-400">[2026-05-22 16:22:15]</p>
               <p>{t('regulatoryFilingSystemLogDesc')}</p>
             </div>
           </div>

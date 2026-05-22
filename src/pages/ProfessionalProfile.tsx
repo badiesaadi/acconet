@@ -267,7 +267,7 @@ export const ProfessionalProfile: React.FC = () => {
                       <div key={rev.id} className="pt-4 first:pt-0 space-y-2">
                         <div className="flex justify-between items-center">
                           <div>
-                            <h4 className="font-serif font-bold text-gray-955 text-xs">{rev.clientName}</h4>
+                            <h4 className="font-serif font-bold text-white text-xs">{rev.clientName}</h4>
                             <p className="text-[10px] text-slate-500 font-mono">{rev.date}</p>
                           </div>
                           

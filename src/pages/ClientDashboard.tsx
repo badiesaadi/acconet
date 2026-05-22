@@ -66,7 +66,7 @@ export const ClientDashboard: React.FC = () => {
               {t('clientWelcome')} <span className="text-brand-accent italic font-normal underline decoration-brand-accent/25 underline-offset-4">{currentClient?.companyName || 'Dzair Tech Link'}</span>
             </h1>
             
-            <p className="text-[11px] text-gray-300 font-sans flex items-center gap-2.5">
+            <p className="text-[11px] text-slate-400 font-sans flex items-center gap-2.5">
               <span>HQ: <strong className="text-white">{tObj(currentClient?.wilayaName)}</strong></span>
               <span className="text-slate-400">•</span>
               <span>NIF Certificate: <strong className="font-mono text-brand-accent">{currentClient?.NIF}</strong></span>
@@ -75,7 +75,7 @@ export const ClientDashboard: React.FC = () => {
 
           <div className="px-4 py-2.5 glass/5 border border-white/10 flex items-center gap-2 text-xs">
             <span className="w-1.5 h-1.5 bg-emerald-400 animate-ping"></span>
-            <span className="text-gray-300 font-mono text-[10px] tracking-wider uppercase">SCF Compliance Live Link</span>
+            <span className="text-slate-400 font-mono text-[10px] tracking-wider uppercase">SCF Compliance Live Link</span>
           </div>
         </div>
       </div>
@@ -315,7 +315,7 @@ export const ClientDashboard: React.FC = () => {
                         className={`w-4 h-4 border flex items-center justify-center cursor-pointer rounded-xl transition-colors ${
                           isFinished 
                             ? 'bg-brand-primary border-[#0F6E56] text-white' 
-                            : 'glass border-gray-400 hover:border-brand-primary'
+                            : 'glass border-white/5 hover:border-brand-primary'
                         }`}
                         title="Click to simulate change of status"
                       >

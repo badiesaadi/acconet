@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               {t('brandSlogan')}
             </p>
             
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
             <h3 className="text-brand-accent font-mono text-xs tracking-widest uppercase mb-4">
               {t('brandName')} Platform
             </h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <Link to="/search" className="hover:text-brand-accent transition">{t('findProButton')}</Link>
               </li>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
             <h3 className="text-brand-accent font-mono text-xs tracking-widest uppercase mb-4">
               Algeria Compliance
             </h3>
-            <ul className="space-y-2 text-xs text-gray-400 font-sans">
+            <ul className="space-y-2 text-xs text-slate-400 font-sans">
               <li>• Système Comptable Financier (SCF)</li>
               <li>• Déclaration Mensuelle G50 & G50 bis</li>
               <li>• Impôts sur le Revenu Global (IRG)</li>
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
                 <span>AccoNet Simulation Control Deck</span>
                 <span className="px-1.5 py-0.5 bg-[#0F6E56] text-[9px] uppercase tracking-widest font-mono text-white">Prototype Mode</span>
               </p>
-              <p className="text-xs text-gray-300 mt-1 max-w-xl">
+              <p className="text-xs text-slate-400 mt-1 max-w-xl">
                 Switch profiles to immediately view the corresponding interactive workspaces, mock contracts, and tax tasks.
               </p>
             </div>
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-xs text-gray-400">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-xs text-slate-400">
           <p>© 2026 {t('brandName')} Algeria. {t('allRightsReserved')}</p>
           <p className="flex items-center gap-1 mt-4 md:mt-0">
             <span>Made with</span>

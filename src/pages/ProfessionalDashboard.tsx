@@ -75,7 +75,7 @@ export const ProfessionalDashboard: React.FC = () => {
 
           <div className="px-3.5 py-2 glass/5 border border-white/10 flex items-center gap-1.5 text-xs">
             <Shield className="w-4 h-4 text-brand-accent animate-pulse" />
-            <span className="text-gray-300 font-mono text-[9px] uppercase tracking-wider">Secure Audit Environment</span>
+            <span className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Secure Audit Environment</span>
           </div>
         </div>
       </div>

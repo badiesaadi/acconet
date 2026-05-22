@@ -323,16 +323,16 @@ LOCAL RECOMMENDATIONS:
                   <button
                     onClick={() => handleRunSimulation(expandedTool)}
                     disabled={isProcessing}
-                    className="w-full py-3 bg-brand-primary hover:bg-brand-dark disabled:bg-slate-800 text-slate-950 font-mono font-bold uppercase tracking-widest rounded-lg text-xs cursor-pointer transition flex items-center justify-center gap-1.5"
+                    className="w-full py-3 bg-brand-primary hover:bg-brand-dark disabled:bg-slate-800 text-white font-mono font-bold uppercase tracking-widest rounded-lg text-xs cursor-pointer transition flex items-center justify-center gap-1.5"
                   >
                     {isProcessing ? (
                       <>
-                        <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
+                        <RefreshCw className="w-4 h-4 animate-spin text-white" />
                         <span>{t('processingLedgerParams')}</span>
                       </>
                     ) : (
                       <>
-                        <Play className="w-4 h-4 fill-slate-950 text-slate-950 shrink-0" />
+                        <Play className="w-4 h-4 fill-slate-950 text-white shrink-0" />
                         <span>{t('executeSimulation')}</span>
                       </>
                     )}

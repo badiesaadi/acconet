@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
                 </Link>
                 <Link 
                   to="/register" 
-                  className="px-3.5 py-1.5 bg-brand-primary text-slate-950 hover:bg-brand-dark rounded-lg text-xs font-bold transition duration-150 shadow-xs hover:shadow-glow"
+                  className="px-3.5 py-1.5 bg-brand-primary text-white hover:bg-brand-dark rounded-lg text-xs font-bold transition duration-150 shadow-xs hover:shadow-glow"
                   id="navbar_register_btn"
                 >
                   {t('registerLink')}
@@ -286,19 +286,19 @@ export const Navbar: React.FC = () => {
             <div className="grid grid-cols-3 gap-2">
               <button 
                 onClick={() => handleLanguageChange('ar')}
-                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'ar' ? 'bg-brand-primary text-slate-950 border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
+                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'ar' ? 'bg-brand-primary text-white border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
               >
                 العربية
               </button>
               <button 
                 onClick={() => handleLanguageChange('fr')}
-                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'fr' ? 'bg-brand-primary text-slate-950 border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
+                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'fr' ? 'bg-brand-primary text-white border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
               >
                 Français
               </button>
               <button 
                 onClick={() => handleLanguageChange('en')}
-                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'en' ? 'bg-brand-primary text-slate-950 border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
+                className={`py-1.5 text-xs rounded-xl border text-center cursor-pointer ${language === 'en' ? 'bg-brand-primary text-white border-brand-primary' : 'glass/5 text-slate-300 border-white/10'}`}
               >
                 English
               </button>
@@ -319,7 +319,7 @@ export const Navbar: React.FC = () => {
                 <Link 
                   to="/register" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-1.5 text-center bg-brand-primary text-slate-950 rounded-xl text-xs font-semibold"
+                  className="py-1.5 text-center bg-brand-primary text-white rounded-xl text-xs font-semibold"
                 >
                   {t('registerLink')}
                 </Link>
