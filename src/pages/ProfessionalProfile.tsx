@@ -385,7 +385,7 @@ export const ProfessionalProfile: React.FC = () => {
           <div className="glass rounded-xl max-w-lg w-full overflow-hidden shadow-2xl border border-white/5 flex flex-col justify-between">
             
             {/* Modal Header */}
-            <div className="bg-[#0B1A16] text-white p-5 flex justify-between items-center">
+            <div className="bg-[#0B1020] text-white p-5 flex justify-between items-center">
               <div>
                 <h3 className="font-serif font-bold text-sm tracking-wide">{t('hireMeNow')}</h3>
                 <p className="text-[10px] text-brand-accent font-mono mt-0.5 uppercase tracking-wider">PROPOSAL FORM FOR {currentClient?.companyName || 'Dzair Tech Link'}</p>
@@ -468,7 +468,7 @@ export const ProfessionalProfile: React.FC = () => {
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4" id="message_sender_modal">
           <div className="glass rounded-xl max-w-md w-full overflow-hidden shadow-2xl border border-white/5">
             
-            <div className="bg-[#0B1A16] text-white p-5 flex justify-between items-center">
+            <div className="bg-[#0B1020] text-white p-5 flex justify-between items-center">
               <div>
                 <h3 className="font-serif font-bold text-sm tracking-wide">{t('sendMessage')}</h3>
                 <p className="text-[10px] text-brand-accent font-mono mt-0.5 uppercase tracking-wider">Direct query to center</p>

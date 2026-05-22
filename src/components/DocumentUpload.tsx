@@ -161,10 +161,10 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
 
       {/* Uploading Progress Bar State */}
       {isUploading && (
-        <div className="border border-[#CFCFC4] bg-[#FAF9F5] p-5 text-center space-y-3">
+        <div className="border border-white/10 bg-[#0B1020] p-5 text-center space-y-3">
           <UploadCloud className="w-6 h-6 text-brand-primary animate-bounce mx-auto" />
           <p className="text-[11px] font-mono text-slate-400">Chargement du fichier en cours... {uploadProgress}%</p>
-          <div className="w-full bg-[#EBEBE5] h-1.5 rounded-none overflow-hidden">
+          <div className="w-full bg-white/10 h-1.5 rounded-none overflow-hidden">
             <div className="bg-brand-primary h-full transition-all duration-150" style={{ width: `${uploadProgress}%` }}></div>
           </div>
         </div>
@@ -172,10 +172,10 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
 
       {/* Success File Loaded State */}
       {!isUploading && fileDetails && (
-        <div className="border border-emerald-500/50 bg-emerald-50/20 p-4 flex items-center justify-between gap-3 shadow-2xs antialiased">
+        <div className="border border-emerald-500/50 bg-emerald-900/20/20 p-4 flex items-center justify-between gap-3 shadow-2xs antialiased">
           <div className="flex items-center gap-3 min-w-0">
             {fileDetails.isImage && fileDetails.previewUrl ? (
-              <div className="w-[80px] h-[80px] border border-[#CFCFC4] overflow-hidden glass shrink-0 relative flex items-center justify-center">
+              <div className="w-[80px] h-[80px] border border-white/10 overflow-hidden glass shrink-0 relative flex items-center justify-center">
                 <img 
                   referrerPolicy="no-referrer"
                   src={fileDetails.previewUrl} 
@@ -184,7 +184,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
                 />
               </div>
             ) : (
-              <div className="w-[80px] h-[80px] border border-[#CFCFC4] glass shrink-0 flex items-center justify-center">
+              <div className="w-[80px] h-[80px] border border-white/10 glass shrink-0 flex items-center justify-center">
                 <FileText className="w-9 h-9 text-brand-primary" />
               </div>
             )}
@@ -204,7 +204,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           <button
             type="button"
             onClick={handleRemove}
-            className="p-1 px-2.5 text-[10px] font-mono uppercase text-red-600 hover:bg-red-50 border border-red-250 cursor-pointer flex items-center gap-1 shrink-0"
+            className="p-1 px-2.5 text-[10px] font-mono uppercase text-red-600 hover:bg-red-900/20 border border-red-250 cursor-pointer flex items-center gap-1 shrink-0"
           >
             <Trash2 className="w-3.5 h-3.5" />
             <span>Supprimer</span>
@@ -221,10 +221,10 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           onClick={triggerFileSelect}
           className={`border-2 border-dashed p-6 text-center cursor-pointer transition flex flex-col items-center justify-center gap-3.5 min-h-[140px] ${
             errorMessage 
-              ? 'border-red-400 bg-red-50/10 hover:bg-red-50/25' 
+              ? 'border-red-400 bg-red-900/20/10 hover:bg-red-900/20/25' 
               : isDragOver
                 ? 'border-[#0F6E56] bg-[#0F6E56]/5'
-                : 'border-[#CFCFC4] bg-[#FAF9F5]/30 hover:bg-[#FAF9F5]/70 hover:border-brand-primary'
+                : 'border-white/10 bg-[#0B1020]/30 hover:bg-[#0B1020]/70 hover:border-brand-primary'
           }`}
         >
           <input 
@@ -250,7 +250,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
 
       {/* Specific error container */}
       {errorMessage && (
-        <div className="mt-2 text-[10px] text-red-700 bg-red-50/50 border border-red-200 px-3 py-2 flex items-start gap-1.5 leading-relaxed">
+        <div className="mt-2 text-[10px] text-red-700 bg-red-900/20/50 border border-red-500/20 px-3 py-2 flex items-start gap-1.5 leading-relaxed">
           <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5 text-red-500" />
           <p>{errorMessage}</p>
         </div>

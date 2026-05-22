@@ -210,7 +210,7 @@ export const ProfessionalDashboard: React.FC = () => {
                         {tk.status !== 'in-progress' && (
                           <button
                             onClick={() => updateTaskStatus(tk.id, 'in-progress')}
-                            className="px-2.5 py-1 glass border border-indigo-200 hover:bg-indigo-50 text-indigo-700 font-bold text-[10px] cursor-pointer"
+                            className="px-2.5 py-1 glass border border-indigo-500/20 hover:bg-indigo-900/20 text-indigo-700 font-bold text-[10px] cursor-pointer"
                           >
                             Set Active
                           </button>
@@ -262,7 +262,7 @@ export const ProfessionalDashboard: React.FC = () => {
                   </div>
                   
                   {/* Precise Progress bar */}
-                  <div className="w-full bg-[#EBEBE5] h-2.5 overflow-hidden">
+                  <div className="w-full bg-white/10 h-2.5 overflow-hidden">
                     <div 
                       className={`h-full transition-all duration-300 ${m.active ? 'bg-brand-primary animate-pulse' : 'glass/10'}`}
                       style={{ width: `${(m.value / m.max) * 100}%` }}

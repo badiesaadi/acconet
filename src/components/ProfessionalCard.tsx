@@ -41,7 +41,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
       ? '⚖️ معتمد لدى وزارة العدل والضرائب'
       : '⚖️ Ministère de la Justice / DGI';
     variantBadgeMarkup = (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-900/200/10 border border-amber-500/25 text-amber-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
         <Gavel className="w-2.5 h-2.5" />
         DGI CERTIFIÉ
       </span>
@@ -54,7 +54,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
       ? '💼 مناسب للمؤسسات الصغيرة والمتوسطة'
       : '🟢 Accessible PME / TPE';
     variantBadgeMarkup = (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-900/200/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
         Accessible PME
       </span>
     );

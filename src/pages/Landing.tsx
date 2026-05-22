@@ -116,7 +116,7 @@ export const Landing: React.FC = () => {
       <section className="relative overflow-hidden pt-12 pb-20 md:py-32 px-4 sm:px-6 lg:px-8 border-b border-white/5">
         {/* Subtle Neon Glow effect */}
         <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute top-1/3 right-10 w-80 h-80 bg-indigo-505/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-1/3 right-10 w-80 h-80 bg-indigo-900/205/10 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -182,7 +182,7 @@ export const Landing: React.FC = () => {
                 {/* Header state */}
                 <div className="flex justify-between items-center pb-3 border-b border-white/5">
                   <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest">{t('heroConsultantCard')}</span>
-                  <span className="px-2.5 py-0.5 bg-teal-500/10 text-brand-primary border border-brand-primary/20 text-[9px] font-mono uppercase font-black rounded-md">
+                  <span className="px-2.5 py-0.5 bg-teal-900/200/10 text-brand-primary border border-brand-primary/20 text-[9px] font-mono uppercase font-black rounded-md">
                     ONEC VERIFIED
                   </span>
                 </div>
@@ -420,7 +420,7 @@ export const Landing: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
             <div className="lg:col-span-6 space-y-5 text-left rtl:text-right">
-              <span className="inline-block px-2.5 py-0.5 bg-amber-500/10 border border-amber-500/25 text-amber-400 text-[9px] font-mono uppercase tracking-wider rounded">
+              <span className="inline-block px-2.5 py-0.5 bg-amber-900/200/10 border border-amber-500/25 text-amber-400 text-[9px] font-mono uppercase tracking-wider rounded">
                 {t('sandboxHeading')}
               </span>
               <h2 className="text-2xl sm:text-3xl font-serif font-black tracking-tight">

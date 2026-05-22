@@ -83,10 +83,10 @@ export const FiscalCalendar: React.FC = () => {
   const activeDeadlines = getFilteredDeadlines();
 
   return (
-    <div className="glass border border-[#CFCFC4] p-5 sm:p-6 text-left rtl:text-right font-sans shadow-2xs w-full" id="fiscal_calendar_widget">
+    <div className="glass border border-white/10 p-5 sm:p-6 text-left rtl:text-right font-sans shadow-2xs w-full" id="fiscal_calendar_widget">
       
       {/* Header and Month Slider */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-[#EBEBE5]">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-white/10">
         <div>
           <div className="flex items-center gap-1.5 text-[#0F6E56]">
             <Calendar className="w-5 h-5 shrink-0" />
@@ -103,7 +103,7 @@ export const FiscalCalendar: React.FC = () => {
         <select 
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(Number(e.target.value))}
-          className="border border-[#CFCFC4] px-3 py-1.5 bg-[#FAF9F5] text-xs font-mono font-bold text-slate-300 outline-none focus:border-brand-primary cursor-pointer rounded-none"
+          className="border border-white/10 px-3 py-1.5 bg-[#0B1020] text-xs font-mono font-bold text-slate-300 outline-none focus:border-brand-primary cursor-pointer rounded-none"
         >
           {monthNamesFR.map((name, idx) => (
             <option key={idx} value={idx}>
@@ -121,10 +121,10 @@ export const FiscalCalendar: React.FC = () => {
               key={deadline.id}
               className={`p-4 border transition ${
                 deadline.status === 'done' 
-                  ? 'border-emerald-250 bg-emerald-500/5' 
+                  ? 'border-emerald-250 bg-emerald-900/200/5' 
                   : deadline.status === 'delegated'
-                    ? 'border-indigo-250 bg-indigo-500/5'
-                    : 'border-[#CFCFC4] bg-[#FAF9F5]/30'
+                    ? 'border-indigo-250 bg-indigo-900/200/5'
+                    : 'border-white/10 bg-[#0B1020]/30'
               } flex flex-col md:flex-row justify-between items-start md:items-center gap-4`}
             >
               <div className="space-y-1.5 md:max-w-2xl">
@@ -134,7 +134,7 @@ export const FiscalCalendar: React.FC = () => {
                       ? 'bg-emerald-600 text-white'
                       : deadline.status === 'delegated'
                         ? 'bg-indigo-600 text-white'
-                        : 'bg-red-500 text-white'
+                        : 'bg-red-900/200 text-white'
                   }`}>
                     ⏱️ EXIGIBLE : {deadline.computedDue}
                   </span>
@@ -153,7 +153,7 @@ export const FiscalCalendar: React.FC = () => {
                 </p>
 
                 {/* Penalty warning block */}
-                <div className="flex items-center gap-1.5 text-[10px] text-amber-800 font-mono">
+                <div className="flex items-center gap-1.5 text-[10px] text-amber-300 font-mono">
                   <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                   <span>Amende/Pénalité : {deadline.penalty}</span>
                 </div>
@@ -162,14 +162,14 @@ export const FiscalCalendar: React.FC = () => {
               {/* Actions Box */}
               <div className="flex flex-wrap items-center gap-2 w-full md:w-auto shrink-0 justify-end">
                 {deadline.status === 'done' && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-emerald-100 border border-emerald-300 text-emerald-800 text-[10px] font-mono font-bold uppercase">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-emerald-100 border border-emerald-300 text-emerald-300 text-[10px] font-mono font-bold uppercase">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                     Déposé & Payé
                   </span>
                 )}
 
                 {deadline.status === 'delegated' && (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-indigo-100 border border-indigo-300 text-indigo-800 text-[10px] font-mono font-bold uppercase">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 bg-indigo-100 border border-indigo-300 text-indigo-300 text-[10px] font-mono font-bold uppercase">
                     <Clock className="w-3.5 h-3.5 text-indigo-700 animate-pulse" />
                     Délégué au Pro
                   </span>
@@ -196,14 +196,14 @@ export const FiscalCalendar: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center py-8 border border-dashed border-[#CFCFC4] text-slate-400 font-mono text-xs">
+          <div className="text-center py-8 border border-dashed border-white/10 text-slate-400 font-mono text-xs">
             Aucun dépôt ou taxe obligatoire répertorié pour {getMonthName(selectedMonth)} 2026.
           </div>
         )}
       </div>
 
       {/* Info Footnote block */}
-      <div className="mt-4 p-3.5 bg-amber-500/5 border border-amber-300/40 text-[10px] leading-relaxed text-amber-900 flex items-start gap-2">
+      <div className="mt-4 p-3.5 bg-amber-900/200/5 border border-amber-300/40 text-[10px] leading-relaxed text-amber-900 flex items-start gap-2">
         <Info className="w-4 h-4 shrink-0 text-amber-700 mt-0.5" />
         <p>
           <strong>Prudence Légale (CPF) :</strong> La date limite du G50 mensuel est le 20 de chaque mois d'exercice. L'Extrait de Rôle des impôts en Algérie exige une absence stricte d'arriérés (Rôle Apuré) pour pouvoir soumissionner aux marchés de sous-traitance industrielle B2B.

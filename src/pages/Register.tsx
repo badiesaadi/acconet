@@ -327,15 +327,15 @@ export const Register: React.FC = () => {
   const isLastWizardStep = currentStep === activeStepsDef.length;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row bg-[#FAF9F5] antialiased" id="register_full_wizard" dir={direction}>
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row bg-[#0B1020] antialiased" id="register_full_wizard" dir={direction}>
       
       {/* 1. LEFT STICKY REGULAR SIDE PANEL (DESKTOP STEPPER AND BRAND BAR) */}
-      <div className="w-full lg:w-1/3 bg-[#0B1A16] text-white p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#0F6E56]/35 shrink-0 select-none">
+      <div className="w-full lg:w-1/3 bg-[#0B1020] text-white p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#0F6E56]/35 shrink-0 select-none">
         <div className="space-y-6">
           
           {/* Logo link */}
           <Link to="/" className="inline-flex items-center space-x-2.5 rtl:space-x-reverse text-left">
-            <span className="flex items-center justify-center w-8 h-8 rounded-none glass text-brand-primary font-bold text-lg border border-[#CFCFC4]">
+            <span className="flex items-center justify-center w-8 h-8 rounded-none glass text-brand-primary font-bold text-lg border border-white/10">
               أ
             </span>
             <span className="text-xl font-serif font-semibold tracking-tight text-white">
@@ -419,19 +419,19 @@ export const Register: React.FC = () => {
 
         {/* Tab Switching Selector (Visible only in initial Step 1) */}
         {!registrationSuccess && currentStep === 1 && (
-          <div className="glass border-b border-[#CFCFC4] px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div className="glass border-b border-white/10 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
               <p className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">{t('accountTypeLabel')}</p>
               <h2 className="text-xs text-slate-300 font-mono mt-0.5">Choisissez le profil adapté à votre activité sur la plateforme AccoNet.</h2>
             </div>
 
-            <div className="flex gap-2 p-1 bg-[#FAF9F5] border border-[#CFCFC4] select-none shrink-0">
+            <div className="flex gap-2 p-1 bg-[#0B1020] border border-white/10 select-none shrink-0">
               <button
                 type="button"
                 onClick={() => handleRoleToggle('client')}
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'client' 
-                    ? 'glass text-brand-primary border border-[#CFCFC4] font-black' 
+                    ? 'glass text-brand-primary border border-white/10 font-black' 
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -444,7 +444,7 @@ export const Register: React.FC = () => {
                 onClick={() => handleRoleToggle('professional')}
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'professional' 
-                    ? 'glass text-indigo-700 border border-[#CFCFC4] font-black' 
+                    ? 'glass text-indigo-700 border border-white/10 font-black' 
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -460,9 +460,9 @@ export const Register: React.FC = () => {
           
           {/* Success screen placeholder */}
           {registrationSuccess ? (
-            <div className="glass border border-[#CFCFC4] p-8 sm:p-12 text-center text-left rtl:text-right space-y-6 animate-fade-in shadow-xs" id="reg_success_pane">
+            <div className="glass border border-white/10 p-8 sm:p-12 text-center text-left rtl:text-right space-y-6 animate-fade-in shadow-xs" id="reg_success_pane">
               
-              <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto rounded-full">
+              <div className="w-16 h-16 bg-emerald-900/20 border border-emerald-500/20 flex items-center justify-center mx-auto rounded-full">
                 <BadgeCheck className="w-10 h-10 text-emerald-600" />
               </div>
 
@@ -482,7 +482,7 @@ export const Register: React.FC = () => {
               </div>
 
               {/* Reference ID Block */}
-              <div className="bg-[#FAF9F5] border border-[#CFCFC4] p-4 max-w-md mx-auto">
+              <div className="bg-[#0B1020] border border-white/10 p-4 max-w-md mx-auto">
                 <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">RÉFÉRENCE DU DOSSIER D\'AGRÉMENT</p>
                 <p className="text-xl font-mono font-black text-[#0F6E56] mt-1 tracking-wider select-all">{registrationSuccess}</p>
               </div>
@@ -506,7 +506,7 @@ export const Register: React.FC = () => {
             <div className="space-y-8">
               
               {/* Central Title */}
-              <div className="pb-4 border-b border-[#EBEBE5]">
+              <div className="pb-4 border-b border-white/10">
                 <h1 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight flex items-center gap-2">
                   <UserPlus className="w-6 h-6 text-[#0F6E56]" />
                   <span>
@@ -523,7 +523,7 @@ export const Register: React.FC = () => {
 
               {/* STEP ERRORS DISPLAYER */}
               {stepErrors && (
-                <div className="p-4 bg-red-500/5 border border-red-400/50 text-red-800 text-xs font-mono leading-relaxed text-left rtl:text-right whitespace-pre-line flex items-start gap-2 animate-[shake_0.3s_ease]">
+                <div className="p-4 bg-red-900/200/5 border border-red-400/50 text-red-300 text-xs font-mono leading-relaxed text-left rtl:text-right whitespace-pre-line flex items-start gap-2 animate-[shake_0.3s_ease]">
                   <X className="w-5 h-5 shrink-0 text-red-650 cursor-pointer" onClick={() => setStepErrors(null)} />
                   <div>
                     <span className="font-bold underline uppercase block mb-1">Erreur de saisie / خطأ في التحقق</span>
@@ -555,7 +555,7 @@ export const Register: React.FC = () => {
                         placeholder={regRole === 'professional' ? "ex: Me. Lamine Bouhired" : "ex: Karim Haddad"}
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2.5 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-bold"
+                        className="w-full border border-white/10 rounded-none px-3 py-2.5 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-bold"
                       />
                     </div>
 
@@ -565,7 +565,7 @@ export const Register: React.FC = () => {
                         E-mail professionnel (البريد الإلكتروني للعمل)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-[#CFCFC4] rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
                         <Mail className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="email" 
@@ -584,10 +584,10 @@ export const Register: React.FC = () => {
                         Numéro de Téléphone (رقم الهاتف الجوال)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="flex border border-[#CFCFC4] rounded-none glass focus-within:border-brand-primary">
+                      <div className="flex border border-white/10 rounded-none glass focus-within:border-brand-primary">
                         
                         {/* Operator select prefix */}
-                        <div className="bg-[#FAF9F5]/85 border-r border-[#CFCFC4] px-2.5 flex items-center gap-1 shrink-0 select-none">
+                        <div className="bg-[#0B1020]/85 border-r border-white/10 px-2.5 flex items-center gap-1 shrink-0 select-none">
                           <span className="text-[13px]" title="Algérie">🇩🇿</span>
                           <span className="text-[10px] font-mono font-bold text-slate-300">+213</span>
                           <select
@@ -620,7 +620,7 @@ export const Register: React.FC = () => {
                         Mot de passe sécurisé (كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-[#CFCFC4] rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
                         <Lock className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="password" 
@@ -639,7 +639,7 @@ export const Register: React.FC = () => {
                         Confirmer le mot de passe (تأكيد كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-[#CFCFC4] rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
                         <Lock className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="password" 
@@ -658,7 +658,7 @@ export const Register: React.FC = () => {
                         {regRole === 'professional' ? 'Wilaya d\'exercice principale (ولاية ممارسة المهنة)' : 'Wilaya du siège social de l\'entreprise (ولاية المقر الاجتماعي للمؤسسة)'}
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-[#CFCFC4] rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
                         <MapPin className="w-4 h-4 text-brand-primary shrink-0" />
                         <select
                           value={selectedWilayaId}
@@ -699,7 +699,7 @@ export const Register: React.FC = () => {
                       <select
                         value={specialty}
                         onChange={(e) => setSpecialty(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2.5 glass text-xs font-bold text-slate-300 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
+                        className="w-full border border-white/10 rounded-none px-3 py-2.5 glass text-xs font-bold text-slate-300 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
                       >
                         <option value="certified-accountant">Expert-Comptables (Agréé par l'ONEC)</option>
                         <option value="statutory-auditor">Commissaire aux Comptes (Agréé par l'ONCC)</option>
@@ -726,7 +726,7 @@ export const Register: React.FC = () => {
                         }
                         value={tableauNumber}
                         onChange={(e) => setTableauNumber(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
                       />
                       <span className="text-[9px] text-[#F59E0B] font-mono block">Format officiel exigé par l'Ordonnance ministérielle.</span>
                     </div>
@@ -741,17 +741,17 @@ export const Register: React.FC = () => {
                         placeholder="ex: MIN-FIN/2014/1982"
                         value={agreeCabinetNumber}
                         onChange={(e) => setAgreeCabinetNumber(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
                       />
                     </div>
 
                     {/* Experience slider slider: 1–40 years */}
-                    <div className="space-y-2 col-span-1 sm:col-span-2 p-4 glass border border-[#CFCFC4]">
+                    <div className="space-y-2 col-span-1 sm:col-span-2 p-4 glass border border-white/10">
                       <div className="flex justify-between items-center">
                         <label className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                           Années d'Expérience effective (سنوات الخبرة المهنية)
                         </label>
-                        <span className="px-2.5 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-800 font-mono font-bold text-xs">
+                        <span className="px-2.5 py-0.5 bg-indigo-900/20 border border-indigo-500/20 text-indigo-300 font-mono font-bold text-xs">
                           {yearsExperience} Ans / سنوات
                         </span>
                       </div>
@@ -761,7 +761,7 @@ export const Register: React.FC = () => {
                         max={40} 
                         value={yearsExperience}
                         onChange={(e) => setYearsExperience(Number(e.target.value))}
-                        className="w-full accent-indigo-700 cursor-pointer h-1 bg-[#EBEBE5]"
+                        className="w-full accent-indigo-700 cursor-pointer h-1 bg-white/10"
                       />
                       <div className="flex justify-between text-[9px] text-slate-400 font-mono">
                         <span>1 An (Comptable junior)</span>
@@ -777,7 +777,7 @@ export const Register: React.FC = () => {
                       
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.ar}
@@ -787,7 +787,7 @@ export const Register: React.FC = () => {
                           <span className="text-xs font-serif font-black text-white">Arabe (العربية)</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.fr}
@@ -797,7 +797,7 @@ export const Register: React.FC = () => {
                           <span className="text-xs font-serif font-black text-white">Français</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.en}
@@ -807,7 +807,7 @@ export const Register: React.FC = () => {
                           <span className="text-xs font-sans font-bold text-white">English</span>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.tamazight}
@@ -844,7 +844,7 @@ export const Register: React.FC = () => {
                       <select
                         value={entityType}
                         onChange={(e) => setEntityType(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2.5 glass text-xs font-bold font-serif text-slate-200 focus:outline-none focus:border-brand-primary cursor-pointer"
+                        className="w-full border border-white/10 rounded-none px-3 py-2.5 glass text-xs font-bold font-serif text-slate-200 focus:outline-none focus:border-brand-primary cursor-pointer"
                       >
                         <option value="SARL">SARL (Société à Responsabilité Limitée)</option>
                         <option value="EURL">EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</option>
@@ -869,7 +869,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: SARL Mitidja Agro Industrie"
                         value={companyNameFR}
                         onChange={(e) => setCompanyNameFR(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black"
                       />
                     </div>
 
@@ -882,7 +882,7 @@ export const Register: React.FC = () => {
                         placeholder="مثال: ش.ذ.م.م متيجة للصناعات الزراعية"
                         value={companyNameAR}
                         onChange={(e) => setCompanyNameAR(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black text-right"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black text-right"
                         dir="rtl"
                       />
                     </div>
@@ -899,7 +899,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: 16/00-0142578-B26"
                         value={rcNumber}
                         onChange={(e) => setRcNumber(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
                       <span className="text-[9px] text-slate-400 font-mono">Format requis par le CNRC : Wilaya/Code-Numéro-Année</span>
                     </div>
@@ -917,7 +917,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: 001612054789412"
                         value={nifNumber}
                         onChange={(e) => setNifNumber(e.target.value.replace(/\D/g, ''))}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono tracking-widest text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono tracking-widest text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
                       <span className="text-[9px] text-[#0F6E56] font-mono block">Doit faire exactement 15 chiffres règlementaires (DGI).</span>
                     </div>
@@ -932,7 +932,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: 16032481056"
                         value={aiNumber}
                         onChange={(e) => setAiNumber(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
                     </div>
 
@@ -944,7 +944,7 @@ export const Register: React.FC = () => {
                       <select
                         value={secteurActivite}
                         onChange={(e) => setSecteurActivite(e.target.value)}
-                        className="w-full border border-[#CFCFC4] rounded-none p-2 glass text-xs text-slate-300 focus:outline-none focus:border-[#0F6E56] cursor-pointer font-serif font-black"
+                        className="w-full border border-white/10 rounded-none p-2 glass text-xs text-slate-300 focus:outline-none focus:border-[#0F6E56] cursor-pointer font-serif font-black"
                       >
                         <option value="Commerce de détail">Commerce de détail (تجارة التجزئة)</option>
                         <option value="Commerce de gros">Commerce de gros (تجارة الجملة)</option>
@@ -966,7 +966,7 @@ export const Register: React.FC = () => {
                       
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -980,7 +980,7 @@ export const Register: React.FC = () => {
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -994,7 +994,7 @@ export const Register: React.FC = () => {
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-[#CFCFC4] flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -1031,7 +1031,7 @@ export const Register: React.FC = () => {
                   </div>
 
                   {/* Wizard 4-grid documents block interface */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-[#CFCFC4] bg-[#FAF9F5]/30">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-white/10 bg-[#0B1020]/30">
                     
                     <DocumentUpload 
                       label="Carte Professionnelle ONEC / ONCC / ONCA"
@@ -1116,7 +1116,7 @@ export const Register: React.FC = () => {
                   </div>
 
                   {/* Custom list of uploaders tailored to Algerian context */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-[#CFCFC4] bg-[#FAF9F5]/30">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-white/10 bg-[#0B1020]/30">
                     
                     <DocumentUpload 
                       label="Extrait du Registre de Commerce (RC)"
@@ -1233,7 +1233,7 @@ export const Register: React.FC = () => {
                   {/* Summary card with core state representations */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <div className="glass border border-[#CFCFC4] p-5 space-y-3.5 shadow-3xs">
+                    <div className="glass border border-white/10 p-5 space-y-3.5 shadow-3xs">
                       <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">IDENITÉ & COMPTE</span>
                       <div className="space-y-2 text-xs">
                         <p><strong className="text-slate-400">Nom complet/المكتب :</strong> {fullName}</p>
@@ -1243,7 +1243,7 @@ export const Register: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="glass border border-[#CFCFC4] p-5 space-y-3.5 shadow-3xs">
+                    <div className="glass border border-white/10 p-5 space-y-3.5 shadow-3xs">
                       <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">CREDENTIELS RECOUPÉS</span>
                       <div className="space-y-2 text-xs">
                         <p><strong className="text-slate-400">Titre :</strong> {specialty.toUpperCase()}</p>
@@ -1256,19 +1256,19 @@ export const Register: React.FC = () => {
                   </div>
 
                   {/* Document checksum verification list with green checks */}
-                  <div className="glass border border-[#CFCFC4] p-5 space-y-3 shadow-3xs">
+                  <div className="glass border border-white/10 p-5 space-y-3 shadow-3xs">
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">INDEX DE VERIFIABILTÉ DU DOSSIER (ONCC CHECK)</span>
                     
                     <div className="space-y-2.5">
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Professionnelle</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.cartePro?.name}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Nationale CIN</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.identity?.name}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#FAF9F5]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Fiche d'inscription au Tableau</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.attestationInsc?.name}</span>
                       </div>
@@ -1305,7 +1305,7 @@ export const Register: React.FC = () => {
 
         {/* 3. WIZARD STEPPERS CONTROLLERS ACTION BUTTONS BAR */}
         {!registrationSuccess && (
-          <div className="glass border-t border-[#CFCFC4] px-6 py-4 flex justify-between items-center select-none shrink-0" id="wizard_buttons_bar">
+          <div className="glass border-t border-white/10 px-6 py-4 flex justify-between items-center select-none shrink-0" id="wizard_buttons_bar">
             
             {/* Back Button */}
             <button
@@ -1315,7 +1315,7 @@ export const Register: React.FC = () => {
               className={`px-4 py-2 text-xs font-mono font-bold uppercase transition flex items-center gap-1 hover:glass/5 border ${
                 currentStep === 1 
                   ? 'border-white/5 text-slate-400 pointer-events-none' 
-                  : 'border-[#CFCFC4] text-slate-300 cursor-pointer'
+                  : 'border-white/10 text-slate-300 cursor-pointer'
               }`}
             >
               <ArrowLeft className="w-4 h-4 shrink-0" />

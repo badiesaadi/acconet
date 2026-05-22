@@ -202,7 +202,7 @@ export const ClientDashboard: React.FC = () => {
                             )}%
                           </span>
                         </div>
-                        <div className="w-full bg-[#EBEBE5] h-1.5 rounded-xl overflow-hidden">
+                        <div className="w-full bg-white/10 h-1.5 rounded-xl overflow-hidden">
                           <div 
                             className="bg-brand-primary h-full transition-all duration-350" 
                             style={{ 
@@ -300,8 +300,8 @@ export const ClientDashboard: React.FC = () => {
                       isFinished 
                         ? 'bg-brand-primary/10/20 border-brand-primary/20 text-brand-primary' 
                         : isOverdue 
-                          ? 'bg-red-50/20 border-red-200 text-red-400' 
-                          : 'bg-amber-50/20 border-white/5 text-amber-400'
+                          ? 'bg-red-900/20/20 border-red-500/20 text-red-400' 
+                          : 'bg-amber-900/20/20 border-white/5 text-amber-400'
                     }`}
                   >
                     <div className="flex justify-between items-center gap-2 mb-2">
@@ -363,7 +363,7 @@ export const ClientDashboard: React.FC = () => {
                 </div>
               </div>
               <div className="flex gap-2.5 items-start">
-                <span className="w-1.5 h-1.5 bg-indigo-500 mt-1.5 shrink-0"></span>
+                <span className="w-1.5 h-1.5 bg-indigo-900/200 mt-1.5 shrink-0"></span>
                 <div>
                   <p className="text-slate-300">Consultation set with certified tax authority</p>
                   <p className="text-[9px] text-slate-500 font-mono">2026-05-10 11:30</p>
