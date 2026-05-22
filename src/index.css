@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-serif: "Merriweather", "IBM Plex Sans Arabic", system-ui, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-primary: #14B8A6;       /* Premium accent teal */
+  --color-brand-light: rgba(20, 184, 166, 0.08); /* Transparent glow background */
+  --color-brand-dark: #0D9488;          /* Accent hover */
+  --color-brand-accent: #14B8A6;        /* Primary accent icon/highlight */
+  --color-brand-neutral: #F1F5F9;       /* Light typography */
+  --color-brand-surface: #0B1020;       /* Prime Background */
+  --color-brand-bg-darker: #070A13;     /* Ultra dark layout mask */
+  --color-brand-secondary: #12182B;     /* Secondary container background */
+  --color-brand-tertiary: #151C31;      /* Tertiary elevated background */
+}
+
+/* Animations and Utilities */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
+
+.pulse-accent {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+@utility glass {
+  background-color: rgba(18, 24, 43, 0.70);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+@utility glass-dark {
+  background-color: rgba(7, 10, 19, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
+}
+
+@utility glass-teal {
+  background-color: rgba(20, 184, 166, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(20, 184, 166, 0.12);
+}
+
+@utility shadow-classic {
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(255, 255, 255, 0.02);
+}
+
+@utility shadow-glow {
+  box-shadow: 0 0 30px -5px rgba(20, 184, 166, 0.15), 0 15px 35px -10px rgba(0, 0, 0, 0.4);
+}
+
+@utility border-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: #0B1020;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling for modern dark layout */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.3);
+}
