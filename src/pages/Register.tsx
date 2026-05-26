@@ -243,7 +243,7 @@ export const Register: React.FC = () => {
       id: `p_reg_${Date.now()}`,
       name: { ar: fullName, fr: fullName, en: fullName },
       initials: fullName.substring(0, 2).toUpperCase(),
-      avatarBg: "bg-indigo-700 text-white",
+      avatarBg: "bg-indigo-700 text-slate-900",
       specialty: specialty as any,
       wilayaId: selectedWilayaId,
       wilayaName: algerianWilayas.find(w => w.id === selectedWilayaId)?.name || { ar: "الجزائر", fr: "Alger", en: "Algiers" },
@@ -296,7 +296,7 @@ export const Register: React.FC = () => {
       wilayaId: selectedWilayaId,
       wilayaName: algerianWilayas.find(w => w.id === selectedWilayaId)?.name || { ar: "الجزائر", fr: "Alger", en: "Algiers" },
       logoInitials: compName.substring(0, 2).toUpperCase(),
-      avatarBg: "bg-teal-700 text-white",
+      avatarBg: "bg-teal-700 text-slate-900",
       NIF: nifNumber,
       RC: rcNumber,
       activeContracts: [],
@@ -327,18 +327,18 @@ export const Register: React.FC = () => {
   const isLastWizardStep = currentStep === activeStepsDef.length;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row bg-[#0B1020] antialiased" id="register_full_wizard" dir={direction}>
+    <div className="min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row bg-white antialiased" id="register_full_wizard" dir={direction}>
       
       {/* 1. LEFT STICKY REGULAR SIDE PANEL (DESKTOP STEPPER AND BRAND BAR) */}
-      <div className="w-full lg:w-1/3 bg-[#0B1020] text-white p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#0F6E56]/35 shrink-0 select-none">
+      <div className="w-full lg:w-1/3 bg-white text-white p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-blue-500/30 shrink-0 select-none">
         <div className="space-y-6">
           
           {/* Logo link */}
           <Link to="/" className="inline-flex items-center space-x-2.5 rtl:space-x-reverse text-left">
-            <span className="flex items-center justify-center w-8 h-8 rounded-none glass text-brand-primary font-bold text-lg border border-white/10">
+            <span className="flex items-center justify-center w-8 h-8 rounded-none glass text-brand-primary font-bold text-lg border border-blue-200">
               أ
             </span>
-            <span className="text-xl font-serif font-semibold tracking-tight text-white">
+            <span className="text-xl font-serif font-semibold tracking-tight text-slate-900">
               AccoNet <span className="text-brand-accent">أكونيت</span>
             </span>
           </Link>
@@ -359,17 +359,17 @@ export const Register: React.FC = () => {
                     {/* Circle Indicator */}
                     <div className={`w-8 h-8 flex items-center justify-center shrink-0 border ${
                       isActive 
-                        ? 'border-brand-accent bg-[#0F6E56] text-white font-black' 
+                        ? 'border-brand-accent bg-brand-primary text-slate-900 font-black' 
                         : isCompleted
                           ? 'border-emerald-500 bg-emerald-600/20 text-emerald-400'
-                          : 'border-white/10 text-white/40'
+                          : 'border-blue-200 text-white/40'
                     }`}>
                       {isCompleted ? '✓' : st.num}
                     </div>
 
                     {/* Step terms */}
                     <div className="space-y-0.5">
-                      <p className={`text-xs font-bold font-mono tracking-wide ${isActive ? 'text-white' : 'text-white/50'}`}>
+                      <p className={`text-xs font-bold font-mono tracking-wide ${isActive ? 'text-slate-900' : 'text-white/50'}`}>
                         {st.title}
                       </p>
                       <p className={`text-[10px] font-bold ${isActive ? 'text-brand-accent' : 'text-white/30'}`}>
@@ -384,14 +384,14 @@ export const Register: React.FC = () => {
 
           {/* Stepper overview for Mobile rendering */}
           {!registrationSuccess && (
-            <div className="block lg:hidden mt-2 p-3 glass/5 border border-white/10">
+            <div className="block lg:hidden mt-2 p-3 bg-white/20 border border-white/30">
               <div className="flex justify-between text-xs font-mono text-slate-400">
                 <span>Étape {currentStep} sur {activeStepsDef.length}</span>
                 <span className="text-brand-accent font-bold">
                   {activeStepsDef[currentStep - 1]?.title} ({activeStepsDef[currentStep-1]?.titleAR})
                 </span>
               </div>
-              <div className="w-full glass/10 h-1 mt-2 overflow-hidden rounded-none">
+              <div className="w-full bg-blue-100/50 h-1 mt-2 overflow-hidden rounded-none">
                 <div 
                   className="bg-brand-accent h-full transition-all duration-300"
                   style={{ width: `${(currentStep / activeStepsDef.length) * 100}%` }}
@@ -403,8 +403,8 @@ export const Register: React.FC = () => {
         </div>
 
         {/* Footnote */}
-        <div className="pt-6 border-t border-white/10 text-[10px] text-slate-400 font-mono space-y-1.5 text-left rtl:text-right">
-          <p className="font-bold flex items-center gap-1 text-[#F59E0B]">
+        <div className="pt-6 border-t border-blue-300 text-[10px] text-blue-100 font-mono space-y-1.5 text-left rtl:text-right">
+          <p className="font-bold flex items-center gap-1 text-amber-300">
             <Scale className="w-3.5 h-3.5" />
             <span>LOI INDUSTRIELLE & CODE CIVIL</span>
           </p>
@@ -419,23 +419,23 @@ export const Register: React.FC = () => {
 
         {/* Tab Switching Selector (Visible only in initial Step 1) */}
         {!registrationSuccess && currentStep === 1 && (
-          <div className="glass border-b border-white/10 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+          <div className="bg-blue-50 border-b border-blue-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
               <p className="text-[9px] font-mono font-bold text-slate-400 uppercase tracking-widest">{t('accountTypeLabel')}</p>
               <h2 className="text-xs text-slate-300 font-mono mt-0.5">Choisissez le profil adapté à votre activité sur la plateforme AccoNet.</h2>
             </div>
 
-            <div className="flex gap-2 p-1 bg-[#0B1020] border border-white/10 select-none shrink-0">
+            <div className="flex gap-2 p-1 bg-white border border-blue-200 select-none shrink-0">
               <button
                 type="button"
                 onClick={() => handleRoleToggle('client')}
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'client' 
-                    ? 'glass text-brand-primary border border-white/10 font-black' 
-                    : 'text-slate-400 hover:text-white'
+                    ? 'glass text-brand-primary border border-blue-200 font-black' 
+                    : 'text-slate-400 hover:text-slate-900'
                 }`}
               >
-                <Building2 className="w-4 h-4 text-[#0F6E56]" />
+                <Building2 className="w-4 h-4 text-brand-primary" />
                 <span>{language === 'ar' ? 'المؤسسة / الشركة' : 'Entreprise (Client)'}</span>
               </button>
 
@@ -444,8 +444,8 @@ export const Register: React.FC = () => {
                 onClick={() => handleRoleToggle('professional')}
                 className={`px-4 py-2 cursor-pointer text-xs font-bold uppercase transition flex items-center gap-2 ${
                   regRole === 'professional' 
-                    ? 'glass text-indigo-700 border border-white/10 font-black' 
-                    : 'text-slate-400 hover:text-white'
+                    ? 'glass text-indigo-700 border border-blue-200 font-black' 
+                    : 'text-slate-400 hover:text-slate-900'
                 }`}
               >
                 <UserCheck className="w-4 h-4 text-indigo-700" />
@@ -460,17 +460,17 @@ export const Register: React.FC = () => {
           
           {/* Success screen placeholder */}
           {registrationSuccess ? (
-            <div className="glass border border-white/10 p-8 sm:p-12 text-center text-left rtl:text-right space-y-6 animate-fade-in shadow-xs" id="reg_success_pane">
+            <div className="glass border border-blue-200 p-8 sm:p-12 text-center text-left rtl:text-right space-y-6 animate-fade-in shadow-xs" id="reg_success_pane">
               
               <div className="w-16 h-16 bg-emerald-900/20 border border-emerald-500/20 flex items-center justify-center mx-auto rounded-full">
                 <BadgeCheck className="w-10 h-10 text-emerald-600" />
               </div>
 
               <div className="space-y-2">
-                <span className="px-2.5 py-1 bg-brand-primary/10 border border-brand-primary/20 text-[#0F6E56] text-[10px] font-mono font-bold uppercase tracking-widest">
+                <span className="px-2.5 py-1 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] font-mono font-bold uppercase tracking-widest">
                   {language === 'ar' ? 'تم استلام الملف بنجاح' : 'Dossier Enregistré avec Succès'}
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-serif font-black text-white tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-serif font-black text-slate-900 tracking-tight">
                   {language === 'ar' ? 'تم رفع طلب الانضمام والتحقق' : 'Demande d\'adhésion soumise !'}
                 </h1>
                 
@@ -482,21 +482,21 @@ export const Register: React.FC = () => {
               </div>
 
               {/* Reference ID Block */}
-              <div className="bg-[#0B1020] border border-white/10 p-4 max-w-md mx-auto">
+              <div className="bg-white border border-blue-200 p-4 max-w-md mx-auto">
                 <p className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">RÉFÉRENCE DU DOSSIER D\'AGRÉMENT</p>
-                <p className="text-xl font-mono font-black text-[#0F6E56] mt-1 tracking-wider select-all">{registrationSuccess}</p>
+                <p className="text-xl font-mono font-black text-brand-primary mt-1 tracking-wider select-all">{registrationSuccess}</p>
               </div>
 
               <div className="max-w-xs mx-auto pt-4 space-y-2">
                 <button
                   type="button"
                   onClick={() => navigate(regRole === 'professional' ? '/dashboard/professional' : '/dashboard/client')}
-                  className="w-full py-2.5 bg-brand-primary hover:bg-[#085041] hover:scale-[1.01] text-white text-[10px] font-mono uppercase tracking-widest transition cursor-pointer font-bold shadow-xs flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 bg-brand-primary hover:bg-brand-dark hover:scale-[1.01] text-slate-900 text-[10px] font-mono uppercase tracking-widest transition cursor-pointer font-bold shadow-xs flex items-center justify-center gap-1.5"
                 >
                   <span>Accéder à ma démo immédiate</span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
-                <Link to="/" className="block text-xs font-bold text-slate-400 hover:text-white font-mono">
+                <Link to="/" className="block text-xs font-bold text-slate-400 hover:text-slate-900 font-mono">
                   Retourner à l'accueil
                 </Link>
               </div>
@@ -506,9 +506,9 @@ export const Register: React.FC = () => {
             <div className="space-y-8">
               
               {/* Central Title */}
-              <div className="pb-4 border-b border-white/10">
-                <h1 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-tight flex items-center gap-2">
-                  <UserPlus className="w-6 h-6 text-[#0F6E56]" />
+              <div className="pb-4 border-b border-blue-200">
+                <h1 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                  <UserPlus className="w-6 h-6 text-brand-primary" />
                   <span>
                     {regRole === 'professional' 
                       ? `Rejoindre en tant que Professionnel (${activeStepsDef[currentStep-1]?.title})`
@@ -516,14 +516,14 @@ export const Register: React.FC = () => {
                     }
                   </span>
                 </h1>
-                <p className="text-[11px] text-[#0F6E56] font-mono font-extrabold uppercase mt-1 tracking-wider">
+                <p className="text-[11px] text-brand-primary font-mono font-extrabold uppercase mt-1 tracking-wider">
                   Algeria Legal Compliance Platform (أكونيت الجزائر)
                 </p>
               </div>
 
               {/* STEP ERRORS DISPLAYER */}
               {stepErrors && (
-                <div className="p-4 bg-red-900/200/5 border border-red-400/50 text-red-300 text-xs font-mono leading-relaxed text-left rtl:text-right whitespace-pre-line flex items-start gap-2 animate-[shake_0.3s_ease]">
+                <div className="p-4 bg-red-50 border border-red-200 text-red-600 text-xs font-mono leading-relaxed text-left rtl:text-right whitespace-pre-line flex items-start gap-2 animate-[shake_0.3s_ease]">
                   <X className="w-5 h-5 shrink-0 text-red-650 cursor-pointer" onClick={() => setStepErrors(null)} />
                   <div>
                     <span className="font-bold underline uppercase block mb-1">Erreur de saisie / خطأ في التحقق</span>
@@ -537,7 +537,7 @@ export const Register: React.FC = () => {
                   ------------------------------------------ */}
               {currentStep === 1 && (
                 <div className="space-y-5 animate-fade-in">
-                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-[#0F6E56]">
+                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-brand-primary">
                     Étape 1 — Informations d'authentification obligatoires
                   </h3>
 
@@ -555,7 +555,7 @@ export const Register: React.FC = () => {
                         placeholder={regRole === 'professional' ? "ex: Me. Lamine Bouhired" : "ex: Karim Haddad"}
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2.5 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-bold"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2.5 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-bold"
                       />
                     </div>
 
@@ -565,7 +565,7 @@ export const Register: React.FC = () => {
                         E-mail professionnel (البريد الإلكتروني للعمل)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-blue-200 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-brand-primary">
                         <Mail className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="email" 
@@ -573,7 +573,7 @@ export const Register: React.FC = () => {
                           placeholder="direction@cabinet.dz"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full text-xs text-slate-300 bg-transparent focus:outline-none focus:ring-0"
+                          className="w-full text-xs text-slate-300 bg-transparent focus:outline-none focus:ring-0 text-slate-700"
                         />
                       </div>
                     </div>
@@ -584,10 +584,10 @@ export const Register: React.FC = () => {
                         Numéro de Téléphone (رقم الهاتف الجوال)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="flex border border-white/10 rounded-none glass focus-within:border-brand-primary">
+                      <div className="flex border border-blue-200 rounded-lg bg-blue-50 focus-within:border-brand-primary">
                         
                         {/* Operator select prefix */}
-                        <div className="bg-[#0B1020]/85 border-r border-white/10 px-2.5 flex items-center gap-1 shrink-0 select-none">
+                        <div className="bg-white/85 border-r border-blue-200 px-2.5 flex items-center gap-1 shrink-0 select-none">
                           <span className="text-[13px]" title="Algérie">🇩🇿</span>
                           <span className="text-[10px] font-mono font-bold text-slate-300">+213</span>
                           <select
@@ -620,7 +620,7 @@ export const Register: React.FC = () => {
                         Mot de passe sécurisé (كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-blue-200 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-brand-primary">
                         <Lock className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="password" 
@@ -639,7 +639,7 @@ export const Register: React.FC = () => {
                         Confirmer le mot de passe (تأكيد كلمة المرور)
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-blue-200 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-brand-primary">
                         <Lock className="w-4 h-4 text-brand-primary shrink-0" />
                         <input 
                           type="password" 
@@ -658,7 +658,7 @@ export const Register: React.FC = () => {
                         {regRole === 'professional' ? 'Wilaya d\'exercice principale (ولاية ممارسة المهنة)' : 'Wilaya du siège social de l\'entreprise (ولاية المقر الاجتماعي للمؤسسة)'}
                         <span className="text-red-500"> *</span>
                       </label>
-                      <div className="relative border border-white/10 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-[#0F6E56]">
+                      <div className="relative border border-blue-200 rounded-none glass px-3 py-2 flex items-center gap-2 focus-within:border-brand-primary">
                         <MapPin className="w-4 h-4 text-brand-primary shrink-0" />
                         <select
                           value={selectedWilayaId}
@@ -699,7 +699,7 @@ export const Register: React.FC = () => {
                       <select
                         value={specialty}
                         onChange={(e) => setSpecialty(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2.5 glass text-xs font-bold text-slate-300 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2.5 glass text-xs font-bold text-slate-300 focus:outline-none focus:border-indigo-600 cursor-pointer font-serif"
                       >
                         <option value="certified-accountant">Expert-Comptables (Agréé par l'ONEC)</option>
                         <option value="statutory-auditor">Commissaire aux Comptes (Agréé par l'ONCC)</option>
@@ -726,9 +726,9 @@ export const Register: React.FC = () => {
                         }
                         value={tableauNumber}
                         onChange={(e) => setTableauNumber(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
                       />
-                      <span className="text-[9px] text-[#F59E0B] font-mono block">Format officiel exigé par l'Ordonnance ministérielle.</span>
+                      <span className="text-[9px] text-amber-300 font-mono block">Format officiel exigé par l'Ordonnance ministérielle.</span>
                     </div>
 
                     {/* Agrément ministériel number */}
@@ -741,12 +741,12 @@ export const Register: React.FC = () => {
                         placeholder="ex: MIN-FIN/2014/1982"
                         value={agreeCabinetNumber}
                         onChange={(e) => setAgreeCabinetNumber(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-indigo-600 uppercase"
                       />
                     </div>
 
                     {/* Experience slider slider: 1–40 years */}
-                    <div className="space-y-2 col-span-1 sm:col-span-2 p-4 glass border border-white/10">
+                    <div className="space-y-2 col-span-1 sm:col-span-2 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                       <div className="flex justify-between items-center">
                         <label className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest">
                           Années d'Expérience effective (سنوات الخبرة المهنية)
@@ -777,44 +777,44 @@ export const Register: React.FC = () => {
                       
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         
-                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-center gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.ar}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, ar: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-serif font-black text-white">Arabe (العربية)</span>
+                          <span className="text-xs font-serif font-black text-slate-900">Arabe (العربية)</span>
                         </label>
 
-                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-center gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.fr}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, fr: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-serif font-black text-white">Français</span>
+                          <span className="text-xs font-serif font-black text-slate-900">Français</span>
                         </label>
 
-                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-center gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.en}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, en: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-sans font-bold text-white">English</span>
+                          <span className="text-xs font-sans font-bold text-slate-900">English</span>
                         </label>
 
-                        <label className="p-3 glass border border-white/10 flex items-center gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-center gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="checkbox" 
                             checked={languagesOfWork.tamazight}
                             onChange={(e) => setLanguagesOfWork(prev => ({ ...prev, tamazight: e.target.checked }))}
                             className="accent-indigo-700 cursor-pointer"
                           />
-                          <span className="text-xs font-serif font-black text-white">Tamazight</span>
+                          <span className="text-xs font-serif font-black text-slate-900">Tamazight</span>
                         </label>
 
                       </div>
@@ -829,7 +829,7 @@ export const Register: React.FC = () => {
                   ------------------------------------------ */}
               {currentStep === 2 && regRole === 'client' && (
                 <div className="space-y-6 animate-fade-in text-left rtl:text-right">
-                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-[#0F6E56]">
+                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-brand-primary">
                     Étape 2 — Identité de la Sarl / Eurl / Institution et Références Légales
                   </h3>
 
@@ -844,7 +844,7 @@ export const Register: React.FC = () => {
                       <select
                         value={entityType}
                         onChange={(e) => setEntityType(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2.5 glass text-xs font-bold font-serif text-slate-200 focus:outline-none focus:border-brand-primary cursor-pointer"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2.5 glass text-xs font-bold font-serif text-slate-200 focus:outline-none focus:border-brand-primary cursor-pointer"
                       >
                         <option value="SARL">SARL (Société à Responsabilité Limitée)</option>
                         <option value="EURL">EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</option>
@@ -869,7 +869,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: SARL Mitidja Agro Industrie"
                         value={companyNameFR}
                         onChange={(e) => setCompanyNameFR(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black"
                       />
                     </div>
 
@@ -882,7 +882,7 @@ export const Register: React.FC = () => {
                         placeholder="مثال: ش.ذ.م.م متيجة للصناعات الزراعية"
                         value={companyNameAR}
                         onChange={(e) => setCompanyNameAR(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black text-right"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs text-slate-200 glass focus:outline-none focus:border-brand-primary font-serif font-black text-right"
                         dir="rtl"
                       />
                     </div>
@@ -899,7 +899,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: 16/00-0142578-B26"
                         value={rcNumber}
                         onChange={(e) => setRcNumber(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
                       <span className="text-[9px] text-slate-400 font-mono">Format requis par le CNRC : Wilaya/Code-Numéro-Année</span>
                     </div>
@@ -917,9 +917,9 @@ export const Register: React.FC = () => {
                         placeholder="ex: 001612054789412"
                         value={nifNumber}
                         onChange={(e) => setNifNumber(e.target.value.replace(/\D/g, ''))}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono tracking-widest text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs font-mono tracking-widest text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
-                      <span className="text-[9px] text-[#0F6E56] font-mono block">Doit faire exactement 15 chiffres règlementaires (DGI).</span>
+                      <span className="text-[9px] text-brand-primary font-mono block">Doit faire exactement 15 chiffres règlementaires (DGI).</span>
                     </div>
 
                     {/* AI Optional */}
@@ -932,7 +932,7 @@ export const Register: React.FC = () => {
                         placeholder="ex: 16032481056"
                         value={aiNumber}
                         onChange={(e) => setAiNumber(e.target.value)}
-                        className="w-full border border-white/10 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-blue-200 rounded-none px-3 py-2 text-xs font-mono text-slate-200 glass focus:outline-none focus:border-brand-primary"
                       />
                     </div>
 
@@ -944,7 +944,7 @@ export const Register: React.FC = () => {
                       <select
                         value={secteurActivite}
                         onChange={(e) => setSecteurActivite(e.target.value)}
-                        className="w-full border border-white/10 rounded-none p-2 glass text-xs text-slate-300 focus:outline-none focus:border-[#0F6E56] cursor-pointer font-serif font-black"
+                        className="w-full border border-blue-200 rounded-none p-2 glass text-xs text-slate-300 focus:outline-none focus:border-brand-primary cursor-pointer font-serif font-black"
                       >
                         <option value="Commerce de détail">Commerce de détail (تجارة التجزئة)</option>
                         <option value="Commerce de gros">Commerce de gros (تجارة الجملة)</option>
@@ -966,7 +966,7 @@ export const Register: React.FC = () => {
                       
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         
-                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-start gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -980,7 +980,7 @@ export const Register: React.FC = () => {
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-start gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -994,7 +994,7 @@ export const Register: React.FC = () => {
                           </div>
                         </label>
 
-                        <label className="p-3 glass border border-white/10 flex items-start gap-2.5 cursor-pointer hover:glass/5">
+                        <label className="p-3 bg-white border border-blue-200 rounded-lg flex items-start gap-2.5 cursor-pointer hover:bg-blue-50">
                           <input 
                             type="radio" 
                             name="regime_fisc"
@@ -1022,16 +1022,16 @@ export const Register: React.FC = () => {
               {currentStep === 3 && regRole === 'professional' && (
                 <div className="space-y-6 animate-fade-in text-left rtl:text-right" id="pro_doc_upload_step">
                   <div>
-                    <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-[#0F6E56]">
+                    <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-brand-primary">
                       Étape 3 — Dossier d'agrément numérisé obligatoire
                     </h3>
-                    <p className="text-[11px] text-[#F59E0B] font-mono mt-1 pr-1 border-l-2 border-[#F59E0B]">
+                    <p className="text-[11px] text-amber-300 font-mono mt-1 pr-1 border-l-2 border-[#F59E0B]">
                       ⚠️ كل الوثائق مطلوبة — التحقق إلزامي قبل تفعيل الحساب من مصالح أكونيت الرقابية للحد من التزوير.
                     </p>
                   </div>
 
                   {/* Wizard 4-grid documents block interface */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-white/10 bg-[#0B1020]/30">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-blue-200 bg-white/30">
                     
                     <DocumentUpload 
                       label="Carte Professionnelle ONEC / ONCC / ONCA"
@@ -1090,7 +1090,7 @@ export const Register: React.FC = () => {
                       return (
                         <div className="flex items-center gap-3 shrink-0">
                           <span className="text-xs font-bold text-indigo-700">{uploadedCount} / 4 Chargés</span>
-                          <div className="w-24 glass/5 h-2">
+                          <div className="w-24 bg-blue-50/50 h-2">
                             <div className="bg-indigo-700 h-full transition-all duration-200" style={{ width: `${(uploadedCount/4)*100}%` }}></div>
                           </div>
                         </div>
@@ -1107,16 +1107,16 @@ export const Register: React.FC = () => {
               {currentStep === 3 && regRole === 'client' && (
                 <div className="space-y-6 animate-fade-in text-left rtl:text-right" id="client_doc_upload_step">
                   <div>
-                    <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-[#0F6E56]">
+                    <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-brand-primary">
                       Étape 3 — Dossier Légal de Constitution de l'Entreprise
                     </h3>
-                    <p className="text-[11px] text-[#0F6E56] font-mono mt-1 pr-1 border-l-2 border-[#0F6E56]">
+                    <p className="text-[11px] text-brand-primary font-mono mt-1 pr-1 border-l-2 border-brand-primary">
                       ✓ Pièces justificatives requises sous format électronique pour sécuriser les futurs contrats B2B ou liasse fiscale de clôture.
                     </p>
                   </div>
 
                   {/* Custom list of uploaders tailored to Algerian context */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-white/10 bg-[#0B1020]/30">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-5 border border-blue-200 bg-white/30">
                     
                     <DocumentUpload 
                       label="Extrait du Registre de Commerce (RC)"
@@ -1200,7 +1200,7 @@ export const Register: React.FC = () => {
 
                   {/* Summary Checklist before submission */}
                   <div className="glass border p-5 space-y-4 shadow-3xs text-left rtl:text-right">
-                    <span className="text-[10px] font-mono font-bold text-[#0F6E56] uppercase tracking-wider block">Engagement de probité légale</span>
+                    <span className="text-[10px] font-mono font-bold text-brand-primary uppercase tracking-wider block">Engagement de probité légale</span>
                     
                     <label className="flex gap-2.5 cursor-pointer text-xs leading-relaxed select-none text-slate-300 font-sans">
                       <input 
@@ -1226,14 +1226,14 @@ export const Register: React.FC = () => {
                   ------------------------------------------ */}
               {currentStep === 4 && regRole === 'professional' && (
                 <div className="space-y-6 animate-fade-in text-left rtl:text-right" id="pro_review_step">
-                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-[#0F6E56]">
+                  <h3 className="text-xs font-bold uppercase font-mono tracking-widest text-brand-primary">
                     Étape 4 — Récapitulatif et validation du dossier
                   </h3>
 
                   {/* Summary card with core state representations */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
-                    <div className="glass border border-white/10 p-5 space-y-3.5 shadow-3xs">
+                    <div className="bg-white border border-blue-200 rounded-xl p-5 space-y-3.5 shadow-classic">
                       <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">IDENITÉ & COMPTE</span>
                       <div className="space-y-2 text-xs">
                         <p><strong className="text-slate-400">Nom complet/المكتب :</strong> {fullName}</p>
@@ -1243,7 +1243,7 @@ export const Register: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="glass border border-white/10 p-5 space-y-3.5 shadow-3xs">
+                    <div className="bg-white border border-blue-200 rounded-xl p-5 space-y-3.5 shadow-classic">
                       <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">CREDENTIELS RECOUPÉS</span>
                       <div className="space-y-2 text-xs">
                         <p><strong className="text-slate-400">Titre :</strong> {specialty.toUpperCase()}</p>
@@ -1256,19 +1256,19 @@ export const Register: React.FC = () => {
                   </div>
 
                   {/* Document checksum verification list with green checks */}
-                  <div className="glass border border-white/10 p-5 space-y-3 shadow-3xs">
+                  <div className="glass border border-blue-200 p-5 space-y-3 shadow-3xs">
                     <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">INDEX DE VERIFIABILTÉ DU DOSSIER (ONCC CHECK)</span>
                     
                     <div className="space-y-2.5">
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-white/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Professionnelle</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.cartePro?.name}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-white/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Carte Nationale CIN</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.identity?.name}</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-[#0B1020]/80">
+                      <div className="flex items-center justify-between text-xs font-mono p-2 bg-white/80">
                         <span className="flex items-center gap-1.5 font-bold"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" /> Fiche d'inscription au Tableau</span>
                         <span className="text-slate-400 text-[10px] truncate max-w-xs">{proDocs.attestationInsc?.name}</span>
                       </div>
@@ -1305,17 +1305,17 @@ export const Register: React.FC = () => {
 
         {/* 3. WIZARD STEPPERS CONTROLLERS ACTION BUTTONS BAR */}
         {!registrationSuccess && (
-          <div className="glass border-t border-white/10 px-6 py-4 flex justify-between items-center select-none shrink-0" id="wizard_buttons_bar">
+          <div className="bg-white border-t border-blue-100 px-6 py-4 flex justify-between items-center select-none shrink-0" id="wizard_buttons_bar">
             
             {/* Back Button */}
             <button
               type="button"
               disabled={currentStep === 1}
               onClick={handlePrevStep}
-              className={`px-4 py-2 text-xs font-mono font-bold uppercase transition flex items-center gap-1 hover:glass/5 border ${
+              className={`px-4 py-2 text-xs font-mono font-bold uppercase transition flex items-center gap-1 hover:bg-blue-50 border ${
                 currentStep === 1 
-                  ? 'border-white/5 text-slate-400 pointer-events-none' 
-                  : 'border-white/10 text-slate-300 cursor-pointer'
+                  ? 'border-blue-100 text-slate-400 pointer-events-none' 
+                  : 'border-blue-200 text-slate-300 cursor-pointer'
               }`}
             >
               <ArrowLeft className="w-4 h-4 shrink-0" />
@@ -1327,7 +1327,7 @@ export const Register: React.FC = () => {
               {activeStepsDef.map((st) => (
                 <div 
                   key={st.num}
-                  className={`w-2.5 h-2.5 rounded-none ${st.num === currentStep ? 'bg-[#0F6E56]' : 'glass/10'}`}
+                  className={`w-2.5 h-2.5 rounded-none ${st.num === currentStep ? 'bg-brand-primary' : 'bg-blue-100/50'}`}
                 ></div>
               ))}
             </div>
@@ -1337,7 +1337,7 @@ export const Register: React.FC = () => {
               <button
                 type="button"
                 onClick={regRole === 'professional' ? handleFinalSubmitPro : handleFinalSubmitClient}
-                className={`px-6 py-2 bg-emerald-700 hover:bg-emerald-800 hover:scale-[1.01] text-white text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer shadow-xs`}
+                className={`px-6 py-2 bg-emerald-700 hover:bg-emerald-800 hover:scale-[1.01] text-slate-900 text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer shadow-xs`}
                 id="wizard_final_save_btn"
               >
                 <span>Soumettre le Dossier</span>
@@ -1346,7 +1346,7 @@ export const Register: React.FC = () => {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="px-6 py-2 bg-brand-primary hover:bg-[#085041] hover:scale-[1.01] text-white text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer shadow-xs flex items-center gap-1"
+                className="px-6 py-2 bg-brand-primary hover:bg-brand-dark hover:scale-[1.01] text-slate-900 text-[10px] font-mono font-bold uppercase tracking-widest transition cursor-pointer shadow-xs flex items-center gap-1"
                 id="wizard_next_step_btn"
               >
                 <span>Suivant</span>

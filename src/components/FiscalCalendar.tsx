@@ -83,14 +83,14 @@ export const FiscalCalendar: React.FC = () => {
   const activeDeadlines = getFilteredDeadlines();
 
   return (
-    <div className="glass border border-white/10 p-5 sm:p-6 text-left rtl:text-right font-sans shadow-2xs w-full" id="fiscal_calendar_widget">
+    <div className="glass border border-blue-200 p-5 sm:p-6 text-left rtl:text-right font-sans shadow-2xs w-full" id="fiscal_calendar_widget">
       
       {/* Header and Month Slider */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-blue-200">
         <div>
-          <div className="flex items-center gap-1.5 text-[#0F6E56]">
+          <div className="flex items-center gap-1.5 text-brand-primary">
             <Calendar className="w-5 h-5 shrink-0" />
-            <h3 className="font-serif font-bold text-sm sm:text-base text-white">
+            <h3 className="font-serif font-bold text-sm sm:text-base text-slate-900">
               {language === 'ar' ? 'الروزنامة الجبائية والمالية — 2026' : 'Calendrier Fiscal Réglementaire — 2026'}
             </h3>
           </div>
@@ -103,7 +103,7 @@ export const FiscalCalendar: React.FC = () => {
         <select 
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(Number(e.target.value))}
-          className="border border-white/10 px-3 py-1.5 bg-[#0B1020] text-xs font-mono font-bold text-slate-300 outline-none focus:border-brand-primary cursor-pointer rounded-none"
+          className="border border-blue-200 px-3 py-1.5 bg-white text-xs font-mono font-bold text-slate-300 outline-none focus:border-brand-primary cursor-pointer rounded-none"
         >
           {monthNamesFR.map((name, idx) => (
             <option key={idx} value={idx}>
@@ -124,7 +124,7 @@ export const FiscalCalendar: React.FC = () => {
                   ? 'border-emerald-250 bg-emerald-900/200/5' 
                   : deadline.status === 'delegated'
                     ? 'border-indigo-250 bg-indigo-900/200/5'
-                    : 'border-white/10 bg-[#0B1020]/30'
+                    : 'border-blue-200 bg-white/30'
               } flex flex-col md:flex-row justify-between items-start md:items-center gap-4`}
             >
               <div className="space-y-1.5 md:max-w-2xl">
@@ -134,17 +134,17 @@ export const FiscalCalendar: React.FC = () => {
                       ? 'bg-emerald-600 text-white'
                       : deadline.status === 'delegated'
                         ? 'bg-indigo-600 text-white'
-                        : 'bg-red-900/200 text-white'
+                        : 'bg-red-100 text-red-700'
                   }`}>
                     ⏱️ EXIGIBLE : {deadline.computedDue}
                   </span>
                   
-                  <span className="px-1.5 py-0.5 glass/5 border border-white/10 text-slate-400 text-[8px] font-mono uppercase">
+                  <span className="px-1.5 py-0.5 glass/5 border border-blue-200 text-slate-400 text-[8px] font-mono uppercase">
                     {deadline.frequency}
                   </span>
                 </div>
 
-                <h4 className="font-serif font-black text-xs sm:text-sm text-white leading-snug">
+                <h4 className="font-serif font-black text-xs sm:text-sm text-slate-800 leading-snug">
                   {deadline.label}
                 </h4>
                 
@@ -196,7 +196,7 @@ export const FiscalCalendar: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="text-center py-8 border border-dashed border-white/10 text-slate-400 font-mono text-xs">
+          <div className="text-center py-8 border border-dashed border-blue-200 text-slate-400 font-mono text-xs">
             Aucun dépôt ou taxe obligatoire répertorié pour {getMonthName(selectedMonth)} 2026.
           </div>
         )}

@@ -41,7 +41,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
       ? '⚖️ معتمد لدى وزارة العدل والضرائب'
       : '⚖️ Ministère de la Justice / DGI';
     variantBadgeMarkup = (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-900/200/10 border border-amber-500/25 text-amber-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-50 border border-amber-500/25 text-amber-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
         <Gavel className="w-2.5 h-2.5" />
         DGI CERTIFIÉ
       </span>
@@ -54,7 +54,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
       ? '💼 مناسب للمؤسسات الصغيرة والمتوسطة'
       : '🟢 Accessible PME / TPE';
     variantBadgeMarkup = (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-900/200/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[9px] font-mono leading-none font-bold uppercase shrink-0 rounded">
         Accessible PME
       </span>
     );
@@ -62,13 +62,13 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
 
   return (
     <div 
-      className={`relative glass border border-white/5 hover:border-brand-primary/25 rounded-xl shadow-classic hover:shadow-glow transition-all duration-300 p-5 pt-7 flex flex-col justify-between`}
+      className={`relative bg-white border border-blue-100 rounded-xl hover:border-brand-primary/25 rounded-xl shadow-classic hover:shadow-glow transition-all duration-300 p-5 pt-7 flex flex-col justify-between`}
       id={`pro_card_${professional.id}`}
     >
       
       {/* Editorial Variant Header Line */}
       {variantHeaderLabel && (
-        <div className="absolute top-0 left-0 right-0 h-4.5 px-3 glass border-b border-white/5 flex items-center justify-between rounded-t-xl">
+        <div className="absolute top-0 left-0 right-0 h-4.5 px-3 bg-white border border-blue-100 border-b border-blue-100 flex items-center justify-between rounded-t-xl">
           <span className="text-[7.5px] font-mono font-bold text-slate-400 uppercase tracking-widest leading-none">
             {variantHeaderLabel}
           </span>
@@ -84,12 +84,12 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
         <div className="flex justify-between items-start mb-3.5">
           <div className="flex items-center gap-3">
             {/* Visual Avatar with initials */}
-            <div className={`w-11 h-11 rounded-lg flex items-center justify-center font-bold text-xs tracking-widest shrink-0 border border-white/10 text-white bg-slate-900/40`}>
+            <div className={`w-11 h-11 rounded-lg flex items-center justify-center font-bold text-xs tracking-widest shrink-0 border border-blue-200 text-white bg-blue-50`}>
               {professional.initials}
             </div>
             
             <div className="space-y-0.5">
-              <h3 className="font-serif font-black text-white text-sm sm:text-base leading-tight hover:text-brand-primary transition">
+              <h3 className="font-serif font-black text-slate-900 text-sm sm:text-base leading-tight hover:text-brand-primary transition">
                 {language === 'ar' && professional.name.ar ? professional.name.ar : professional.name.fr}
               </h3>
               
@@ -109,7 +109,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
               {t('availableImmediately') || 'Disponible'}
             </span>
           ) : (
-            <span className="px-2 py-0.5 glass/5 border border-white/10 text-slate-400 text-[9px] font-mono leading-none uppercase shrink-0 rounded">
+            <span className="px-2 py-0.5 bg-blue-50/50 border border-blue-200 text-slate-400 text-[9px] font-mono leading-none uppercase shrink-0 rounded">
               Occupé
             </span>
           )}
@@ -125,7 +125,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
           {serviceBadges.map((badge, idx) => (
             <span 
               key={idx}
-              className="text-[9px] font-mono px-2 py-0.5 bg-slate-900/40 border border-white/5 text-slate-300 rounded"
+              className="text-[9px] font-mono px-2 py-0.5 bg-blue-50 border border-blue-100 text-slate-300 rounded"
             >
               • {badge}
             </span>
@@ -133,7 +133,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
         </div>
 
         {/* Essential Info Badges */}
-        <div className="grid grid-cols-2 gap-2 my-3 pt-3 border-t border-white/5">
+        <div className="grid grid-cols-2 gap-2 my-3 pt-3 border-t border-blue-100">
           
           {/* Wilaya location */}
           <div className="flex items-center gap-1.5 text-xs text-slate-300 justify-start">
@@ -152,16 +152,16 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
           </div>
 
           {/* Stars & rating */}
-          <div className="flex items-center gap-1.5 text-xs text-slate-300 col-span-2 pt-2 border-t border-dashed border-white/5">
+          <div className="flex items-center gap-1.5 text-xs text-slate-300 col-span-2 pt-2 border-t border-dashed border-blue-100">
             <div className="flex items-center gap-0.5 text-amber-500">
               <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500 shrink-0" />
-              <span className="font-bold text-white text-xs">{professional.rating}</span>
+              <span className="font-bold text-slate-900 text-xs">{professional.rating}</span>
             </div>
             <span className="text-[10px] text-slate-450 font-sans">
               ({professional.reviewCount} avis)
             </span>
             
-            <div className="ml-auto rtl:ml-0 rtl:mr-auto flex items-center text-[10px] text-slate-400 font-mono font-bold leading-none bg-slate-900/40 px-1.5 py-0.5 border border-white/5 rounded">
+            <div className="ml-auto rtl:ml-0 rtl:mr-auto flex items-center text-[10px] text-slate-400 font-mono font-bold leading-none bg-blue-50 px-1.5 py-0.5 border border-blue-100 rounded">
               <ShieldCheck className="w-3 h-3 text-brand-primary mr-0.5 rtl:mr-0 rtl:ml-0.5 shrink-0" />
               <span>{professional.accreditationNumber.split(' ')[0]}</span>
             </div>
@@ -172,7 +172,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
       </div>
 
       {/* Button footer row */}
-      <div className="pt-3 border-t border-white/5 flex items-center justify-between mt-1 select-none">
+      <div className="pt-3 border-t border-blue-100 flex items-center justify-between mt-1 select-none">
         <div className="flex flex-col text-left rtl:text-right">
           <span className="text-[8px] text-slate-500 font-mono uppercase tracking-wider leading-none">HONORAIRES ESTIMATIFS</span>
           <span className="text-sm font-bold text-brand-primary font-mono mt-0.5">
@@ -182,7 +182,7 @@ export const ProfessionalCard: React.FC<ProfessionalCardProps> = ({ professional
 
         <Link 
           to={`/professional/${professional.id}`}
-          className="flex items-center gap-1 px-3 py-1.5 bg-brand-primary text-white font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-brand-dark transition rounded-lg"
+          className="flex items-center gap-1 px-3 py-1.5 bg-brand-primary text-slate-900 font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-brand-dark transition rounded-lg"
           id={`view_profile_btn_${professional.id}`}
         >
           <span>Visualiser</span>

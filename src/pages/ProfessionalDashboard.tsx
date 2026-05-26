@@ -50,14 +50,14 @@ export const ProfessionalDashboard: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-8" id="pro_dashboard_view">
       
       {/* 1. WELCOME HEADER DECK */}
-      <div className="glass border border-[#0F6E56]/40 p-6 sm:p-8 text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(#0F6E56_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-10"></div>
+      <div className="glass border border-brand-primary/30 p-6 sm:p-8 text-white relative">
+        <div className="absolute inset-0 bg-[radial-gradient(#1D4ED8_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-10"></div>
         
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 relative z-10 text-left rtl:text-right">
           <div className="space-y-2">
             <div className="flex items-center gap-1.5">
-              <span className="px-2 py-0.5 bg-brand-primary/25 border border-[#0F6E56] text-brand-accent text-[8px] font-mono uppercase tracking-widest">
-                Approved Cabinet Portal
+              <span className="px-2 py-0.5 bg-brand-primary/25 border border-brand-primary text-brand-accent text-[8px] font-mono uppercase tracking-widest">
+                {language === 'ar' ? 'بوابة المهني المعتمد' : 'Portail du Professionnel Agréé'}
               </span>
               <span className="text-[10px] font-mono text-slate-500">REGISTRATION COMPLETED</span>
             </div>
@@ -67,13 +67,13 @@ export const ProfessionalDashboard: React.FC = () => {
             </h1>
             
             <p className="text-[11px] text-teal-150 font-sans flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="glass/5 border border-white/10 px-1.5 py-0.5">{tSpec(pro.specialty)}</span>
+              <span className="bg-blue-50/50 border border-blue-200 px-1.5 py-0.5">{tSpec(pro.specialty)}</span>
               <span className="text-slate-300 hidden sm:inline">•</span>
               <span>Accreditation Board ID: <strong className="font-mono text-brand-accent">{pro.accreditationNumber}</strong></span>
             </p>
           </div>
 
-          <div className="px-3.5 py-2 glass/5 border border-white/10 flex items-center gap-1.5 text-xs">
+          <div className="px-3.5 py-2 bg-blue-50/50 border border-blue-200 flex items-center gap-1.5 text-xs">
             <Shield className="w-4 h-4 text-brand-accent animate-pulse" />
             <span className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Secure Audit Environment</span>
           </div>
@@ -84,7 +84,7 @@ export const ProfessionalDashboard: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="stats_benchmarks_row">
         
         {/* Active Clients */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
+        <div className="bg-white border border-blue-100 rounded-xl p-5 shadow-classic flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
             <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">{t('proStatsClients')}</span>
             <p className="text-2xl font-serif font-black text-brand-primary font-mono">{activeClientsCount}</p>
@@ -93,7 +93,7 @@ export const ProfessionalDashboard: React.FC = () => {
         </div>
 
         {/* Global Tasks */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
+        <div className="bg-white border border-blue-100 rounded-xl p-5 shadow-classic flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
             <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">PENDING AUDITS</span>
             <p className="text-2xl font-serif font-black text-brand-accent font-mono">
@@ -104,7 +104,7 @@ export const ProfessionalDashboard: React.FC = () => {
         </div>
 
         {/* Monthly Earnings / Pro-rata Yield */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between col-span-1">
+        <div className="bg-white border border-blue-100 rounded-xl p-5 shadow-classic flex items-center justify-between col-span-1">
           <div className="space-y-1 text-left rtl:text-right">
             <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">{t('proStatsEarnings')}</span>
             <p className="text-xl font-serif font-black text-emerald-400 font-mono leading-tight">
@@ -115,7 +115,7 @@ export const ProfessionalDashboard: React.FC = () => {
         </div>
 
         {/* Score */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
+        <div className="bg-white border border-blue-100 rounded-xl p-5 shadow-classic flex items-center justify-between">
           <div className="space-y-1 text-left rtl:text-right">
             <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">RATING SCORE</span>
             <p className="text-2xl font-serif font-black text-indigo-400 font-mono">{pro.rating} / 5.0</p>
@@ -131,35 +131,35 @@ export const ProfessionalDashboard: React.FC = () => {
         {/* Left Column (col-span-8) - Task inbox & operations */}
         <div className="lg:col-span-8 space-y-6">
           
-          <div className="glass border border-white/5 p-6 space-y-6">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 space-y-6">
             
             {/* Inbox header with localized tab options */}
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 pb-4 border-b border-white/5">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 pb-4 border-b border-blue-100">
               <div className="text-left rtl:text-right">
                 <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">TASK REGISTRY</span>
-                <h2 className="font-serif font-semibold text-white text-base flex items-center gap-2 mt-0.5">
+                <h2 className="font-serif font-semibold text-slate-900 text-base flex items-center gap-2 mt-0.5">
                   <Briefcase className="w-4.5 h-4.5 text-brand-primary" />
                   {t('taskInboxTitle')}
                 </h2>
               </div>
 
               {/* Status Switcher Tabs */}
-              <div className="flex bg-[#0B1020] border border-white/5 p-0.5 text-xs self-start">
+              <div className="flex bg-white border border-blue-100 p-0.5 text-xs self-start">
                 <button
                   onClick={() => setActiveTaskTab('todo')}
-                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'todo' ? 'glass text-white font-bold' : 'text-slate-400 hover:text-white'}`}
+                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'todo' ? 'glass text-slate-900 font-bold' : 'text-slate-400 hover:text-slate-900'}`}
                 >
                   Todo ({proTasks.filter((t) => t.status === 'todo').length})
                 </button>
                 <button
                   onClick={() => setActiveTaskTab('in-progress')}
-                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'in-progress' ? 'glass text-white font-bold' : 'text-slate-400 hover:text-white'}`}
+                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'in-progress' ? 'glass text-slate-900 font-bold' : 'text-slate-400 hover:text-slate-900'}`}
                 >
                   Active ({proTasks.filter((t) => t.status === 'in-progress').length})
                 </button>
                 <button
                   onClick={() => setActiveTaskTab('done')}
-                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'done' ? 'glass text-white font-bold' : 'text-slate-400 hover:text-white'}`}
+                  className={`px-3 py-1.5 cursor-pointer font-mono text-[10px] uppercase transition tracking-wider ${activeTaskTab === 'done' ? 'glass text-slate-900 font-bold' : 'text-slate-400 hover:text-slate-900'}`}
                 >
                   Done ({proTasks.filter((t) => t.status === 'done').length})
                 </button>
@@ -174,11 +174,11 @@ export const ProfessionalDashboard: React.FC = () => {
                   return (
                     <div 
                       key={tk.id}
-                      className="border border-white/5 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#0B1020]/40 hover:border-[#0F6E56] transition text-left rtl:text-right"
+                      className="border border-blue-100 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white/40 hover:border-brand-primary transition text-left rtl:text-right"
                     >
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 glass border border-white/5 text-slate-400 font-mono">
+                          <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 bg-white border border-blue-100 rounded-xl text-slate-400 font-mono">
                             {tk.type}
                           </span>
                           {clientInfo && (
@@ -188,7 +188,7 @@ export const ProfessionalDashboard: React.FC = () => {
                           )}
                         </div>
 
-                        <p className="text-xs font-bold text-white font-serif">
+                        <p className="text-xs font-bold text-slate-900 font-serif">
                           {tObj(tk.title)}
                         </p>
 
@@ -202,7 +202,7 @@ export const ProfessionalDashboard: React.FC = () => {
                         {tk.status !== 'todo' && (
                           <button
                             onClick={() => updateTaskStatus(tk.id, 'todo')}
-                            className="px-2.5 py-1 glass border border-white/5 hover:glass/5 text-slate-300 font-bold text-[10px] cursor-pointer"
+                            className="px-2.5 py-1 bg-white border border-blue-100 rounded-xl hover:bg-blue-50 text-slate-300 font-bold text-[10px] cursor-pointer"
                           >
                             Set Todo
                           </button>
@@ -210,7 +210,7 @@ export const ProfessionalDashboard: React.FC = () => {
                         {tk.status !== 'in-progress' && (
                           <button
                             onClick={() => updateTaskStatus(tk.id, 'in-progress')}
-                            className="px-2.5 py-1 glass border border-indigo-500/20 hover:bg-indigo-900/20 text-indigo-700 font-bold text-[10px] cursor-pointer"
+                            className="px-2.5 py-1 bg-white border border-blue-100 border border-indigo-500/20 hover:bg-indigo-50 text-indigo-700 font-bold text-[10px] cursor-pointer"
                           >
                             Set Active
                           </button>
@@ -218,7 +218,7 @@ export const ProfessionalDashboard: React.FC = () => {
                         {tk.status !== 'done' && (
                           <button
                             onClick={() => updateTaskStatus(tk.id, 'done')}
-                            className="px-2.5 py-1 bg-brand-primary hover:bg-brand-dark text-white text-[10px] cursor-pointer font-bold"
+                            className="px-2.5 py-1 bg-brand-primary hover:bg-brand-dark text-slate-900 text-[10px] cursor-pointer font-bold"
                           >
                             ✓ Validate
                           </button>
@@ -229,7 +229,7 @@ export const ProfessionalDashboard: React.FC = () => {
                   );
                 })
               ) : (
-                <div className="text-center py-10 border border-dashed border-white/5 text-slate-500 font-mono">
+                <div className="text-center py-10 border border-dashed border-blue-100 text-slate-500 font-mono">
                   <p className="text-xs leading-relaxed">
                     No matching filings currently recorded inside {activeTaskTab.toUpperCase()} section.
                   </p>
@@ -245,8 +245,8 @@ export const ProfessionalDashboard: React.FC = () => {
         <div className="lg:col-span-4 space-y-6">
           
           {/* Custom monospaced earnings progression panel */}
-          <div className="glass border border-white/5 p-6 space-y-4">
-            <h2 className="font-serif font-semibold text-white text-sm flex items-center gap-2 pb-2 border-b border-white/5">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 space-y-4">
+            <h2 className="font-serif font-semibold text-slate-900 text-sm flex items-center gap-2 pb-2 border-b border-blue-100">
               <TrendingUp className="w-5 h-5 text-brand-primary shrink-0 text-brand-primary" />
               {t('earningsBarChartTitle')}
             </h2>
@@ -258,13 +258,13 @@ export const ProfessionalDashboard: React.FC = () => {
                     <span className={`font-semibold ${m.active ? 'text-brand-primary font-bold' : 'text-slate-400'}`}>
                       {m.month} {m.active && '• Live'}
                     </span>
-                    <span className="font-mono font-bold text-white">{m.value.toLocaleString()} DZD</span>
+                    <span className="font-mono font-bold text-slate-900">{m.value.toLocaleString()} DZD</span>
                   </div>
                   
                   {/* Precise Progress bar */}
-                  <div className="w-full bg-white/10 h-2.5 overflow-hidden">
+                  <div className="w-full bg-blue-100 h-2.5 overflow-hidden">
                     <div 
-                      className={`h-full transition-all duration-300 ${m.active ? 'bg-brand-primary animate-pulse' : 'glass/10'}`}
+                      className={`h-full transition-all duration-300 ${m.active ? 'bg-brand-primary animate-pulse' : 'bg-blue-100/50'}`}
                       style={{ width: `${(m.value / m.max) * 100}%` }}
                     ></div>
                   </div>
@@ -272,14 +272,14 @@ export const ProfessionalDashboard: React.FC = () => {
               ))}
             </div>
 
-            <p className="text-[10px] text-slate-500 leading-relaxed font-sans border-t border-white/5 pt-3 text-center">
+            <p className="text-[10px] text-slate-500 leading-relaxed font-sans border-t border-blue-100 pt-3 text-center">
               {t('earningsMockDisclaimer')}
             </p>
           </div>
 
           {/* Active SME Engagements */}
-          <div className="glass border border-white/5 p-6 space-y-4">
-            <h2 className="font-serif font-semibold text-white text-sm flex items-center gap-1.5">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 space-y-4">
+            <h2 className="font-serif font-semibold text-slate-900 text-sm flex items-center gap-1.5">
               <Layers className="w-4.5 h-4.5 text-brand-primary shrink-0 text-brand-primary" />
               Active SME Engagements
             </h2>
@@ -288,9 +288,9 @@ export const ProfessionalDashboard: React.FC = () => {
               {proContracts.map((c) => {
                 const conClient = clients.find((cl) => cl.id === c.clientId);
                 return (
-                  <div key={c.id} className="p-3.5 bg-[#0B1020] border border-white/5 space-y-2">
+                  <div key={c.id} className="p-3.5 bg-white border border-blue-100 space-y-2">
                     <div className="flex justify-between items-center">
-                      <strong className="text-white font-serif text-xs">{tObj(c.title).substring(0, 30)}...</strong>
+                      <strong className="text-slate-900 font-serif text-xs">{tObj(c.title).substring(0, 30)}...</strong>
                       <span className="text-[8px] px-1.5 py-0.5 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary font-bold font-mono uppercase">
                         {c.status}
                       </span>
@@ -302,7 +302,7 @@ export const ProfessionalDashboard: React.FC = () => {
                       </p>
                     )}
 
-                    <div className="flex justify-between text-[9px] text-slate-500 font-mono border-t border-white/5/60 pt-2">
+                    <div className="flex justify-between text-[9px] text-slate-500 font-mono border-t border-blue-100/60 pt-2">
                       <span>VALUE: {c.value.toLocaleString()} DZD</span>
                       <span>DATE: {c.startDate}</span>
                     </div>

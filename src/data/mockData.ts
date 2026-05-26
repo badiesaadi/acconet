@@ -169,7 +169,7 @@ export const professionals: Professional[] = [
     completionRate: 98,
     clientsServed: 124,
     bio: {
-      ar: "خبير محاسب معتمد يتمتع بأكثر من 14 عامًا من الخبرة في مرافقة الشركات الناشئة والمؤسسات الصغيرة والمتوسطة في الجزائر العاصمة. متخصص في الهيكلة الجبائية وإعداد الميزانيات السنوية.",
+      ar: "مهني محاسب معتمد يتمتع بأكثر من 14 عامًا من الخبرة في مرافقة الشركات الناشئة والمؤسسات الصغيرة والمتوسطة في الجزائر العاصمة. متخصص في الهيكلة الجبائية وإعداد الميزانيات السنوية.",
       fr: "Expert-comptable agréé avec plus de 14 ans d'expérience dans l'accompagnement des startups et PME à Alger. Spécialiste de la structuration fiscale et de la préparation des bilans annuels.",
       en: "Certified Chartered Accountant with over 14 years of experience supporting startups and SMEs in Algiers. Specialist in tax structuring and annual balance sheet preparation."
     },
@@ -284,7 +284,7 @@ export const professionals: Professional[] = [
         clientName: "Nadia T.",
         rating: 5,
         comment: {
-          ar: "خبيرة في القانون الجزائري ومخلصة جداً في عملها. التواصل كان ممتازاً بكلا اللغتين.",
+          ar: "متخصصة في القانون الجزائري ومخلصة جداً في عملها. التواصل كان ممتازاً بكلا اللغتين.",
           fr: "Experte en loi algérienne et très dévouée. Excellente communication en arabe et français.",
           en: "Expert in Algerian law and very dedicated. Excellent communication in both Arabic and French."
         },
@@ -480,7 +480,7 @@ export const professionals: Professional[] = [
     completionRate: 94,
     clientsServed: 110,
     bio: {
-      ar: "خبير قضائي معتمد ومحكم حسابات لدى المحاكم والمجالس القضائية الجزائرية. خبرة تمتد لأكثر من عشرين سنة في تقييم الأضرار، تفكيك الشراكات، وتوريث المؤسسات العائلية الكبرى.",
+      ar: "مهني قضائي معتمد ومحكم حسابات لدى المحاكم والمجالس القضائية الجزائرية. خبرة تمتد لأكثر من عشرين سنة في تقييم الأضرار، تفكيك الشراكات، وتوريث المؤسسات العائلية الكبرى.",
       fr: "Expert judiciaire agréé près les Cours et Tribunaux algériens. Plus de 22 ans d'expérience dans l'évaluation des préjudices, la liquidation d'entreprises et le règlement des successions complexes.",
       en: "Accredited Judicial Expert registered with Algerian Courts. Over 22 years of experience in damages valuation, corporate liquidations, and complex business succession inheritance disputes."
     },
@@ -513,7 +513,7 @@ export const professionals: Professional[] = [
         clientName: "Salem B.",
         rating: 4.5,
         comment: {
-          ar: "خبير في غاية النزاهة والحكمة. أدار النقاش والوصول للتسوية بروية واحترام كبير للطرفين.",
+          ar: "مهني في غاية النزاهة والحكمة. أدار النقاش والوصول للتسوية بروية واحترام كبير للطرفين.",
           fr: "Arbitre intègre et sage. Il a conduit l'arbitrage avec équité et respect envers les parties.",
           en: "Honest and wise arbitrator. He headed the dispute resolution with fairness and absolute respect."
         },
@@ -521,7 +521,7 @@ export const professionals: Professional[] = [
       }
     ],
     history: [
-      { year: "2004 - Present", title: { ar: "خبير قضائي معتمد لدى مجلس قضاء سطيف", fr: "Expert Judiciaire Agréé, Cour de Sétif", en: "Accredited Judicial Expert, Court of Setif" }, description: { ar: "تكليف في أكثر من 180 قضية تجارية ومالية معقدة.", fr: "Désigné par la justice sur plus de 180 affaires commerciales complexes.", en: "Appointed by courts on more than 180 complex commercial disputes." } }
+      { year: "2004 - Present", title: { ar: "مهني قضائي معتمد لدى مجلس قضاء سطيف", fr: "Expert Judiciaire Agréé, Cour de Sétif", en: "Accredited Judicial Expert, Court of Setif" }, description: { ar: "تكليف في أكثر من 180 قضية تجارية ومالية معقدة.", fr: "Désigné par la justice sur plus de 180 affaires commerciales complexes.", en: "Appointed by courts on more than 180 complex commercial disputes." } }
     ]
   },
   {
@@ -545,7 +545,7 @@ export const professionals: Professional[] = [
     completionRate: 98,
     clientsServed: 63,
     bio: {
-      ar: "خبير ومحاسب معتمد في الجزائر العاصمة، رائد في رقمنة الأنظمة المحاسبية. نسعى لتطوير نظام الشركات الجزائرية عبر دمج التكنولوجيا المتطورة والسحابة مع الكفاءة المحلية.",
+      ar: "مهني محاسب معتمد في الجزائر العاصمة، رائد في رقمنة الأنظمة المحاسبية. نسعى لتطوير نظام الشركات الجزائرية عبر دمج التكنولوجيا المتطورة والسحابة مع الكفاءة المحلية.",
       fr: "Comptable agréé basé à Alger, pionnier de la numérisation des systèmes d'information comptables. Nous intégrons les outils cloud avec l'expertise locale.",
       en: "Accredited Accountant in Algiers, pioneer in local cloud accounting. We optimize financial systems by merging state-of-the-art tech tools with local Algerian rules."
     },
@@ -627,7 +627,7 @@ export const professionals: Professional[] = [
     completionRate: 96,
     clientsServed: 58,
     bio: {
-      ar: "خبيرة مستشارة في الضرائب بمدينة البليدة ومحيط المتيجة. أساعد المصانع وشركات الأغذية والتحويل الزراعي في مطابقة اللوائح الجبائية الجديدة في قوانين المالية السنوية.",
+      ar: "مستشارة مهنية في الضرائب بمدينة البليدة ومحيط المتيجة. أساعد المصانع وشركات الأغذية والتحويل الزراعي في مطابقة اللوائح الجبائية الجديدة في قوانين المالية السنوية.",
       fr: "Consultante fiscale à Blida. J'oriente les industries agroalimentaires et manufacturières de la Mitidja face aux fréquents changements des lois de finances.",
       en: "Tax Consultant based in Blida. I help food-processing and manufacturing businesses in Mitidja navigate the frequent updates in annually voted Algerian Finance Acts."
     },
@@ -795,7 +795,7 @@ export const testimonials: Testimonial[] = [
     wilayaName: { ar: "الجزائر", fr: "Alger", en: "Algiers" },
     rating: 5,
     comment: {
-      ar: "موقع أكونيت وفر علينا الكثير من الوقت والبحث الطويل في الجزائر العاصمة. وجدنا خبيراً محاسباً بجودة عالية جداً يفهم جيداً طبيعة شركات السحاب والتكنولوجيا.",
+      ar: "موقع أكونيت وفر علينا الكثير من الوقت والبحث الطويل في الجزائر العاصمة. وجدنا مهنياً محاسباً بجودة عالية جداً يفهم جيداً طبيعة شركات السحاب والتكنولوجيا.",
       fr: "La plateforme AccoNet nous a épargné de longues recherches infructueuses à Alger. Nous avons trouvé un comptable agréé qui saisit l'univers de l'IT.",
       en: "AccoNet saved us weeks of cold searching in Algiers! We matched with a brilliant certified accountant who fully understands clean cloud SaaS technology."
     },

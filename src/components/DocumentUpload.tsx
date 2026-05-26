@@ -130,7 +130,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
       {/* Label and descriptive header */}
       <div className="flex justify-between items-start mb-2.5">
         <div>
-          <span className="block text-xs font-serif font-bold text-white">
+          <span className="block text-xs font-serif font-bold text-slate-800">
             {label} {required && <span className="text-red-500">*</span>}
           </span>
           <span className="block text-[11px] font-medium text-brand-primary/95 mt-0.5">
@@ -143,7 +143,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           <div className="relative shrink-0">
             <button 
               type="button"
-              className="text-[#0F6E56] hover:text-[#085041] p-1 focus:outline-none"
+              className="text-brand-primary hover:text-[#1E40AF] p-1 focus:outline-none"
               onMouseEnter={() => setShowTooltip(true)}
               onMouseLeave={() => setShowTooltip(false)}
               onClick={() => setShowTooltip(!showTooltip)}
@@ -151,7 +151,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
               <HelpCircle className="w-4 h-4 cursor-pointer" />
             </button>
             {showTooltip && (
-              <div className="absolute right-0 top-6 z-20 w-56 p-2.5 glass border border-white/5 text-[10px] text-slate-400 leading-normal shadow-lg">
+              <div className="absolute right-0 top-6 z-20 w-56 p-2.5 glass border border-blue-100 text-[10px] text-slate-400 leading-normal shadow-lg">
                 <p>{legalTooltip}</p>
               </div>
             )}
@@ -161,7 +161,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
 
       {/* Uploading Progress Bar State */}
       {isUploading && (
-        <div className="border border-white/10 bg-[#0B1020] p-5 text-center space-y-3">
+        <div className="border border-blue-200 bg-white p-5 text-center space-y-3">
           <UploadCloud className="w-6 h-6 text-brand-primary animate-bounce mx-auto" />
           <p className="text-[11px] font-mono text-slate-400">Chargement du fichier en cours... {uploadProgress}%</p>
           <div className="w-full bg-white/10 h-1.5 rounded-none overflow-hidden">
@@ -175,7 +175,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
         <div className="border border-emerald-500/50 bg-emerald-900/20/20 p-4 flex items-center justify-between gap-3 shadow-2xs antialiased">
           <div className="flex items-center gap-3 min-w-0">
             {fileDetails.isImage && fileDetails.previewUrl ? (
-              <div className="w-[80px] h-[80px] border border-white/10 overflow-hidden glass shrink-0 relative flex items-center justify-center">
+              <div className="w-[80px] h-[80px] border border-blue-200 overflow-hidden glass shrink-0 relative flex items-center justify-center">
                 <img 
                   referrerPolicy="no-referrer"
                   src={fileDetails.previewUrl} 
@@ -184,7 +184,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
                 />
               </div>
             ) : (
-              <div className="w-[80px] h-[80px] border border-white/10 glass shrink-0 flex items-center justify-center">
+              <div className="w-[80px] h-[80px] border border-blue-200 glass shrink-0 flex items-center justify-center">
                 <FileText className="w-9 h-9 text-brand-primary" />
               </div>
             )}
@@ -223,8 +223,8 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
             errorMessage 
               ? 'border-red-400 bg-red-900/20/10 hover:bg-red-900/20/25' 
               : isDragOver
-                ? 'border-[#0F6E56] bg-[#0F6E56]/5'
-                : 'border-white/10 bg-[#0B1020]/30 hover:bg-[#0B1020]/70 hover:border-brand-primary'
+                ? 'border-brand-primary bg-brand-primary/5'
+                : 'border-blue-200 bg-white/30 hover:bg-white/70 hover:border-brand-primary'
           }`}
         >
           <input 
@@ -239,7 +239,7 @@ export const DocumentUpload: React.FC<DocumentUploadProps> = ({
           
           <div className="space-y-1">
             <p className="text-xs text-slate-300 leading-normal">
-              <span className="font-bold underline text-[#0F6E56]">Faites glisser</span> ou <span className="font-bold underline text-[#0F6E56]">cliquez pour charger</span>
+              <span className="font-bold underline text-brand-primary">Faites glisser</span> ou <span className="font-bold underline text-brand-primary">cliquez pour charger</span>
             </p>
             <p className="text-[10px] text-slate-400 font-mono tracking-wide uppercase">
               {normalizeExtensions.join(', ').toUpperCase()} — Max {maxSizeMB}MB

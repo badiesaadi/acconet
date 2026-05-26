@@ -1,381 +1,332 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useApp } from '../context/AppContext';
-import { 
-  Building2, Users, FileText, CheckCircle2, AlertTriangle, 
-  MapPin, Calendar, CreditCard, ChevronRight, Send, ArrowUpRight,
-  ShieldCheck, ArrowLeft, ArrowRight, Sparkles, Receipt
+import {
+  Building2, Users, FileText, CheckCircle2,
+  Calendar, Send, ShieldCheck, Receipt, Wrench,
 } from 'lucide-react';
 import { professionals } from '../data/mockData';
 
-export const ClientDashboard: React.FC = () => {
-  const { t, tObj, tSpec, direction } = useLanguage();
-  const { 
-    currentClient, contracts, tasks, 
-    updateTaskStatus, addTask 
-  } = useApp();
+// ── Placeholder tool names (to be replaced with final Arabic names) ──
+const TOOLS = [
+  { id: 'tool_1', icon: '📄', label: { ar: 'أداة 1', fr: 'Outil 1', en: 'Tool 1' } },
+  { id: 'tool_2', icon: '📊', label: { ar: 'أداة 2', fr: 'Outil 2', en: 'Tool 2' } },
+  { id: 'tool_3', icon: '🧮', label: { ar: 'أداة 3', fr: 'Outil 3', en: 'Tool 3' } },
+  { id: 'tool_4', icon: '📝', label: { ar: 'أداة 4', fr: 'Outil 4', en: 'Tool 4' } },
+  { id: 'tool_5', icon: '📁', label: { ar: 'أداة 5', fr: 'Outil 5', en: 'Tool 5' } },
+  { id: 'tool_6', icon: '🔍', label: { ar: 'أداة 6', fr: 'Outil 6', en: 'Tool 6' } },
+];
 
-  // State to append a task
-  const [newTaskTitle, setNewTaskTitle] = useState('');
+export const ClientDashboard: React.FC = () => {
+  const { t, tObj, tSpec, direction, language } = useLanguage();
+  const { currentClient, contracts, tasks, updateTaskStatus, addTask } = useApp();
+
+  const [newTaskTitle,       setNewTaskTitle]       = useState('');
   const [selectedContractId, setSelectedContractId] = useState('');
 
-  // Filter lists for our current simulated client 
-  const clientContracts = contracts.filter((c) => c.clientId === (currentClient?.id || 'c1'));
-  const activeContractIds = clientContracts.map((c) => c.id);
-  const clientTasks = tasks.filter((tk) => activeContractIds.includes(tk.contractId));
+  const clientContracts    = contracts.filter(c => c.clientId === (currentClient?.id || 'c1'));
+  const activeContractIds  = clientContracts.map(c => c.id);
+  const clientTasks        = tasks.filter(tk => activeContractIds.includes(tk.contractId));
+  const pendingTasksCount  = clientTasks.filter(tk => tk.status !== 'done').length;
+  const completedTasksCount = clientTasks.filter(tk => tk.status === 'done').length;
 
-  // Counts
-  const activeContractsCount = clientContracts.length;
-  const pendingTasksCount = clientTasks.filter((tk) => tk.status !== 'done').length;
-  const completedTasksCount = clientTasks.filter((tk) => tk.status === 'done').length;
-
-  // New task submit
-  const handleAddTaskSubmit = (e: React.FormEvent) => {
+  const handleAddTask = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newTaskTitle || !selectedContractId) return;
-
+    if (!newTaskTitle.trim() || !selectedContractId) return;
     addTask({
-      id: `tk_custom_cl_${Date.now()}`,
+      id: `tk_cl_${Date.now()}`,
       contractId: selectedContractId,
       title: { ar: newTaskTitle, fr: newTaskTitle, en: newTaskTitle },
-      deadline: new Date(Date.now() + 7 * 864 * 1000).toISOString().split('T')[0], // 7 Days from now
+      deadline: new Date(Date.now() + 7 * 86_400_000).toISOString().split('T')[0],
       status: 'todo',
-      type: 'bookkeeping'
+      type: 'bookkeeping',
     });
-
     setNewTaskTitle('');
   };
 
+  const toolLabel = (tool: typeof TOOLS[0]) =>
+    tool.label[language as 'ar' | 'fr' | 'en'] ?? tool.label.ar;
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-8" id="client_dashboard_wrapper">
-      
-      {/* 1. WELCOME METADATA HEADER ROW */}
-      <div className="glass border border-[#0F6E56]/40 p-6 sm:p-8 text-white relative">
-        <div className="absolute top-0 right-0 w-32 h-full bg-brand-primary/10 filter blur-2xl"></div>
-        
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 relative z-10 text-left rtl:text-right">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 bg-brand-primary/30 border border-[#0F6E56] text-brand-primary text-[9px] font-mono uppercase tracking-widest">
-                SME Business Console
-              </span>
-              <span className="text-[10px] font-mono text-slate-500">REGULATORY COMPATIBLE • ALGERIA</span>
-            </div>
-            
-            <h1 className="text-2xl sm:text-3xl font-serif font-semibold tracking-tight text-white leading-tight">
-              {t('clientWelcome')} <span className="text-brand-accent italic font-normal underline decoration-brand-accent/25 underline-offset-4">{currentClient?.companyName || 'Dzair Tech Link'}</span>
+    <div
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-8"
+      dir={direction}
+    >
+      {/* ── WELCOME HEADER ── */}
+      <div className="bg-white border border-blue-200 rounded-2xl p-6 sm:p-8 shadow-classic">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
+          <div className="space-y-2 text-left rtl:text-right">
+            <span className="text-xs font-mono uppercase tracking-widest text-brand-primary bg-brand-primary/10 border border-brand-primary/20 px-2.5 py-1 rounded-lg">
+              {language === 'ar' ? 'فضاء الأعمال' : 'Business Suite'}
+            </span>
+            <h1 className="font-serif font-bold text-slate-800 text-2xl sm:text-3xl leading-snug">
+              {t('clientWelcome')}{' '}
+              <span className="text-brand-primary italic">{currentClient?.companyName || 'Dzair Tech Link'}</span>
             </h1>
-            
-            <p className="text-[11px] text-slate-400 font-sans flex items-center gap-2.5">
-              <span>HQ: <strong className="text-white">{tObj(currentClient?.wilayaName)}</strong></span>
-              <span className="text-slate-400">•</span>
-              <span>NIF Certificate: <strong className="font-mono text-brand-accent">{currentClient?.NIF}</strong></span>
+            <p className="text-sm text-slate-400 flex flex-wrap items-center gap-3 font-mono">
+              <span>NIF: <strong className="text-brand-primary">{currentClient?.NIF}</strong></span>
+              <span className="text-slate-200">|</span>
+              <span>{tObj(currentClient?.wilayaName)}</span>
             </p>
           </div>
-
-          <div className="px-4 py-2.5 glass/5 border border-white/10 flex items-center gap-2 text-xs">
-            <span className="w-1.5 h-1.5 bg-emerald-400 animate-ping"></span>
-            <span className="text-slate-400 font-mono text-[10px] tracking-wider uppercase">SCF Compliance Live Link</span>
+          <div className="px-4 py-2.5 bg-blue-50 border border-blue-200 rounded-xl flex items-center gap-2 text-xs font-mono text-slate-500 shrink-0">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+            {language === 'ar' ? 'SCF — مطابق' : 'SCF Compliance Live'}
           </div>
         </div>
       </div>
 
-      {/* 2. HIGH DENSITY KPI MATRIX */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="kpi_matrix_row">
-        
-        {/* Active contracts */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
-          <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">{t('activeContractsLabel')}</p>
-            <p className="text-2xl font-serif font-black text-brand-primary font-mono">{activeContractsCount}</p>
+      {/* ── KPI MATRIX ── */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { label: t('activeContractsLabel'), value: clientContracts.length,     color: 'text-brand-primary', Icon: Building2 },
+          { label: t('dashboardTasksActive'), value: pendingTasksCount,           color: 'text-amber-500',     Icon: FileText  },
+          { label: language === 'ar' ? 'مكتملة' : 'Complétées', value: completedTasksCount, color: 'text-emerald-500', Icon: CheckCircle2 },
+          { label: language === 'ar' ? 'مكاتب مرتبطة' : 'Cabinets liés', value: new Set(clientContracts.map(c => c.professionalId)).size, color: 'text-indigo-500', Icon: Users },
+        ].map(({ label, value, color, Icon }, i) => (
+          <div key={i} className="bg-white border border-blue-100 rounded-xl p-5 shadow-classic flex items-center justify-between">
+            <div className="space-y-1 text-left rtl:text-right">
+              <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider leading-none">{label}</p>
+              <p className={`text-3xl font-serif font-black ${color}`}>{value}</p>
+            </div>
+            <Icon className={`w-9 h-9 ${color} opacity-20`} />
           </div>
-          <Building2 className="w-8 h-8 text-brand-primary/30" />
-        </div>
-
-        {/* Pending tasks */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
-          <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">{t('dashboardTasksActive')}</p>
-            <p className="text-2xl font-serif font-black text-brand-accent font-mono">{pendingTasksCount}</p>
-          </div>
-          <FileText className="w-8 h-8 text-[#F59E0B]/30" />
-        </div>
-
-        {/* Done tasks */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
-          <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">COMPLETED LEDGERS</p>
-            <p className="text-2xl font-serif font-black text-emerald-400 font-mono">{completedTasksCount}</p>
-          </div>
-          <CheckCircle2 className="w-8 h-8 text-emerald-400/30" />
-        </div>
-
-        {/* Unread messages */}
-        <div className="glass border border-white/5 p-5 shadow-classic flex items-center justify-between">
-          <div className="space-y-1 text-left rtl:text-right">
-            <p className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider">ASSIGNED CABINETS</p>
-            <p className="text-2xl font-serif font-black text-indigo-400 font-mono">
-              {new Set(clientContracts.map((c) => c.professionalId)).size}
-            </p>
-          </div>
-          <Users className="w-8 h-8 text-indigo-400/30" />
-        </div>
-
+        ))}
       </div>
 
-      {/* 3. BUSINESS MATRIX HUB - ASYMMETRIC PARTNER GRID */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        {/* Left Module (col-span-8) - Contract details & Direct Task Assignment */}
+      {/* ── MAIN GRID ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        {/* Left column */}
         <div className="lg:col-span-8 space-y-8">
-          
-          {/* Active Partnerships List */}
-          <div className="glass border border-white/5 p-6 space-y-6">
-            <div className="pb-4 border-b border-white/5 flex items-center justify-between text-left rtl:text-right">
-              <div>
-                <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">Active Engagements</span>
-                <h2 className="font-serif font-semibold text-white text-base flex items-center gap-2 mt-1">
+
+          {/* Active contracts */}
+          <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-classic space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-blue-100">
+              <div className="text-left rtl:text-right">
+                <p className="text-xs font-mono text-slate-400 uppercase tracking-widest">{language === 'ar' ? 'العقود النشطة' : 'Active Engagements'}</p>
+                <h2 className="font-serif font-semibold text-slate-800 text-lg flex items-center gap-2 mt-0.5">
                   <ShieldCheck className="w-5 h-5 text-brand-primary" />
                   {t('activeServiceContractsTitle')}
                 </h2>
               </div>
-              <span className="text-xs font-mono text-slate-500">Total volume: {clientContracts.length}</span>
+              <span className="text-sm font-mono text-slate-400">{clientContracts.length}</span>
             </div>
 
-            {clientContracts.length > 0 ? (
+            {clientContracts.length === 0 ? (
+              <p className="text-center py-10 text-slate-400 text-sm font-mono">
+                {language === 'ar' ? 'لا توجد عقود نشطة.' : 'Aucun contrat actif.'}
+              </p>
+            ) : (
               <div className="space-y-4">
-                {clientContracts.map((con) => {
-                  const proInfo = professionals.find((p) => p.id === con.professionalId);
+                {clientContracts.map(con => {
+                  const pro = professionals.find(p => p.id === con.professionalId);
+                  const tasksForContract = clientTasks.filter(tk => tk.contractId === con.id);
+                  const doneCount = tasksForContract.filter(tk => tk.status === 'done').length;
+                  const progress = tasksForContract.length ? Math.round((doneCount / tasksForContract.length) * 100) : 0;
+
                   return (
-                    <div key={con.id} className="border border-white/5 p-5 hover:border-brand-primary transition duration-150 space-y-4 bg-[#0B1020]/40 text-left rtl:text-right">
-                      
-                      {/* Contract Name Header */}
-                      <div className="flex flex-col sm:flex-row justify-between items-start gap-3">
+                    <div key={con.id} className="border border-blue-100 rounded-xl p-5 bg-blue-50/30 hover:border-brand-primary/40 transition space-y-4 text-left rtl:text-right">
+                      <div className="flex flex-col sm:flex-row justify-between gap-3">
                         <div>
-                          <h3 className="font-serif font-bold text-white text-sm leading-snug">{tObj(con.title)}</h3>
-                          <p className="text-[9px] text-slate-500 font-mono mt-0.5 uppercase tracking-wider">CONTRACT REF: {con.id}</p>
+                          <h3 className="font-serif font-bold text-slate-800 leading-snug">{tObj(con.title)}</h3>
+                          <p className="text-xs text-slate-400 font-mono mt-0.5">REF: {con.id}</p>
                         </div>
-                        <span className="px-2.5 py-0.5 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] font-mono uppercase">
+                        <span className="self-start px-2.5 py-1 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-mono uppercase rounded-lg shrink-0">
                           {con.status}
                         </span>
                       </div>
 
-                      {/* Professional Info Block */}
-                      {proInfo && (
-                        <div className="flex items-center gap-3 text-xs text-slate-300 glass p-3 border border-white/5">
-                          <div className={`w-8 h-8 font-bold flex items-center justify-center text-xs text-brand-primary glass ${proInfo.avatarBg}`}>
-                            {proInfo.initials}
+                      {pro && (
+                        <div className="flex items-center gap-3 bg-white border border-blue-100 rounded-xl p-3 text-sm">
+                          <div className="w-9 h-9 rounded-lg bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-bold text-sm shrink-0">
+                            {pro.initials}
                           </div>
                           <div>
-                            <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest block">Accredited Partner Cabinet</span>
-                            <span className="font-sans font-bold text-white">{tObj(proInfo.name)}</span>
-                            <span className="text-slate-500 font-mono mx-1.5">|</span>
-                            <span className="text-slate-300 font-sans">{tSpec(proInfo.specialty)}</span>
+                            <p className="text-xs text-slate-400 font-mono uppercase">{language === 'ar' ? 'المهني المعتمد' : 'Professionnel agréé'}</p>
+                            <p className="font-bold text-slate-800">{tObj(pro.name)} <span className="text-slate-400 font-normal">— {tSpec(pro.specialty)}</span></p>
                           </div>
                         </div>
                       )}
 
-                      {/* Precise Metric breakdown row using monospacing */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-white/5 text-xs">
+                      <div className="grid grid-cols-3 gap-3 pt-3 border-t border-blue-100 text-sm">
                         <div>
-                          <span className="text-[9px] text-slate-500 uppercase leading-none font-mono block mb-1">{t('contractValueLabel')}</span>
-                          <span className="font-bold font-mono text-white">{con.value.toLocaleString()} DZD</span>
+                          <p className="text-xs text-slate-400 font-mono uppercase">{t('contractValueLabel')}</p>
+                          <p className="font-bold font-mono text-slate-800">{con.value.toLocaleString()} DZD</p>
                         </div>
                         <div>
-                          <span className="text-[9px] text-slate-500 uppercase leading-none font-mono block mb-1">EFFECTIVE DATE</span>
-                          <span className="font-semibold text-white font-mono">{con.startDate}</span>
+                          <p className="text-xs text-slate-400 font-mono uppercase">{language === 'ar' ? 'بداية' : 'Début'}</p>
+                          <p className="font-semibold font-mono text-slate-800">{con.startDate}</p>
                         </div>
                         <div>
-                          <span className="text-[9px] text-slate-500 uppercase leading-none font-mono block mb-1">VALIDITY TERM</span>
-                          <span className="font-semibold text-white font-mono">{con.endDate}</span>
+                          <p className="text-xs text-slate-400 font-mono uppercase">{language === 'ar' ? 'نهاية' : 'Fin'}</p>
+                          <p className="font-semibold font-mono text-slate-800">{con.endDate}</p>
                         </div>
                       </div>
 
-                      {/* Task completion ratios */}
-                      <div className="space-y-1.5 pt-2">
-                        <div className="flex justify-between items-center text-[10px] font-mono">
-                          <span className="text-slate-500 uppercase">Task Compliance ratio</span>
-                          <span className="font-bold text-brand-primary">
-                            {Math.round(
-                              (clientTasks.filter((tk) => tk.contractId === con.id && tk.status === 'done').length / 
-                              Math.max(1, clientTasks.filter((tk) => tk.contractId === con.id).length)) * 100
-                            )}%
-                          </span>
+                      <div className="space-y-1.5">
+                        <div className="flex justify-between text-xs font-mono">
+                          <span className="text-slate-400 uppercase">{language === 'ar' ? 'تقدم المهام' : 'Progression des tâches'}</span>
+                          <span className="font-bold text-brand-primary">{progress}%</span>
                         </div>
-                        <div className="w-full bg-white/10 h-1.5 rounded-xl overflow-hidden">
-                          <div 
-                            className="bg-brand-primary h-full transition-all duration-350" 
-                            style={{ 
-                              width: `${
-                                (clientTasks.filter((tk) => tk.contractId === con.id && tk.status === 'done').length / 
-                                Math.max(1, clientTasks.filter((tk) => tk.contractId === con.id).length)) * 100
-                              }%` 
-                            }}
-                          ></div>
+                        <div className="w-full bg-blue-100 h-2 rounded-full overflow-hidden">
+                          <div className="bg-brand-primary h-full rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
                         </div>
                       </div>
-
                     </div>
                   );
                 })}
               </div>
-            ) : (
-              <div className="text-center py-10 text-slate-500 font-mono">
-                <p className="text-xs">No active accounting partnerships. Complete a search to hire an approved specialist.</p>
-              </div>
             )}
-
           </div>
 
-          {/* Direct Task Dispatcher Center */}
-          <div className="glass border border-white/5 p-6 space-y-6">
-            <div className="pb-3 border-b border-white/5">
-              <span className="text-[9px] font-mono text-slate-500 uppercase tracking-widest">SME Action Dispatch</span>
-              <h2 className="font-serif font-semibold text-white text-sm flex items-center gap-2 mt-0.5">
-                <Send className="w-4.5 h-4.5 text-brand-primary" />
-                Direct Task Dispatch Center (SCF Tools)
+          {/* Task dispatcher */}
+          <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-classic space-y-5">
+            <div className="pb-3 border-b border-blue-100 text-left rtl:text-right">
+              <p className="text-xs font-mono text-slate-400 uppercase tracking-widest">{language === 'ar' ? 'تفويض المهام' : 'Dispatch des tâches'}</p>
+              <h2 className="font-serif font-semibold text-slate-800 flex items-center gap-2 mt-0.5">
+                <Send className="w-5 h-5 text-brand-primary" />
+                {language === 'ar' ? 'إسناد مهمة للمهني' : 'Attribuer une tâche au cabinet'}
               </h2>
             </div>
-
-            <form onSubmit={handleAddTaskSubmit} className="space-y-4 text-left rtl:text-right">
+            <form onSubmit={handleAddTask} className="space-y-4 text-left rtl:text-right">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="block text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider">Target Contract</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block">
+                    {language === 'ar' ? 'العقد المستهدف' : 'Contrat cible'}
+                  </label>
                   <select
                     required
                     value={selectedContractId}
-                    onChange={(e) => setSelectedContractId(e.target.value)}
-                    className="w-full text-xs border border-white/5 p-2.5 bg-[#0B1020] focus:outline-none focus:border-brand-primary text-slate-200 rounded-xl font-sans"
+                    onChange={e => setSelectedContractId(e.target.value)}
+                    className="w-full border border-blue-200 bg-blue-50 rounded-xl text-slate-700 focus:border-brand-primary"
                   >
-                    <option value="">Select accounting contract...</option>
-                    {clientContracts.map((c) => (
-                      <option key={c.id} value={c.id}>{tObj(c.title).substring(0, 40)}...</option>
+                    <option value="">{language === 'ar' ? 'اختر العقد...' : 'Sélectionner...'}</option>
+                    {clientContracts.map(c => (
+                      <option key={c.id} value={c.id}>{tObj(c.title).substring(0, 45)}…</option>
                     ))}
                   </select>
                 </div>
-                
-                <div className="space-y-1">
-                  <label className="block text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider">Tax Filing / Task Title</label>
-                  <input 
+                <div className="space-y-1.5">
+                  <label className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider block">
+                    {language === 'ar' ? 'عنوان المهمة' : 'Titre de la tâche'}
+                  </label>
+                  <input
                     type="text"
                     required
-                    placeholder="e.g. Audit G50 correction of May sales ledger"
+                    placeholder={language === 'ar' ? 'مثال: مراجعة كشف G50' : 'ex: Vérification G50 de mai'}
                     value={newTaskTitle}
-                    onChange={(e) => setNewTaskTitle(e.target.value)}
-                    className="w-full text-xs border border-white/5 p-2.5 bg-[#0B1020] focus:outline-none focus:border-brand-primary text-slate-200 rounded-xl"
+                    onChange={e => setNewTaskTitle(e.target.value)}
+                    className="w-full border border-blue-200 bg-blue-50 rounded-xl text-slate-700 focus:border-brand-primary"
                   />
                 </div>
               </div>
-              
-              <button 
-                type="submit"
-                className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white font-mono text-[10px] uppercase tracking-widest transition duration-150 cursor-pointer"
-              >
-                Assign Filing Work to Cabinet
+              <button type="submit" className="px-6 py-3 bg-brand-primary hover:bg-brand-dark text-white font-bold text-sm rounded-xl transition">
+                {language === 'ar' ? 'إسناد المهمة' : 'Attribuer la tâche'}
               </button>
             </form>
           </div>
 
+          {/* Tools grid — placeholder names, final Arabic names coming */}
+          <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-classic space-y-5">
+            <div className="pb-3 border-b border-blue-100 text-left rtl:text-right">
+              <p className="text-xs font-mono text-slate-400 uppercase tracking-widest">
+                {language === 'ar' ? 'الأدوات' : 'Outils du tableau de bord'}
+              </p>
+              <h2 className="font-serif font-semibold text-slate-800 flex items-center gap-2 mt-0.5">
+                <Wrench className="w-5 h-5 text-brand-primary" />
+                {language === 'ar' ? 'أدوات العمل' : 'Outils de travail'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {TOOLS.map(tool => (
+                <button
+                  key={tool.id}
+                  className="flex flex-col items-center gap-3 p-5 bg-blue-50 border border-blue-200 rounded-xl hover:border-brand-primary hover:bg-brand-primary/5 transition"
+                >
+                  <span className="text-3xl">{tool.icon}</span>
+                  <span className="text-sm font-semibold text-slate-600 font-mono">{toolLabel(tool)}</span>
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 font-mono text-center">
+              {language === 'ar' ? '(أسماء الأدوات قيد التحديث)' : '(Noms des outils — mise à jour en cours)'}
+            </p>
+          </div>
         </div>
 
-        {/* Right Column (col-span-4) - COLOR CODED DEADLINES BOX & HISTORY */}
+        {/* Right column */}
         <div className="lg:col-span-4 space-y-6">
-          
-          {/* DEADLINES COLUMN */}
-          <div className="glass border border-white/5 p-6 space-y-5">
-            <h2 className="font-serif font-semibold text-white text-sm flex items-center gap-2 pb-3 border-b border-white/5">
-              <Calendar className="w-4.5 h-4.5 text-brand-primary shrink-0 text-brand-primary" />
+
+          {/* Deadlines */}
+          <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-classic space-y-5">
+            <h2 className="font-serif font-semibold text-slate-800 flex items-center gap-2 pb-3 border-b border-blue-100">
+              <Calendar className="w-5 h-5 text-brand-primary" />
               {t('upcomingDeadlinesTitle')}
             </h2>
-
             <div className="space-y-3">
-              {clientTasks.map((tk) => {
-                const isOverdue = new Date(tk.deadline) < new Date();
-                const isFinished = tk.status === 'done';
+              {clientTasks.length === 0 && (
+                <p className="text-center text-slate-400 text-sm py-4">
+                  {language === 'ar' ? 'لا توجد مهام.' : 'Aucune tâche.'}
+                </p>
+              )}
+              {clientTasks.map(tk => {
+                const overdue  = new Date(tk.deadline) < new Date();
+                const done     = tk.status === 'done';
+                const colorSet = done
+                  ? 'bg-emerald-50 border-emerald-200'
+                  : overdue
+                  ? 'bg-red-50 border-red-200'
+                  : 'bg-amber-50 border-amber-200';
 
                 return (
-                  <div 
-                    key={tk.id} 
-                    className={`p-4 border text-left rtl:text-right transition ${
-                      isFinished 
-                        ? 'bg-brand-primary/10/20 border-brand-primary/20 text-brand-primary' 
-                        : isOverdue 
-                          ? 'bg-red-900/20/20 border-red-500/20 text-red-400' 
-                          : 'bg-amber-900/20/20 border-white/5 text-amber-400'
-                    }`}
-                  >
-                    <div className="flex justify-between items-center gap-2 mb-2">
-                      <span className="text-[8px] uppercase font-bold tracking-wider px-1.5 py-0.5 glass border border-white/5 text-slate-400 font-mono">
+                  <div key={tk.id} className={`p-4 border rounded-xl text-left rtl:text-right ${colorSet}`}>
+                    <div className="flex justify-between items-start gap-2 mb-2">
+                      <span className="text-xs font-bold font-mono uppercase text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-md">
                         {tk.type}
                       </span>
-                      
-                      {/* State checkbox */}
-                      <button 
-                        onClick={() => updateTaskStatus(tk.id, tk.status === 'done' ? 'todo' : 'done')}
-                        className={`w-4 h-4 border flex items-center justify-center cursor-pointer rounded-xl transition-colors ${
-                          isFinished 
-                            ? 'bg-brand-primary border-[#0F6E56] text-white' 
-                            : 'glass border-white/5 hover:border-brand-primary'
-                        }`}
-                        title="Click to simulate change of status"
+                      <button
+                        onClick={() => updateTaskStatus(tk.id, done ? 'todo' : 'done')}
+                        className={`w-5 h-5 border flex items-center justify-center rounded-md transition shrink-0 ${done ? 'bg-emerald-500 border-emerald-500' : 'bg-white border-slate-300 hover:border-brand-primary'}`}
                       >
-                        {isFinished && <CheckCircle2 className="w-3 h-3 text-white" />}
+                        {done && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
                       </button>
                     </div>
-
-                    <p className="text-xs font-bold font-serif text-white">
-                      {tObj(tk.title)}
-                    </p>
-
-                    <div className="flex justify-between items-center text-[10px] pt-2 border-t border-white/5/60 mt-2 text-slate-400">
-                      <span>Due: <strong className="font-mono text-slate-300">{tk.deadline}</strong></span>
-                      <span className="font-mono uppercase text-[9px] glass px-1.5 py-0.5 border border-white/5 text-slate-200">
-                        {tk.status}
-                      </span>
+                    <p className="text-sm font-bold font-serif text-slate-800">{tObj(tk.title)}</p>
+                    <div className="flex justify-between items-center text-xs mt-2 pt-2 border-t border-blue-1000 text-slate-500">
+                      <span>{language === 'ar' ? 'الموعد:' : 'Échéance:'} <strong className="font-mono">{tk.deadline}</strong></span>
+                      <span className="font-mono uppercase text-xs bg-white px-2 py-0.5 border border-slate-200 rounded-md">{tk.status}</span>
                     </div>
-
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* SIMULATED ACTION FEED */}
-          <div className="glass border border-white/5 p-6 space-y-4">
-            <h2 className="font-serif font-semibold text-white text-sm flex items-center gap-2 pb-2 border-b border-white/5">
-              <Receipt className="w-4 h-4 text-brand-primary" />
+          {/* Recent actions */}
+          <div className="bg-white border border-blue-100 rounded-2xl p-6 shadow-classic space-y-4">
+            <h2 className="font-serif font-semibold text-slate-800 flex items-center gap-2 pb-2 border-b border-blue-100">
+              <Receipt className="w-5 h-5 text-brand-primary" />
               {t('recentActionsLabel')}
             </h2>
-
-            <div className="space-y-4 font-sans text-xs">
-              <div className="flex gap-2.5 items-start">
-                <span className="w-1.5 h-1.5 bg-brand-primary mt-1.5 shrink-0"></span>
-                <div>
-                  <p className="text-slate-300">Contract proposal simulated with <strong>Layla Yakoubi</strong></p>
-                  <p className="text-[9px] text-slate-500 font-mono">2026-05-20 14:02</p>
+            <div className="space-y-4 text-sm">
+              {[
+                { dot: 'bg-brand-primary', text: language === 'ar' ? 'عرض عقد من Layla Yakoubi' : 'Proposition de contrat — Layla Yakoubi', time: '2026-05-20 14:02' },
+                { dot: 'bg-amber-400',     text: language === 'ar' ? 'رفع تقرير G50 — Sofiane Benamara' : 'Rapport G50 chargé — Sofiane Benamara', time: '2026-05-18 10:15' },
+                { dot: 'bg-indigo-400',    text: language === 'ar' ? 'جلسة استشارة ضريبية' : 'Consultation fiscale planifiée', time: '2026-05-10 11:30' },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-3 items-start">
+                  <span className={`w-2 h-2 rounded-full ${item.dot} mt-1.5 shrink-0`} />
+                  <div>
+                    <p className="text-slate-700">{item.text}</p>
+                    <p className="text-xs text-slate-400 font-mono mt-0.5">{item.time}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-2.5 items-start">
-                <span className="w-1.5 h-1.5 bg-brand-accent mt-1.5 shrink-0"></span>
-                <div>
-                  <p className="text-slate-300">G50 tax report loaded by <strong>Sofiane Benamara</strong></p>
-                  <p className="text-[9px] text-slate-500 font-mono">2026-05-18 10:15</p>
-                </div>
-              </div>
-              <div className="flex gap-2.5 items-start">
-                <span className="w-1.5 h-1.5 bg-indigo-900/200 mt-1.5 shrink-0"></span>
-                <div>
-                  <p className="text-slate-300">Consultation set with certified tax authority</p>
-                  <p className="text-[9px] text-slate-500 font-mono">2026-05-10 11:30</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 };

@@ -12,7 +12,7 @@ export const OrderBadge: React.FC<OrderBadgeProps> = ({ orderKey, showDetails = 
 
   if (!detail) {
     return (
-      <span className="px-2 py-0.5 glass/5 border border-white/10 text-slate-300 text-[10px] font-bold font-mono">
+      <span className="px-2 py-0.5 glass/5 border border-blue-200 text-slate-300 text-[10px] font-bold font-mono">
         {orderKey}
       </span>
     );
@@ -58,7 +58,7 @@ export const OrderBadge: React.FC<OrderBadgeProps> = ({ orderKey, showDetails = 
         </div>
       </div>
 
-      <div className="pt-2 text-[10px] text-slate-400 font-mono space-y-1 border-t border-white/5">
+      <div className="pt-2 text-[10px] text-slate-400 font-mono space-y-1 border-t border-blue-100">
         <p>⚖️ <span className="font-bold">Base légale :</span> {detail.legalBasis}</p>
         <p>📈 <span className="font-bold">Membres inscrits :</span> {detail.memberCount}</p>
         

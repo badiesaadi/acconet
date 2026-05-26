@@ -112,13 +112,13 @@ export const Search: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-[#0B1020] text-slate-100" id="search_page_wrapper">
+    <div className="min-h-screen bg-white text-slate-100" id="search_page_wrapper">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-10">
         
         {/* Editorial Title Section */}
-        <div className="border-b border-white/5 pb-6 space-y-2 text-left rtl:text-right">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#14B8A6] font-bold">Algerian Cabinet Directory</span>
-          <h1 className="text-3xl sm:text-4xl font-serif font-black text-white tracking-tight leading-none mt-1">
+        <div className="border-b border-blue-100 pb-6 space-y-2 text-left rtl:text-right">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-brand-primary font-bold">{language === 'ar' ? 'دليل المهنيين المحاسبيين' : 'Annuaire des Professionnels Comptables'}</span>
+          <h1 className="text-3xl sm:text-4xl font-serif font-black text-slate-900 tracking-tight leading-none mt-1">
             {t('searchTitle')}
           </h1>
           <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest leading-none pt-1">
@@ -151,12 +151,12 @@ export const Search: React.FC = () => {
           <div className="lg:col-span-8 space-y-6">
             
             {/* Status Header above grid */}
-            <div className="bg-[#12182B] border border-white/5 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-classic text-left rtl:text-right">
+            <div className="bg-white border border-blue-100 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-classic text-left rtl:text-right">
               <div className="text-xs font-mono uppercase text-slate-400">
                 {isLoading ? (
                   <span className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-brand-primary animate-ping rounded-full"></span>
-                    Recalculating Cabinet Matches...
+                    جارٍ البحث...
                   </span>
                 ) : (
                   <>
@@ -182,19 +182,19 @@ export const Search: React.FC = () => {
             {isLoading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" id="skeletons_container">
                 {[1, 2, 3, 4].map((n) => (
-                  <div key={n} className="bg-[#12182B] border border-white/5 p-6 space-y-4 rounded-xl animate-pulse">
+                  <div key={n} className="bg-white border border-blue-100 p-6 space-y-4 rounded-xl animate-pulse">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 glass/5 rounded-lg"></div>
+                      <div className="w-12 h-12 bg-blue-50/50 rounded-lg"></div>
                       <div className="space-y-2 flex-1">
-                        <div className="h-3.5 glass/5 rounded w-2/3"></div>
-                        <div className="h-3 glass/5 rounded w-1/3"></div>
+                        <div className="h-3.5 bg-blue-50/50 rounded w-2/3"></div>
+                        <div className="h-3 bg-blue-50/50 rounded w-1/3"></div>
                       </div>
                     </div>
-                    <div className="h-3 glass/5 rounded w-full animate-pulse"></div>
-                    <div className="h-3 glass/5 rounded w-5/6 animate-pulse"></div>
-                    <div className="border-t border-white/5 pt-4 flex justify-between">
-                      <div className="h-4 glass/5 rounded w-1/3"></div>
-                      <div className="h-5 glass/5 rounded w-1/4"></div>
+                    <div className="h-3 bg-blue-50/50 rounded w-full animate-pulse"></div>
+                    <div className="h-3 bg-blue-50/50 rounded w-5/6 animate-pulse"></div>
+                    <div className="border-t border-blue-100 pt-4 flex justify-between">
+                      <div className="h-4 bg-blue-50/50 rounded w-1/3"></div>
+                      <div className="h-5 bg-blue-50/50 rounded w-1/4"></div>
                     </div>
                   </div>
                 ))}
@@ -210,19 +210,19 @@ export const Search: React.FC = () => {
                   </div>
                 ) : (
                   /* Empty state */
-                  <div className="bg-[#12182B] border border-white/5 p-12 rounded-xl text-center space-y-5" id="search_empty_state">
-                    <div className="w-12 h-12 bg-slate-900/40 border border-white/5 text-slate-400 flex items-center justify-center mx-auto text-xl rounded-xl shadow-classic">
+                  <div className="bg-white border border-blue-200 p-12 rounded-xl text-center space-y-5" id="search_empty_state">
+                    <div className="w-12 h-12 bg-blue-50 border border-blue-100 text-slate-400 flex items-center justify-center mx-auto text-xl rounded-xl shadow-classic">
                       🔍
                     </div>
                     <div className="space-y-2">
-                      <h3 className="font-serif font-black text-white text-base">No Matching Cabinet Found</h3>
+                      <h3 className="font-serif font-black text-slate-900 text-base">لم يُعثر على مهني مطابق</h3>
                       <p className="text-slate-400 text-xs leading-relaxed max-w-sm mx-auto font-sans">
                         No certified practitioners met your exact constraints in our active SCF database. Relax maximum fee sliders or remove wilaya constraints.
                       </p>
                     </div>
                     <button 
                       onClick={handleResetFilters}
-                      className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white font-mono text-[10px] font-bold uppercase tracking-widest cursor-pointer rounded-lg"
+                      className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-slate-900 font-mono text-[10px] font-bold uppercase tracking-widest cursor-pointer rounded-lg"
                     >
                       Reset Filter Parameters
                     </button>
@@ -232,11 +232,11 @@ export const Search: React.FC = () => {
             )}
 
             {/* Regulatory Citation Directive */}
-            <div className="bg-[#12182B] border border-white/5 p-5 gap-3 text-xs text-slate-300 rounded-xl flex text-left rtl:text-right">
+            <div className="bg-white border border-blue-200 p-5 gap-3 text-xs text-slate-300 rounded-xl flex text-left rtl:text-right">
               <Info className="w-5 h-5 text-brand-primary shrink-0 mt-0.5 animate-pulse" />
               <div className="space-y-1.5">
-                <span className="text-[9px] font-mono uppercase tracking-widest text-[#14B8A6] font-bold block">National Accreditation Fact</span>
-                <p className="font-serif font-bold text-white text-xs leading-none">Ordre National des Experts Comptables (ONCC) alignment</p>
+                <span className="text-[9px] font-mono uppercase tracking-widest text-brand-primary font-bold block">National Accreditation Fact</span>
+                <p className="font-serif font-bold text-slate-900 text-xs leading-none">Ordre National des Experts Comptables (ONCC) alignment</p>
                 <p className="text-[11px] leading-relaxed text-slate-400">
                   All accounting practitioners referenced on AccoNet maintain active registrations across Algerian regional fiscal boards. In accordance with standard Finance Law revisions, engagement with certified experts completely satisfied administrative filing compliance.
                 </p>

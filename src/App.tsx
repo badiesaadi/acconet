@@ -24,7 +24,7 @@ const GlobalNotification: React.FC = () => {
 
   return (
     <div className="fixed inset-0 bg-black/55 z-55 flex items-center justify-center p-4 animate-fade-in" id="global_notification_overlay">
-      <div className="glass rounded-2xl max-w-sm w-full p-6 text-center space-y-4 border border-white/5 shadow-2xl animate-scale-up">
+      <div className="glass rounded-2xl max-w-sm w-full p-6 text-center space-y-4 border border-blue-100 shadow-2xl animate-scale-up">
         
         {/* Animated Check */}
         <div className="w-16 h-16 bg-brand-light text-brand-primary rounded-full flex items-center justify-center mx-auto text-3xl shadow-sm border border-brand-primary/20">

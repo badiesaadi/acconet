@@ -45,11 +45,11 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
   ];
 
   return (
-    <div className="bg-[#12182B] border border-white/5 p-6 shadow-glow sticky top-24 text-left rtl:text-right rounded-xl" id="search_filters_sidebar">
+    <div className="bg-white border border-blue-100 p-6 shadow-glow sticky top-24 text-left rtl:text-right rounded-xl" id="search_filters_sidebar">
       
       {/* Filters Title & Reset */}
-      <div className="flex justify-between items-center pb-4 border-b border-white/5 mb-6">
-        <h3 className="font-serif font-black text-white text-base flex items-center gap-2">
+      <div className="flex justify-between items-center pb-4 border-b border-blue-100 mb-6">
+        <h3 className="font-serif font-black text-slate-900 text-base flex items-center gap-2">
           <Sliders className="w-4.5 h-4.5 text-brand-primary" />
           {t('filterBy')}
         </h3>
@@ -73,13 +73,13 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="w-full bg-slate-900/40 border border-white/10 text-xs px-3 py-2 text-slate-300 focus:outline-none focus:border-brand-primary rounded-lg font-sans cursor-pointer"
+            className="w-full bg-blue-50 border border-blue-200 text-xs px-3 py-2 text-slate-300 focus:outline-none focus:border-brand-primary rounded-lg font-sans cursor-pointer"
             id="sort_by_dropdown"
           >
-            <option value="rating" className="bg-[#12182B] text-white">{t('sortRating')}</option>
-            <option value="price-asc" className="bg-[#12182B] text-white">{t('sortPriceAsc')}</option>
-            <option value="price-desc" className="bg-[#12182B] text-white">{t('sortPriceDesc')}</option>
-            <option value="experience" className="bg-[#12182B] text-white">{t('sortExperience')}</option>
+            <option value="rating" className="bg-white text-slate-900">{t('sortRating')}</option>
+            <option value="price-asc" className="bg-white text-slate-900">{t('sortPriceAsc')}</option>
+            <option value="price-desc" className="bg-white text-slate-900">{t('sortPriceDesc')}</option>
+            <option value="experience" className="bg-white text-slate-900">{t('sortExperience')}</option>
           </select>
         </div>
 
@@ -91,12 +91,12 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <select 
             value={selectedWilaya}
             onChange={(e) => setSelectedWilaya(Number(e.target.value))}
-            className="w-full bg-slate-900/40 border border-white/10 text-xs px-3 py-2 text-slate-300 focus:outline-none focus:border-brand-primary rounded-lg font-sans cursor-pointer"
+            className="w-full bg-blue-50 border border-blue-200 text-xs px-3 py-2 text-slate-300 focus:outline-none focus:border-brand-primary rounded-lg font-sans cursor-pointer"
             id="filter_wilaya_select"
           >
-            <option value={0} className="bg-[#12182B] text-white">📍 {t('allWilayas')}</option>
+            <option value={0} className="bg-white text-slate-900">📍 {t('allWilayas')}</option>
             {wilayas.map((w) => (
-              <option key={w.id} value={w.id} className="bg-[#12182B] text-white">
+              <option key={w.id} value={w.id} className="bg-white text-slate-900">
                 {w.code} - {tObj(w.name)}
               </option>
             ))}
@@ -111,7 +111,7 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <div className="space-y-1.5 max-h-[160px] overflow-y-auto pr-1">
             <button
               onClick={() => setSelectedSpecialty("")}
-              className={`w-full flex items-center justify-between text-left rtl:text-right text-xs px-3 py-2 rounded-lg border transition ${selectedSpecialty === "" ? 'bg-brand-primary/10 border-brand-primary/50 text-brand-primary font-bold' : 'border-white/5 hover:glass/5 text-slate-400'}`}
+              className={`w-full flex items-center justify-between text-left rtl:text-right text-xs px-3 py-2 rounded-lg border transition ${selectedSpecialty === "" ? 'bg-brand-primary/10 border-brand-primary/50 text-brand-primary font-bold' : 'border-blue-100 hover:bg-blue-50 text-slate-400'}`}
             >
               <span>{t('allSpecialties')}</span>
               {selectedSpecialty === "" && <Check className="w-3.5 h-3.5 text-brand-primary" />}
@@ -120,7 +120,7 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
               <button
                 key={spec}
                 onClick={() => setSelectedSpecialty(spec)}
-                className={`w-full flex items-center justify-between text-left rtl:text-right text-xs px-3 py-2 rounded-lg border transition ${selectedSpecialty === spec ? 'bg-brand-primary/10 border-brand-primary/50 text-brand-primary font-bold' : 'border-white/5 hover:glass/5 text-slate-400'}`}
+                className={`w-full flex items-center justify-between text-left rtl:text-right text-xs px-3 py-2 rounded-lg border transition ${selectedSpecialty === spec ? 'bg-brand-primary/10 border-brand-primary/50 text-brand-primary font-bold' : 'border-blue-100 hover:bg-blue-50 text-slate-400'}`}
               >
                 <span>{tSpec(spec)}</span>
                 {selectedSpecialty === spec && <Check className="w-3.5 h-3.5 text-brand-primary" />}
@@ -163,10 +163,10 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
               <button
                 key={rating}
                 onClick={() => setMinRating(rating)}
-                className={`py-2 border text-xs font-mono font-bold text-center cursor-pointer transition flex flex-col items-center justify-center rounded-lg ${minRating === rating ? 'bg-brand-primary border-brand-primary text-white shadow-glow' : 'border-white/5 hover:glass/5 text-slate-400 bg-slate-900/20'}`}
+                className={`py-2 border text-xs font-mono font-bold text-center cursor-pointer transition flex flex-col items-center justify-center rounded-lg ${minRating === rating ? 'bg-brand-primary border-brand-primary text-white shadow-glow' : 'border-blue-100 hover:bg-blue-50 text-slate-400 bg-slate-900/20'}`}
                 title={`Show professionals rated ${rating}+`}
               >
-                <Star className={`w-3 h-3 mb-0.5 ${minRating === rating ? 'fill-slate-950 text-white' : 'text-amber-500 fill-amber-500'}`} />
+                <Star className={`w-3 h-3 mb-0.5 ${minRating === rating ? 'fill-slate-950 text-slate-900' : 'text-amber-500 fill-amber-500'}`} />
                 <span>{rating}</span>
               </button>
             ))}
@@ -174,13 +174,13 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
         </div>
 
         {/* Available Immediately toggle */}
-        <div className="pt-4 border-t border-white/5">
+        <div className="pt-4 border-t border-blue-100">
           <label className="flex items-center gap-3 cursor-pointer select-none">
             <input 
               type="checkbox" 
               checked={onlyAvailable}
               onChange={(e) => setOnlyAvailable(e.target.checked)}
-              className="w-4 h-4 text-brand-primary accent-brand-primary cursor-pointer border-white/10 bg-transparent rounded"
+              className="w-4 h-4 text-brand-primary accent-brand-primary cursor-pointer border-blue-200 bg-transparent rounded"
               id="filter_availability_checkbox"
             />
             <span className="text-xs font-semibold text-slate-300">

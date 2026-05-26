@@ -18,7 +18,7 @@ export const specialtiesTranslations = {
     en: "Statutory Auditor"
   },
   "certified-accountant": {
-    ar: "خبير محاسب",
+    ar: "مهني محاسب",
     fr: "Expert-Comptable",
     en: "Chartered Accountant"
   },
@@ -28,7 +28,7 @@ export const specialtiesTranslations = {
     en: "Tax Consultant"
   },
   "judicial-expert": {
-    ar: "خبير قضائي",
+    ar: "مهني قضائي",
     fr: "Expert Judiciaire",
     en: "Judicial Expert"
   }
@@ -44,16 +44,16 @@ export const translations: TranslationDictionary = {
   brandSlogan: {
     ar: "أول منصة رقمية لمهنيي المحاسبة والجباية في الجزائر",
     fr: "1ère plateforme des professionnels du chiffre et de la fiscalité en Algérie",
-    en: "Algeria's 1st digital network for accounting & tax professionals"
+    en: "منصة رقمية تربط المهنيين المحاسبيين بالمتعاملين الاقتصاديين"
   },
   findProButton: {
-    ar: "إيجاد خبير",
-    fr: "Trouver un Expert",
-    en: "Find an Expert"
+    ar: "إيجاد مهني",
+    fr: "Trouver un Professionnel",
+    en: "Find a Professional"
   },
   joinAsProButton: {
-    ar: "انضمام كخبير",
-    fr: "Rejoindre comme Pro",
+    ar: "انضمام كمهني",
+    fr: "Rejoindre en tant que Pro",
     en: "Join as Pro"
   },
   toolsLink: {
@@ -89,12 +89,12 @@ export const translations: TranslationDictionary = {
 
   // Landing Page Hero
   heroTitle: {
-    ar: "جد أفضل الشركاء المالييين والمحاسبيين لشركتك في الجزائر",
+    ar: "جد أفضل المهنيين من مجال المحاسبة في الجزائر",
     fr: "Trouvez le meilleur partenaire comptable & fiscal pour votre entreprise en Algérie",
     en: "Find the Best Accounting & Tax Partners for Your Business in Algeria"
   },
   heroSubtitle: {
-    ar: "منصة تربط بين المصانع، المؤسسات الناشئة والمصالح الحرة مع مكاتب خبرة محاسبية ومستشارين جبائيين معتمدين عبر 48 ولاية.",
+    ar: "منصة تربط بين المهنيين والمتعاملين الاقتصاديين عبر 69 ولاية",
     fr: "Une plateforme d'élite reliant PME, startups et coopératives avec des experts-comptables agréés et conseillers fiscaux sur les 48 wilayas.",
     en: "An elite platform connecting SMEs, startups, and agricultural coops with certified chartered accountants and tax advisers across all 48 wilayas."
   },
@@ -121,7 +121,7 @@ export const translations: TranslationDictionary = {
 
   // Stats Counters
   statPros: {
-    ar: "+120 خبير معتمد",
+    ar: "+120 مهني معتمد",
     fr: "+120 Experts Agréés",
     en: "+120 Approved Experts"
   },
@@ -131,9 +131,9 @@ export const translations: TranslationDictionary = {
     en: "Registered in national boards"
   },
   statWilayas: {
-    ar: "48 ولاية مغطاة",
+    ar: "69 ولاية مغطاة",
     fr: "48 Wilayas Couvertes",
-    en: "48 Wilayas Covered"
+    en: "69 Wilayas Covered"
   },
   statWilayasSub: {
     ar: "من العاصمة إلى تمنراست",
@@ -321,7 +321,7 @@ export const translations: TranslationDictionary = {
 
   // Professional Profile Page
   tabAbout: {
-    ar: "حول الخبير",
+    ar: "حول المهني",
     fr: "À propos",
     en: "About"
   },
@@ -341,7 +341,7 @@ export const translations: TranslationDictionary = {
     en: "Professional Timeline"
   },
   hireMeNow: {
-    ar: "طلب توظيف الخبير",
+    ar: "طلب توظيف المهني",
     fr: "Embaucher l'Expert",
     en: "Hire This Expert"
   },
@@ -378,7 +378,7 @@ export const translations: TranslationDictionary = {
 
   // Client Dashboard
   clientWelcome: {
-    ar: "أهلاً بك، مصالح الإدارة لـ",
+    ar: "أهلاً بك،",
     fr: "Bienvenue, Espace Administration -",
     en: "Welcome, Corporate Administration Area -"
   },
@@ -430,7 +430,7 @@ export const translations: TranslationDictionary = {
 
   // Professional Dashboard
   proWelcome: {
-    ar: "مرحبًا بك في فضاء الخبراء، الأستاذ",
+    ar: "مرحبًا بك، الأستاذ",
     fr: "Espace Professionnel - Cabinet de Me.",
     en: "Professional Workspace - Office of Mr/Ms."
   },
@@ -534,7 +534,7 @@ export const translations: TranslationDictionary = {
     en: "Business/SME Director (Looking to Hire)"
   },
   isProLabel: {
-    ar: "مهني معتمد ورأس مال مالي (خبير)",
+    ar: "مهني معتمد ورأس مال مالي",
     fr: "Professionnel de comptabilité (offre des services)",
     en: "Certified Accounting Professional (Offering Services)"
   },
@@ -601,7 +601,7 @@ export const translations: TranslationDictionary = {
     en: "Hire Request Dispatched Successfully!"
   },
   alertHireSuccessBody: {
-    ar: "لقد تم إرسال مسودة العقد المبدئية وقيمتها للخبير. سيقوم بمراجعة طلبك خلال 24 ساعة والتواصل معكم.",
+    ar: "لقد تم إرسال مسودة العقد المبدئية وقيمتها للمهني. سيقوم بمراجعة طلبك خلال 24 ساعة والتواصل معكم.",
     fr: "Votre brouillon de contrat a été envoyé à l'expert. Il examinera votre proposition sous 24h.",
     en: "Your draft engagement proposal has been dispatched. The expert will review and reply within 24 hours."
   },
@@ -611,7 +611,7 @@ export const translations: TranslationDictionary = {
     en: "Message Sent Successfully!"
   },
   alertMessageSuccessBody: {
-    ar: "تم تسليم استفسارك لصندوق التراسل السريع الخاص بالخبير. ستصلك الإشعارات فور الرد.",
+    ar: "تم تسليم استفسارك لصندوق التراسل السريع الخاص بالمهني. ستصلك الإشعارات فور الرد.",
     fr: "Votre message est maintenant visible dans l'espace de messagerie de l'expert.",
     en: "Your query has been sent to the expert's mailbox. You'll receive real-time updates as they respond."
   },
@@ -668,7 +668,7 @@ export const translations: TranslationDictionary = {
     en: "Client Business"
   },
   accountantProLabel: {
-    ar: "محاسب خبير",
+    ar: "محاسب مهني",
     fr: "Expert Comptable",
     en: "Accountant Pro"
   },
@@ -690,7 +690,7 @@ export const translations: TranslationDictionary = {
     en: "First Digital Accounting Platform • AccoNet"
   },
   heroConsultantCard: {
-    ar: "بطاقة الخبير النشط",
+    ar: "بطاقة المهني النشط",
     fr: "Fiche du Consultant Actif",
     en: "Active Consultant Card"
   },
@@ -699,8 +699,8 @@ export const translations: TranslationDictionary = {
     fr: "Disponible immédiatement",
     en: "Available Immediately"
   },
-  contactTheExpert: {
-    ar: "اتصل بالخبير",
+  contactThePro: {
+    ar: "اتصل بالمهني",
     fr: "Contacter l'expert",
     en: "Contact the Expert"
   },
@@ -752,7 +752,7 @@ export const translations: TranslationDictionary = {
   nationalCoverageTitle: {
     ar: "تغطية وطنية كاملة",
     fr: "48 Wilayas d'Algérie",
-    en: "48 Wilayas Covered"
+    en: "69 Wilayas Covered"
   },
   fromNorthToSouth: {
     ar: "من الشمال إلى أقصى الجنوب الجزائري",
@@ -810,7 +810,7 @@ export const translations: TranslationDictionary = {
     en: "Featured National Order Profiles"
   },
   featuredProsSub: {
-    ar: "أعضاء نشطون معتمدون. يتوفر كل خبير على ملف تعريف مرخص مع رقم التوثيق وعينات مراجعات أصحاب الأعمال الصاعدة.",
+    ar: "أعضاء نشطون معتمدون. يتوفر كل مهني على ملف تعريف مرخص مع رقم التوثيق وعينات مراجعات أصحاب الأعمال الصاعدة.",
     fr: "Membres actifs confirmés. Chaque professionnel dispose d'un profil d'exercice avec numéro d'accréditation vérifié et avis d'entrepreneurs locaux.",
     en: "Confirmed active professional members. Each expert has a licensed practicing profile with a verified accreditation number and client reviews."
   },
@@ -988,11 +988,6 @@ export const translations: TranslationDictionary = {
     fr: "Cabinets Agréés Enregistrés",
     en: "Registered Practicing Cabinets"
   },
-  onccRegistered: {
-    ar: "مسجل بالمنظمة الوطنية",
-    fr: "ENREGISTRÉS A L'ONCP / ONCC",
-    en: "OFFICIALLY ACCREDITED"
-  },
   nationalSmeEnrolment: {
     ar: "المؤسسات والشركات النشطة المسجلة",
     fr: "PME & Startups Affiliées",
@@ -1090,3 +1085,4 @@ export const translations: TranslationDictionary = {
     en: "All rights reserved. Styled with pride for Algerian entrepreneurs & finance agents."
   }
 };
+

@@ -39,10 +39,10 @@ export const ProfessionalProfile: React.FC = () => {
     return (
       <div className="max-w-7xl mx-auto px-4 py-20 text-center space-y-4">
         <AlertCircle className="w-12 h-12 text-red-500 mx-auto" />
-        <h2 className="font-serif font-semibold text-xl text-white">Cabinet expert not found</h2>
+        <h2 className="font-serif font-semibold text-xl text-slate-900">المهني غير موجود</h2>
         <button 
           onClick={() => navigate('/search')}
-          className="px-5 py-2.5 bg-brand-primary text-white text-xs font-mono uppercase tracking-widest cursor-pointer"
+          className="px-5 py-2.5 bg-brand-primary text-slate-900 text-xs font-mono uppercase tracking-widest cursor-pointer"
         >
           Return to directory
         </button>
@@ -112,18 +112,18 @@ export const ProfessionalProfile: React.FC = () => {
         <div className="lg:col-span-8 space-y-6">
           
           {/* Main Professional Header block */}
-          <div className="glass border border-white/5 p-6 sm:p-8 relative text-left rtl:text-right">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 sm:p-8 relative text-left rtl:text-right">
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
               
               {/* Visual avatar with initials */}
-              <div className={`w-16 h-16 rounded-xl flex items-center justify-center font-bold text-xl tracking-widest ${pro.avatarBg} shrink-0 border border-white/5/60`}>
+              <div className={`w-16 h-16 rounded-xl flex items-center justify-center font-bold text-xl tracking-widest ${pro.avatarBg} shrink-0 border border-blue-100/60`}>
                 {pro.initials}
               </div>
 
               {/* Bio & names */}
               <div className="space-y-2 flex-1">
                 <div className="flex flex-wrap items-center gap-3">
-                  <h1 className="text-2xl sm:text-3xl font-serif font-black text-white tracking-tight leading-none">
+                  <h1 className="text-2xl sm:text-3xl font-serif font-black text-slate-900 tracking-tight leading-none">
                     {tObj(pro.name)}
                   </h1>
                   
@@ -133,14 +133,14 @@ export const ProfessionalProfile: React.FC = () => {
                       {t('availableStatus').toUpperCase()}
                     </span>
                   ) : (
-                    <span className="px-2 py-0.5 glass/5 border border-white/10 text-slate-500 text-[10px] font-mono">
+                    <span className="px-2 py-0.5 bg-blue-50/50 border border-blue-200 text-slate-500 text-[10px] font-mono">
                       {t('busyStatus').toUpperCase()}
                     </span>
                   )}
                 </div>
 
                 <div className="flex flex-wrap items-center gap-y-1.5 gap-x-4 text-xs text-slate-400 font-sans">
-                  <span className="px-2 py-0.5 bg-[#0B1020] border border-white/5 text-brand-primary text-[10px] font-semibold">
+                  <span className="px-2 py-0.5 bg-white border border-blue-100 text-brand-primary text-[10px] font-semibold">
                     {tSpec(pro.specialty)}
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -159,7 +159,7 @@ export const ProfessionalProfile: React.FC = () => {
                       <Star key={s} className="w-3.5 h-3.5 fill-brand-accent text-brand-accent shrink-0" />
                     ))}
                   </div>
-                  <span className="font-extrabold text-white font-mono">{pro.rating}</span>
+                  <span className="font-extrabold text-slate-900 font-mono">{pro.rating}</span>
                   <span className="text-slate-500">({pro.reviewCount} verified reviews)</span>
                 </div>
 
@@ -169,7 +169,7 @@ export const ProfessionalProfile: React.FC = () => {
           </div>
 
           {/* TAB TRIGGERS BAR */}
-          <div className="border-b border-white/5 flex space-x-6 rtl:space-x-reverse text-xs font-mono uppercase tracking-wider">
+          <div className="border-b border-blue-100 flex space-x-6 rtl:space-x-reverse text-xs font-mono uppercase tracking-wider">
             <button
               onClick={() => setActiveTab('about')}
               className={`pb-3 relative transition-all cursor-pointer ${activeTab === 'about' ? 'text-brand-primary font-bold border-b-2 border-brand-primary' : 'text-slate-400 hover:text-brand-primary'}`}
@@ -197,29 +197,29 @@ export const ProfessionalProfile: React.FC = () => {
           </div>
 
           {/* TAB DETAILED CONTENTS */}
-          <div className="glass border border-white/5 p-6 shadow-classic min-h-[300px] text-left rtl:text-right">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 shadow-classic min-h-[300px] text-left rtl:text-right">
             
             {/* ABOUT TAB */}
             {activeTab === 'about' && (
               <div className="space-y-6" id="tab_content_about">
                 <div className="space-y-2">
-                  <h3 className="font-serif font-bold text-white text-sm">{direction === 'rtl' ? 'السيرة المهنية للعلبة' : 'Cabinet Bio-Syllabus'}</h3>
+                  <h3 className="font-serif font-bold text-slate-900 text-sm">{direction === 'rtl' ? 'السيرة المهنية للعلبة' : 'السيرة المهنية'}</h3>
                   <p className="text-slate-300 text-xs sm:text-sm leading-relaxed whitespace-pre-line font-sans">
                     {tObj(pro.bio)}
                   </p>
                 </div>
 
                 {/* Local statistics grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/5">
-                  <div className="bg-[#0B1020] border border-white/5 p-4 text-center">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-blue-100">
+                  <div className="bg-white border border-blue-100 p-4 text-center">
                     <p className="text-2xl font-serif font-black text-brand-primary font-mono">{pro.yearsExperience}+</p>
                     <p className="text-[9px] text-slate-500 uppercase font-mono mt-1">{t('expYears').split(' ')[1]} of practice</p>
                   </div>
-                  <div className="bg-[#0B1020] border border-white/5 p-4 text-center">
+                  <div className="bg-white border border-blue-100 p-4 text-center">
                     <p className="text-2xl font-serif font-black text-brand-primary font-mono">{pro.clientsServed}</p>
                     <p className="text-[9px] text-slate-500 uppercase font-mono mt-1">{t('profileStatsServed')}</p>
                   </div>
-                  <div className="bg-[#0B1020] border border-white/5 p-4 text-center">
+                  <div className="bg-white border border-blue-100 p-4 text-center">
                     <p className="text-2xl font-serif font-black text-brand-primary font-mono">{pro.completionRate}%</p>
                     <p className="text-[9px] text-slate-500 uppercase font-mono mt-1">{t('profileStatsCompleted')}</p>
                   </div>
@@ -235,12 +235,12 @@ export const ProfessionalProfile: React.FC = () => {
                 {pro.services.length > 0 ? (
                   <div className="space-y-4">
                     {pro.services.map((ser, sIdx) => (
-                      <div key={sIdx} className="border border-white/5 p-4 hover:border-brand-primary transition bg-[#0B1020]/25">
+                      <div key={sIdx} className="border border-blue-100 p-4 hover:border-brand-primary transition bg-white/25">
                         <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-2">
-                          <h4 className="font-serif font-bold text-white text-sm">
+                          <h4 className="font-serif font-bold text-slate-900 text-sm">
                             {tObj(ser.title)}
                           </h4>
-                          <span className="px-2 py-0.5 bg-[#0B1020] border border-brand-primary/40 text-brand-primary font-mono text-[11px] font-bold">
+                          <span className="px-2 py-0.5 bg-white border border-brand-primary/40 text-brand-primary font-mono text-[11px] font-bold">
                             {ser.price}
                           </span>
                         </div>
@@ -267,7 +267,7 @@ export const ProfessionalProfile: React.FC = () => {
                       <div key={rev.id} className="pt-4 first:pt-0 space-y-2">
                         <div className="flex justify-between items-center">
                           <div>
-                            <h4 className="font-serif font-bold text-white text-xs">{rev.clientName}</h4>
+                            <h4 className="font-serif font-bold text-slate-900 text-xs">{rev.clientName}</h4>
                             <p className="text-[10px] text-slate-500 font-mono">{rev.date}</p>
                           </div>
                           
@@ -301,17 +301,17 @@ export const ProfessionalProfile: React.FC = () => {
                 <p className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">OFFICIAL RECOGNITIONS & CERTIFICATIONS</p>
                 
                 {pro.history.length > 0 ? (
-                  <div className="relative border-l rtl:border-l-0 rtl:border-r border-white/5 mt-2 space-y-6 pl-4 rtl:pl-0 rtl:pr-4">
+                  <div className="relative border-l rtl:border-l-0 rtl:border-r border-blue-100 mt-2 space-y-6 pl-4 rtl:pl-0 rtl:pr-4">
                     {pro.history.map((hist, hIdx) => (
                       <div key={hIdx} className="relative">
                         {/* Timeline dot */}
                         <div className="absolute -left-6 rtl:-right-6 top-1.5 w-3.5 h-3.5 bg-brand-primary border-4 border-white rounded-xl"></div>
                         
-                        <span className="text-[10px] font-bold text-brand-primary font-mono bg-[#E1F5EE] px-2 py-0.5 border border-[#0F6E56]/15">
+                        <span className="text-[10px] font-bold text-brand-primary font-mono bg-[#E1F5EE] px-2 py-0.5 border border-brand-primary/15">
                           {hist.year}
                         </span>
                         
-                        <h4 className="font-serif font-bold text-white text-xs mt-2">
+                        <h4 className="font-serif font-bold text-slate-900 text-xs mt-2">
                           {tObj(hist.title)}
                         </h4>
                         
@@ -337,7 +337,7 @@ export const ProfessionalProfile: React.FC = () => {
 
         {/* RIGHT SIDEBAR PANEL / ACTION CARD (col-span-4) */}
         <div className="lg:col-span-4 sticky top-20 space-y-6">
-          <div className="glass border border-white/5 p-6 shadow-classic space-y-5 text-center">
+          <div className="bg-white border border-blue-100 rounded-xl p-6 shadow-classic space-y-5 text-center">
             
             <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">REFERENCE BRACKET PRICING</div>
             
@@ -348,14 +348,14 @@ export const ProfessionalProfile: React.FC = () => {
               <p className="text-xs text-slate-400 font-mono uppercase">{t('perHour')}</p>
             </div>
 
-            <div className="p-3 bg-[#0B1020] border border-white/5 text-xs text-slate-300 leading-relaxed font-sans text-left rtl:text-right">
+            <div className="p-3 bg-white border border-blue-100 text-xs text-slate-300 leading-relaxed font-sans text-left rtl:text-right">
               💡 {t('contactToDiscuss')}
             </div>
 
             <div className="space-y-2.5 pt-2">
               <button 
                 onClick={() => setHireModalOpen(true)}
-                className="w-full py-3 bg-brand-primary hover:bg-brand-dark text-white text-xs font-mono uppercase tracking-widest transition cursor-pointer flex items-center justify-center gap-1.5"
+                className="w-full py-3 bg-brand-primary hover:bg-brand-dark text-slate-900 text-xs font-mono uppercase tracking-widest transition cursor-pointer flex items-center justify-center gap-1.5"
                 id="profile_hire_now_btn"
               >
                 <UserCheck className="w-4 h-4" />
@@ -364,7 +364,7 @@ export const ProfessionalProfile: React.FC = () => {
 
               <button 
                 onClick={() => setMsgModalOpen(true)}
-                className="w-full py-3 glass border border-white/5 hover:glass/5 text-slate-200 text-xs font-mono uppercase tracking-widest cursor-pointer transition flex items-center justify-center gap-1.5"
+                className="w-full py-3 bg-white border border-blue-100 rounded-xl hover:bg-blue-50 text-slate-200 text-xs font-mono uppercase tracking-widest cursor-pointer transition flex items-center justify-center gap-1.5"
                 id="profile_send_message_btn"
               >
                 <MessageSquare className="w-4 h-4 text-brand-primary" />
@@ -382,10 +382,10 @@ export const ProfessionalProfile: React.FC = () => {
       {/* HIRE NOW ATTACH CONTRACT FORM */}
       {hireModalOpen && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4" id="hire_contract_modal">
-          <div className="glass rounded-xl max-w-lg w-full overflow-hidden shadow-2xl border border-white/5 flex flex-col justify-between">
+          <div className="glass rounded-xl max-w-lg w-full overflow-hidden shadow-2xl border border-blue-100 flex flex-col justify-between">
             
             {/* Modal Header */}
-            <div className="bg-[#0B1020] text-white p-5 flex justify-between items-center">
+            <div className="bg-brand-primary text-white p-5 flex justify-between items-center">
               <div>
                 <h3 className="font-serif font-bold text-sm tracking-wide">{t('hireMeNow')}</h3>
                 <p className="text-[10px] text-brand-accent font-mono mt-0.5 uppercase tracking-wider">PROPOSAL FORM FOR {currentClient?.companyName || 'Dzair Tech Link'}</p>
@@ -408,7 +408,7 @@ export const ProfessionalProfile: React.FC = () => {
                   placeholder="e.g. 2026 Monthly VAT filing & Ledger Auditing"
                   value={contractTitle}
                   onChange={(e) => setContractTitle(e.target.value)}
-                  className="w-full border border-white/5 rounded-xl px-3 py-2 text-xs text-slate-200 bg-[#0B1020] focus:outline-none focus:border-brand-primary focus:glass font-sans"
+                  className="w-full border border-blue-100 rounded-xl px-3 py-2 text-xs text-slate-200 bg-white focus:outline-none focus:border-brand-primary focus:glass font-sans"
                 />
               </div>
 
@@ -419,7 +419,7 @@ export const ProfessionalProfile: React.FC = () => {
                   placeholder={`Standard DZD ${(pro.hourlyRate * 30).toLocaleString()}`}
                   value={proposedBudget}
                   onChange={(e) => setProposedBudget(e.target.value)}
-                  className="w-full border border-white/5 rounded-xl px-3 py-2 text-xs font-mono text-slate-200 bg-[#0B1020] focus:outline-none focus:border-brand-primary focus:glass"
+                  className="w-full border border-blue-100 rounded-xl px-3 py-2 text-xs font-mono text-slate-200 bg-white focus:outline-none focus:border-brand-primary focus:glass"
                 />
                 <span className="text-[9px] text-slate-500 font-mono tracking-tight block">Leave empty to auto-apply flat monthly rate.</span>
               </div>
@@ -431,11 +431,11 @@ export const ProfessionalProfile: React.FC = () => {
                   placeholder="Specify list of deliverables like CNAS, monthly G50 filings etc."
                   value={scopeDetails}
                   onChange={(e) => setScopeDetails(e.target.value)}
-                  className="w-full border border-white/5 rounded-xl px-3 py-2 text-xs text-slate-200 bg-[#0B1020] focus:outline-none focus:border-brand-primary focus:glass resize-none font-sans"
+                  className="w-full border border-blue-100 rounded-xl px-3 py-2 text-xs text-slate-200 bg-white focus:outline-none focus:border-brand-primary focus:glass resize-none font-sans"
                 />
               </div>
 
-              <div className="glass-dark p-3 text-[10px] text-slate-300 leading-normal border border-white/5 flex gap-2">
+              <div className="glass-dark p-3 text-[10px] text-slate-300 leading-normal border border-blue-100 flex gap-2">
                 <BookmarkCheck className="w-4 h-4 text-brand-primary shrink-0 mt-0.5" />
                 <span>By submitting, you draft a sample proposal instantly appended onto your client dashboard contract sheet.</span>
               </div>
@@ -450,7 +450,7 @@ export const ProfessionalProfile: React.FC = () => {
                 </button>
                 <button 
                   type="submit" 
-                  className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white font-mono uppercase tracking-widest cursor-pointer"
+                  className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-slate-900 font-mono uppercase tracking-widest cursor-pointer"
                   id="confirm_hire_modal_btn"
                 >
                   SUBMIT ENGAGEMENT LETTER
@@ -466,9 +466,9 @@ export const ProfessionalProfile: React.FC = () => {
       {/* SEND MESSAGE DIALOG FORM */}
       {msgModalOpen && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center px-4" id="message_sender_modal">
-          <div className="glass rounded-xl max-w-md w-full overflow-hidden shadow-2xl border border-white/5">
+          <div className="glass rounded-xl max-w-md w-full overflow-hidden shadow-2xl border border-blue-100">
             
-            <div className="bg-[#0B1020] text-white p-5 flex justify-between items-center">
+            <div className="bg-brand-primary text-white p-5 flex justify-between items-center">
               <div>
                 <h3 className="font-serif font-bold text-sm tracking-wide">{t('sendMessage')}</h3>
                 <p className="text-[10px] text-brand-accent font-mono mt-0.5 uppercase tracking-wider">Direct query to center</p>
@@ -488,7 +488,7 @@ export const ProfessionalProfile: React.FC = () => {
                   placeholder={`e.g. Salam, we want to initiate tax advisory in ${tObj(pro.wilayaName)}. What documentation is required?`}
                   value={msgText}
                   onChange={(e) => setMsgText(e.target.value)}
-                  className="w-full border border-white/5 rounded-xl p-3 text-xs text-slate-200 bg-[#0B1020] focus:outline-none focus:border-brand-primary focus:glass resize-none"
+                  className="w-full border border-blue-100 rounded-xl p-3 text-xs text-slate-200 bg-white focus:outline-none focus:border-brand-primary focus:glass resize-none"
                 />
               </div>
 
@@ -502,7 +502,7 @@ export const ProfessionalProfile: React.FC = () => {
                 </button>
                 <button 
                   type="submit" 
-                  className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-white font-mono uppercase tracking-widest cursor-pointer"
+                  className="px-5 py-2.5 bg-brand-primary hover:bg-brand-dark text-slate-900 font-mono uppercase tracking-widest cursor-pointer"
                   id="confirm_message_modal_btn"
                 >
                   SEND ENQUIRY

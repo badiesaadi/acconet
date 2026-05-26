@@ -36,35 +36,35 @@ export const Tools: React.FC = () => {
       title: { ar: "محلل الفواتير الذكي وعلامات المدفوعات", fr: "OCR Invoice Receipt Parser", en: "OCR Invoice Receipt Parser" },
       desc: { ar: "التقاط أرقام النيف NIF والتصاريح الجبائية وعجز الحساب وقيمة الضرائب من الصور والملفات تلقائياً.", fr: "Extraction automatisée des NIF, TVA, ICE et montants TTC à partir des scans PDF d'achats locaux.", en: "Automated extraction of local Algerian Supplier NIF, VAT brackets, and final cash sums from PDF scans." },
       icon: FileText,
-      color: "bg-[#12182B] border-white/5 text-teal-400"
+      color: "bg-white border-blue-100 text-teal-400"
     },
     {
       id: 2,
       title: { ar: "محاكي احتساب معدلات ضرائب G50", fr: "Algerian G50 Tax Formula Simulator", en: "Algerian G50 Tax Formula Simulator" },
       desc: { ar: "توليد تلقائي لتقديرات TAP ورسوم الطوابع واقتطاعات الأجور عير خوارزمية ذكية مطابقة لقانون المالية.", fr: "Modélisation des taxes TAP (1.5%/1%), de l'IRG sur salaires et droits de douanes en temps réel.", en: "Live estimation of G50 monthly Turn-over tax (TAP), wage withholdings (IRG), and VAT rates under modern Finance Acts." },
       icon: Database,
-      color: "bg-[#12182B] border-white/5 text-amber-400"
+      color: "bg-white border-blue-100 text-amber-400"
     },
     {
       id: 3,
       title: { ar: "مكشاف ثغرات موازين المراجعة والأخطاء", fr: "Trial Balance Audit Scan", en: "Trial Balance Audit Scan" },
       desc: { ar: "مراجعة كشوف الأرباح والمخازن والتحقق من التناسق الحسابي للوقاية من تعديل الضرائب المفاجئ.", fr: "Révélateur automatisé d'écarts de débit/crédit et de comptes d'attente anormaux.", en: "Schedules automated checking of client trial balance ledgers for unbacked debits, suspicious suspense flows, or miscoded credits." },
       icon: ShieldAlert,
-      color: "bg-[#12182B] border-white/5 text-rose-400"
+      color: "bg-white border-blue-100 text-rose-400"
     },
     {
       id: 4,
       title: { ar: "محلل مالي للشركات الصاعدة", fr: "AI Executive Strategic Analyst", en: "AI Executive Strategic Analyst" },
       desc: { ar: "استشارات مالية مخصصة لتحسين التكاليف وتحقيق الاستقرار تتماشى مع طبيعة النشاط التجاري والمقر.", fr: "Génération de diagnostics de trésorerie sur-mesure et d'opportunités d'optimisation d'impôts.", en: "Tailored strategic reports mapping operating cash flow optimization and active tax credit schemes for SME sectors." },
       icon: Cpu,
-      color: "bg-[#12182B] border-white/5 text-sky-400"
+      color: "bg-white border-blue-100 text-sky-400"
     },
     {
       id: 5,
       title: { ar: "صندوق تبادل الملفات الآمن المشفر", fr: "Secure Encrypted Document Locker", en: "Secure Encrypted Document Locker" },
       desc: { ar: "آلية لتبادل الوثائق المحاسبية مع الخبراء والشركاء بتشفير كامل يضمن سرية الأرقام والمكاسب.", fr: "Coffre-fort d'échange de liasses de clôture chiffrées à destination directe de votre expert.", en: "Encrypted upload locker to dispatch sensitive PDF balance sheets to your assigned accounting cabinet." },
       icon: Eye,
-      color: "bg-[#12182B] border-white/5 text-purple-400"
+      color: "bg-white border-blue-100 text-purple-400"
     }
   ];
 
@@ -148,11 +148,11 @@ LOCAL RECOMMENDATIONS:
   };
 
   return (
-    <div className="min-h-screen bg-[#0B1020] text-slate-100" id="tools_page_wrapper">
+    <div className="min-h-screen bg-white text-slate-100" id="tools_page_wrapper">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-10">
         
         {/* Title Header */}
-        <div className="glass p-6 sm:p-8 rounded-2xl text-center space-y-4 border border-white/5 relative overflow-hidden backdrop-blur-md">
+        <div className="glass p-6 sm:p-8 rounded-2xl text-center space-y-4 border border-blue-100 relative overflow-hidden backdrop-blur-md">
           <div className="absolute top-0 right-1/2 translate-x-1/2 w-48 h-48 bg-brand-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
           
           <div className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded uppercase tracking-wider">
@@ -160,7 +160,7 @@ LOCAL RECOMMENDATIONS:
             <span>{t('interactiveSandboxEngine')}</span>
           </div>
           
-          <h1 className="text-3xl sm:text-4xl font-serif font-black text-white tracking-tight leading-none mt-1">
+          <h1 className="text-3xl sm:text-4xl font-serif font-black text-slate-900 tracking-tight leading-none mt-1">
             {t('aiToolsHeroTitle')}
           </h1>
           
@@ -185,14 +185,14 @@ LOCAL RECOMMENDATIONS:
                     setExpandedTool(tool.id);
                     setSimulationResult(null);
                   }}
-                  className={`border rounded-xl p-5 cursor-pointer transition-all duration-200 ${isExpanded ? 'bg-[#12182B] border-brand-primary/50 shadow-glow ring-1 ring-brand-primary/10' : 'bg-[#12182B]/60 border-white/5 hover:bg-[#12182B] hover:border-white/10'}`}
+                  className={`border rounded-xl p-5 cursor-pointer transition-all duration-200 ${isExpanded ? 'bg-white border-brand-primary/50 shadow-glow ring-1 ring-brand-primary/10' : 'bg-white/60 border-blue-100 hover:bg-white hover:border-blue-200'}`}
                 >
                   <div className="flex justify-between items-center mb-2.5">
                     <div className="flex items-center gap-3">
-                      <div className={`w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center shrink-0 ${tool.color}`}>
+                      <div className={`w-9 h-9 rounded-lg border border-blue-200 flex items-center justify-center shrink-0 ${tool.color}`}>
                         <Icon className="w-4.5 h-4.5" />
                       </div>
-                      <h3 className="font-serif font-bold text-white text-xs sm:text-sm">{tObj(tool.title)}</h3>
+                      <h3 className="font-serif font-bold text-slate-800 text-xs sm:text-sm">{tObj(tool.title)}</h3>
                     </div>
                     
                     {isExpanded ? <ChevronUp className="w-4 h-4 text-brand-primary" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
@@ -207,12 +207,12 @@ LOCAL RECOMMENDATIONS:
           </div>
 
           {/* Right Column (col-span-7) - Live Simulation Interactive Control Window */}
-          <div className="lg:col-span-7 bg-[#12182B] border border-white/5 rounded-2xl p-6 sm:p-8 shadow-classic space-y-6 sticky top-24 text-left rtl:text-right">
+          <div className="lg:col-span-7 bg-white border border-blue-100 rounded-2xl p-6 sm:p-8 shadow-classic space-y-6 sticky top-24 text-left rtl:text-right">
             
             {expandedTool !== null ? (
               <>
                 {/* Dynamic Action Header depending on tool */}
-                <div className="pb-4 border-b border-white/5 flex items-center justify-between gap-3">
+                <div className="pb-4 border-b border-blue-100 flex items-center justify-between gap-3">
                   <div>
                     <h2 className="font-serif font-black text-brand-primary text-sm sm:text-base leading-none">
                       ⚙️ {t('activeSimulator')}: {tObj(toolsList[expandedTool].title)}
@@ -233,7 +233,7 @@ LOCAL RECOMMENDATIONS:
                         rows={3}
                         value={rawEntryText}
                         onChange={(e) => setRawEntryText(e.target.value)}
-                        className="w-full border border-white/10 p-3 rounded-lg text-xs text-white bg-slate-900/40 focus:outline-none focus:border-brand-primary resize-none"
+                        className="w-full border border-blue-200 p-3 rounded-lg text-xs text-white bg-white/40 focus:outline-none focus:border-brand-primary resize-none"
                       />
                     </div>
                   )}
@@ -248,7 +248,7 @@ LOCAL RECOMMENDATIONS:
                             key={f}
                             type="button"
                             onClick={() => setSelectedMockPdf(f)}
-                            className={`p-2.5 text-[10px] border rounded-lg font-mono text-center cursor-pointer transition ${selectedMockPdf === f ? 'bg-brand-primary/10 border-brand-primary text-brand-primary font-bold' : 'border-white/5 hover:glass/5 text-slate-400'}`}
+                            className={`p-2.5 text-[10px] border rounded-lg font-mono text-center cursor-pointer transition ${selectedMockPdf === f ? 'bg-brand-primary/10 border-brand-primary text-brand-primary font-bold' : 'border-blue-100 hover:glass/5 text-slate-400'}`}
                           >
                             📄 {f}
                           </button>
@@ -268,7 +268,7 @@ LOCAL RECOMMENDATIONS:
                             type="text" 
                             value={monthlySales}
                             onChange={(e) => setMonthlySales(e.target.value)}
-                            className="w-full border border-white/10 rounded-lg px-3 py-2 text-xs text-white font-mono bg-slate-900/40 focus:outline-none focus:border-brand-primary"
+                            className="w-full border border-blue-200 rounded-lg px-3 py-2 text-xs text-white font-mono bg-white/40 focus:outline-none focus:border-brand-primary"
                           />
                         </div>
                         <div className="space-y-1">
@@ -277,7 +277,7 @@ LOCAL RECOMMENDATIONS:
                             type="text" 
                             value={monthlyStaffPayroll}
                             onChange={(e) => setMonthlyStaffPayroll(e.target.value)}
-                            className="w-full border border-white/10 rounded-lg px-3 py-2 text-xs text-white font-mono bg-slate-900/40 focus:outline-none focus:border-brand-primary"
+                            className="w-full border border-blue-200 rounded-lg px-3 py-2 text-xs text-white font-mono bg-white/40 focus:outline-none focus:border-brand-primary"
                           />
                         </div>
                       </div>
@@ -292,7 +292,7 @@ LOCAL RECOMMENDATIONS:
                         type="text" 
                         value={rawBalanceState}
                         onChange={(e) => setRawBalanceState(e.target.value)}
-                        className="w-full border border-white/10 rounded-lg px-3 py-2 text-xs text-white font-mono bg-slate-900/40 focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-blue-200 rounded-lg px-3 py-2 text-xs text-white font-mono bg-white/40 focus:outline-none focus:border-brand-primary"
                       />
                     </div>
                   )}
@@ -305,16 +305,16 @@ LOCAL RECOMMENDATIONS:
                         type="text" 
                         value={smeForecastText}
                         onChange={(e) => setSmeForecastText(e.target.value)}
-                        className="w-full border border-white/10 rounded-lg px-3 py-2 text-xs text-white bg-slate-900/40 focus:outline-none focus:border-brand-primary"
+                        className="w-full border border-blue-200 rounded-lg px-3 py-2 text-xs text-white bg-white/40 focus:outline-none focus:border-brand-primary"
                       />
                     </div>
                   )}
 
                   {/* TOOL 5 INPUT */}
                   {expandedTool === 5 && (
-                    <div className="bg-slate-900/45 border border-white/5 rounded-lg p-6 text-center space-y-2">
+                    <div className="bg-white/45 border border-blue-100 rounded-lg p-6 text-center space-y-2">
                       <span className="text-xl">🔒</span>
-                      <p className="text-xs font-bold text-white">financial_statement_draft_2026.pdf</p>
+                      <p className="text-xs font-bold text-slate-700">financial_statement_draft_2026.pdf</p>
                       <p className="text-[10px] text-slate-500 font-mono">{t('fileSizeLockerCapsule')}</p>
                     </div>
                   )}
@@ -327,7 +327,7 @@ LOCAL RECOMMENDATIONS:
                   >
                     {isProcessing ? (
                       <>
-                        <RefreshCw className="w-4 h-4 animate-spin text-white" />
+                        <RefreshCw className="w-4 h-4 animate-spin text-brand-primary" />
                         <span>{t('processingLedgerParams')}</span>
                       </>
                     ) : (
@@ -341,15 +341,15 @@ LOCAL RECOMMENDATIONS:
                 </div>
 
                 {/* OUTPUT WINDOW CONTAINER */}
-                <div className="pt-6 border-t border-white/5 space-y-2.5">
+                <div className="pt-6 border-t border-blue-100 space-y-2.5">
                   <h3 className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest block">{t('simulatedOutput')}</h3>
                   
                   {simulationResult ? (
-                    <div className="bg-slate-950 text-brand-primary font-mono p-4 rounded-xl text-xs overflow-x-auto border border-white/5 leading-relaxed whitespace-pre-wrap min-h-[160px] text-left">
+                    <div className="bg-slate-950 text-brand-primary font-mono p-4 rounded-xl text-xs overflow-x-auto border border-blue-100 leading-relaxed whitespace-pre-wrap min-h-[160px] text-left">
                       {simulationResult}
                     </div>
                   ) : (
-                    <div className="bg-slate-900/20 border border-dashed border-white/5 rounded-xl p-6 flex flex-col items-center justify-center text-center text-slate-500 min-h-[160px]">
+                    <div className="bg-white/20 border border-dashed border-blue-100 rounded-xl p-6 flex flex-col items-center justify-center text-center text-slate-500 min-h-[160px]">
                       <Info className="w-5 h-5 text-brand-primary/30 mb-1 shrink-0" />
                       <p className="text-xs font-sans">{t('provideTransactionInstructions')}</p>
                     </div>

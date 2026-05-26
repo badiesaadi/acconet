@@ -72,7 +72,7 @@ export const professionalOrders: Record<string, OrderDetail> = {
     website: 'www.onec.dz',
     legalBasis: 'Loi 10-01 du 29 juin 2010',
     memberCount: '~4,500 membres',
-    badgeColor: '#0F6E56',
+    badgeColor: '#1D4ED8',
     verificationURL: 'www.onec.dz/tableau-national'
   },
   'ONCC': {
