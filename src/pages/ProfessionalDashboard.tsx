@@ -9,7 +9,7 @@ import {
 import { clients } from '../data/mockData';
 
 export const ProfessionalDashboard: React.FC = () => {
-  const { t, tObj, tSpec } = useLanguage();
+  const { t, tObj, tSpec, language, direction } = useLanguage();
   const { 
     currentProfessional, contracts, tasks, 
     updateTaskStatus 

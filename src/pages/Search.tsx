@@ -7,7 +7,7 @@ import { ProfessionalCard } from '../components/ProfessionalCard';
 import { Info } from 'lucide-react';
 
 export const Search: React.FC = () => {
-  const { t, tObj, tSpec } = useLanguage();
+  const { t, tObj, tSpec, language, direction } = useLanguage();
   const { allProfessionals } = useApp();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -112,7 +112,7 @@ export const Search: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-white text-slate-100" id="search_page_wrapper">
+    <div className="min-h-screen bg-[#F8FAFF] text-slate-800" id="search_page_wrapper">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-10">
         
         {/* Editorial Title Section */}

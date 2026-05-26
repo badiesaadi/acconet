@@ -45,11 +45,19 @@ export const Navbar: React.FC = () => {
       {/* ── MAIN NAV ── */}
       <nav className="bg-white border-b border-blue-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
 
-            {/* ── BRAND: Real SVG Logo ── */}
-            <Link to="/" className="flex items-center shrink-0 hover:opacity-90 transition-opacity">
-              <AccoNetLogo height={42} color="#1D4ED8" />
+            {/* ── BRAND: Logo + Platform Name ── */}
+            <Link to="/" className="flex items-center gap-3 shrink-0 hover:opacity-90 transition-opacity group">
+              <AccoNetLogo height={52} color="#1D4ED8" />
+              <div className="hidden sm:flex flex-col leading-none">
+                <span className="text-2xl font-black tracking-tight text-brand-primary font-serif">
+                  AccoNet
+                </span>
+                <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-[0.18em] mt-0.5">
+                  Algeria
+                </span>
+              </div>
             </Link>
 
             {/* ── Desktop links ── */}
