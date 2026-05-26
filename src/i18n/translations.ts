@@ -18,7 +18,7 @@ export const specialtiesTranslations = {
     en: "Statutory Auditor"
   },
   "certified-accountant": {
-    ar: "مهني محاسب",
+    ar: "مهني خبير",
     fr: "Expert-Comptable",
     en: "Chartered Accountant"
   },
@@ -795,7 +795,7 @@ export const translations: TranslationDictionary = {
     en: "Search for Judicial / Fiscal / Accounting Partner"
   },
   searchPlaceholderInput: {
-    ar: "مثال : G50 ، ميزانية SCF ، لقمة مالية...",
+    ar: "مثال : G50 ، ميزانية SCF...",
     fr: "ex : G50, bilan SCF, liasse fiscale...",
     en: "ex: G50, SCF balance sheet, fiscal return..."
   },

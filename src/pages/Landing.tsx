@@ -226,25 +226,18 @@ export const Landing: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════
-          3. STATS BOARD
+          3. PLATFORM TOOLS SECTION
       ══════════════════════════════════════════ */}
       <section className="px-4 sm:px-6 lg:px-8 pb-14">
-        <div className="max-w-7xl mx-auto bg-white border border-blue-100 rounded-2xl p-6 shadow-classic grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { label: t('nationalCoverage'),    value: t('nationalCoverageTitle'), sub: t('fromNorthToSouth')      },
-            { label: t('nationalBoards'),       value: 'ONEC & CNCC',             sub: t('automaticCheckRequired') },
-            { label: t('scfG50Compliance'),     value: 'SCF & G50',               sub: t('scfG50ComplianceSub')   },
-            { label: t('certifiedAdmission'),   value: 'Art. 222 CP',             sub: t('certifiedAdmissionSub') },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className={`space-y-1 ${i > 0 ? 'border-t md:border-t-0 md:border-l rtl:md:border-l-0 rtl:md:border-r border-blue-100 pt-4 md:pt-0 md:pl-4 rtl:md:pl-0 rtl:md:pr-4' : ''}`}
-            >
-              <p className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">{item.label}</p>
-              <p className="text-2xl font-serif font-black text-brand-primary">{item.value}</p>
-              <p className="text-xs text-slate-400">{item.sub}</p>
-            </div>
-          ))}
+        <div className="max-w-7xl mx-auto bg-white border border-blue-100 rounded-2xl p-6 shadow-classic">
+          <h3 className="font-serif font-black text-slate-800 text-lg mb-4 text-right rtl:text-right">أدوات المنصة:</h3>
+          <ul className="space-y-2 text-right rtl:text-right text-slate-700 text-sm list-none">
+            <li className="flex items-start gap-2 justify-end flex-row-reverse"><span>التسجيل المحاسبي الآلي.</span><span className="text-brand-primary mt-0.5">•</span></li>
+            <li className="flex items-start gap-2 justify-end flex-row-reverse"><span>إستخراج المعلومات من الوثائق أوتوماتيكيا حسب الحاجة (مبالغ...إلخ)</span><span className="text-brand-primary mt-0.5">•</span></li>
+            <li className="flex items-start gap-2 justify-end flex-row-reverse"><span>إعداد التصريحات في قوالب جاهزة.</span><span className="text-brand-primary mt-0.5">•</span></li>
+            <li className="flex items-start gap-2 justify-end flex-row-reverse"><span>مسح القوائم المالية واكتشاف الأخطاء.</span><span className="text-brand-primary mt-0.5">•</span></li>
+            <li className="flex items-start gap-2 justify-end flex-row-reverse"><span>تحليل القوائم المالية باستخدام الذكاء الاصطناعي وتقديم الاقتراحات.</span><span className="text-brand-primary mt-0.5">•</span></li>
+          </ul>
         </div>
       </section>
 

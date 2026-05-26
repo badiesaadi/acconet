@@ -50,32 +50,32 @@ export const ProfessionalDashboard: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-8" id="pro_dashboard_view">
       
       {/* 1. WELCOME HEADER DECK */}
-      <div className="glass border border-brand-primary/30 p-6 sm:p-8 text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(#1D4ED8_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-10"></div>
+      <div className="bg-white border border-brand-primary/30 p-6 sm:p-8 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(#1D4ED8_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-5 pointer-events-none"></div>
         
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 relative z-10 text-left rtl:text-right">
           <div className="space-y-2">
             <div className="flex items-center gap-1.5">
-              <span className="px-2 py-0.5 bg-brand-primary/25 border border-brand-primary text-brand-accent text-[8px] font-mono uppercase tracking-widest">
+              <span className="px-2 py-0.5 bg-brand-primary/10 border border-brand-primary text-brand-primary text-[8px] font-mono uppercase tracking-widest">
                 {language === 'ar' ? 'بوابة المهني المعتمد' : 'Portail du Professionnel Agréé'}
               </span>
               <span className="text-[10px] font-mono text-slate-500">REGISTRATION COMPLETED</span>
             </div>
             
-            <h1 className="text-2xl sm:text-3xl font-serif font-semibold tracking-tight leading-tight">
-              {t('proWelcome')} <span className="text-brand-accent italic font-normal">{tObj(pro.name)}</span>
+            <h1 className="text-2xl sm:text-3xl font-serif font-semibold tracking-tight leading-tight text-slate-900">
+              {t('proWelcome')} <span className="text-brand-primary italic font-normal">{tObj(pro.name)}</span>
             </h1>
             
-            <p className="text-[11px] text-teal-150 font-sans flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="bg-blue-50/50 border border-blue-200 px-1.5 py-0.5">{tSpec(pro.specialty)}</span>
-              <span className="text-slate-300 hidden sm:inline">•</span>
-              <span>Accreditation Board ID: <strong className="font-mono text-brand-accent">{pro.accreditationNumber}</strong></span>
+            <p className="text-[11px] text-slate-500 font-sans flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="bg-blue-50 border border-blue-200 px-1.5 py-0.5 text-slate-700">{tSpec(pro.specialty)}</span>
+              <span className="text-slate-400 hidden sm:inline">•</span>
+              <span className="text-slate-600">Accreditation Board ID: <strong className="font-mono text-brand-primary">{pro.accreditationNumber}</strong></span>
             </p>
           </div>
 
-          <div className="px-3.5 py-2 bg-blue-50/50 border border-blue-200 flex items-center gap-1.5 text-xs">
-            <Shield className="w-4 h-4 text-brand-accent animate-pulse" />
-            <span className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Secure Audit Environment</span>
+          <div className="px-3.5 py-2 bg-blue-50 border border-blue-200 flex items-center gap-1.5 text-xs">
+            <Shield className="w-4 h-4 text-brand-primary animate-pulse" />
+            <span className="text-slate-600 font-mono text-[9px] uppercase tracking-wider">Secure Audit Environment</span>
           </div>
         </div>
       </div>
