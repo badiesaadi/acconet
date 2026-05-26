@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useApp } from '../context/AppContext';
 import { algerianWilayas } from '../data/algerianWilayas';
-import { Search, ArrowLeft, ArrowRight, MapPin, Star, Sparkles, ShieldCheck } from 'lucide-react';
+import { Search, ArrowLeft, ArrowRight, MapPin, Sparkles, ShieldCheck } from 'lucide-react';
 
 const specialties = [
   { key: 'certified-accountant',  icon: '💎' },
@@ -111,53 +111,13 @@ export const Landing: React.FC = () => {
             </div>
           </div>
 
-          {/* Professional card */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-sm bg-white border border-blue-200 rounded-2xl p-6 shadow-glow space-y-5 hover:border-brand-primary/40 transition-all">
-              <div className="flex justify-between items-center pb-3 border-b border-blue-100">
-                <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">{t('heroConsultantCard')}</span>
-                <span className="px-2.5 py-1 bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-mono font-bold rounded-lg">ONEC ✓</span>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary font-black font-serif text-xl shrink-0">SB</div>
-                <div>
-                  <div className="flex items-center gap-1.5">
-                    <h3 className="font-serif font-black text-slate-800">Sofiane Benamara</h3>
-                    <span className="text-brand-primary">✓</span>
-                  </div>
-                  <p className="text-xs font-mono text-brand-primary font-bold uppercase mt-0.5">{tSpec('certified-accountant')}</p>
-                  <p className="text-xs text-slate-400 mt-0.5 flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {language === 'ar' ? 'الجزائر، الولاية 16' : 'Alger, Wilaya 16'}
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 py-4 border-y border-blue-100 text-sm">
-                <div>
-                  <p className="text-xs text-slate-400 font-mono uppercase">{t('rating')}</p>
-                  <p className="font-bold text-slate-800 flex items-center gap-1 mt-0.5">
-                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" /> 4.9
-                  </p>
-                </div>
-                <div className="border-l border-blue-100 pl-3 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-3">
-                  <p className="text-xs text-slate-400 font-mono uppercase">{t('seniority')}</p>
-                  <p className="font-bold text-slate-800 mt-0.5">{t('seniorityYears')}</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1.5 text-xs font-mono text-brand-primary bg-brand-primary/10 px-3 py-1.5 rounded-lg border border-brand-primary/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse" />
-                  {tx('availNow')}
-                </span>
-                <span className="font-mono font-black text-slate-800 text-sm">{t('fortyFiveThousand')}</span>
-              </div>
-              <button
-                onClick={handleContact}
-                className="w-full py-3 bg-brand-primary hover:bg-brand-dark text-white font-bold text-sm rounded-xl transition"
-              >
-                {tx('contactBtn')}
-              </button>
-            </div>
+          {/* Accounting Illustration */}
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <img
+              src="/assets/Accounting_Illustration.svg"
+              alt="Accounting Illustration"
+              className="w-full max-w-lg drop-shadow-lg"
+            />
           </div>
 
         </div>

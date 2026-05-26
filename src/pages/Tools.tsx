@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { 
-  Sparkles, FileText, Database, ShieldAlert, Cpu, Eye, 
+  Sparkles, FileText, Database, ShieldAlert, Cpu,
   ChevronDown, ChevronUp, Play, Info, RefreshCw 
 } from 'lucide-react';
 
@@ -26,45 +26,38 @@ export const Tools: React.FC = () => {
   const toolsList = [
     {
       id: 0,
-      title: { ar: "مولد القيود المحاسبية التلقائي", fr: "Auto Journal Entry Generator", en: "Auto Journal Entry Generator" },
-      desc: { ar: "حول نصوص المعاملات النثرية إلى قيود محاسبية ثنائية متوافقة مباشرة مع النطام المحاسبي المالي الجزائري.", fr: "Convertit vos notes de frais en écritures de double-partie réglementaires conformes au SCF algérien.", en: "Converts plain text business expenditures into dual-ledger journal entries compliant with the Algerian SCF." },
+      title: { ar: "التسجيل المحاسبي الآلي", fr: "Enregistrement Comptable Automatique", en: "Automated Accounting Entry" },
+      desc: { ar: "تحويل المعاملات النثرية إلى قيود محاسبية آلية متوافقة مع النظام المحاسبي المالي الجزائري.", fr: "Conversion automatique des transactions en écritures comptables conformes au SCF algérien.", en: "Automatically converts plain-text transactions into compliant double-entry journal records under the Algerian SCF." },
       icon: Sparkles,
       color: "bg-brand-primary/10 border-brand-primary/20 text-brand-primary"
     },
     {
       id: 1,
-      title: { ar: "محلل الفواتير الذكي وعلامات المدفوعات", fr: "OCR Invoice Receipt Parser", en: "OCR Invoice Receipt Parser" },
-      desc: { ar: "التقاط أرقام النيف NIF والتصاريح الجبائية وعجز الحساب وقيمة الضرائب من الصور والملفات تلقائياً.", fr: "Extraction automatisée des NIF, TVA, ICE et montants TTC à partir des scans PDF d'achats locaux.", en: "Automated extraction of local Algerian Supplier NIF, VAT brackets, and final cash sums from PDF scans." },
+      title: { ar: "استخراج المعلومات من الوثائق أوتوماتيكيا حسب الحاجة (مبالغ...إلخ)", fr: "Extraction Automatique depuis les Documents (montants, etc.)", en: "Automatic Document Data Extraction (amounts, etc.)" },
+      desc: { ar: "استخراج تلقائي للمبالغ وأرقام النيف NIF وبيانات الضريبة وسائر المعلومات من الفواتير والوثائق المحاسبية.", fr: "Extraction automatisée des montants, NIF, TVA et données fiscales depuis vos factures et documents comptables.", en: "Automated extraction of amounts, NIF numbers, tax data, and other key information from invoices and accounting documents." },
       icon: FileText,
       color: "bg-white border-blue-100 text-teal-400"
     },
     {
       id: 2,
-      title: { ar: "محاكي احتساب معدلات ضرائب G50", fr: "Algerian G50 Tax Formula Simulator", en: "Algerian G50 Tax Formula Simulator" },
-      desc: { ar: "توليد تلقائي لتقديرات TAP ورسوم الطوابع واقتطاعات الأجور عير خوارزمية ذكية مطابقة لقانون المالية.", fr: "Modélisation des taxes TAP (1.5%/1%), de l'IRG sur salaires et droits de douanes en temps réel.", en: "Live estimation of G50 monthly Turn-over tax (TAP), wage withholdings (IRG), and VAT rates under modern Finance Acts." },
+      title: { ar: "إعداد التصريحات في قوالب جاهزة", fr: "Préparation des Déclarations en Modèles Prêts", en: "Declaration Preparation with Ready-Made Templates" },
+      desc: { ar: "توليد التصريحات الجبائية والاجتماعية تلقائياً في قوالب جاهزة مطابقة للمتطلبات القانونية الجزائرية.", fr: "Génération automatique des déclarations fiscales et sociales dans des modèles conformes à la réglementation algérienne.", en: "Automatically generates tax and social declarations in ready-to-use templates compliant with Algerian regulations." },
       icon: Database,
       color: "bg-white border-blue-100 text-amber-400"
     },
     {
       id: 3,
-      title: { ar: "مكشاف ثغرات موازين المراجعة والأخطاء", fr: "Trial Balance Audit Scan", en: "Trial Balance Audit Scan" },
-      desc: { ar: "مراجعة كشوف الأرباح والمخازن والتحقق من التناسق الحسابي للوقاية من تعديل الضرائب المفاجئ.", fr: "Révélateur automatisé d'écarts de débit/crédit et de comptes d'attente anormaux.", en: "Schedules automated checking of client trial balance ledgers for unbacked debits, suspicious suspense flows, or miscoded credits." },
+      title: { ar: "مسح القوائم المالية واكتشاف الأخطاء", fr: "Analyse des États Financiers et Détection d'Erreurs", en: "Financial Statement Scanning & Error Detection" },
+      desc: { ar: "فحص شامل للقوائم المالية والميزانيات واكتشاف الأخطاء والتناقضات الحسابية بشكل تلقائي.", fr: "Vérification complète des états financiers et bilans avec détection automatique des erreurs et incohérences comptables.", en: "Comprehensive scanning of financial statements and balance sheets with automatic detection of errors and accounting inconsistencies." },
       icon: ShieldAlert,
       color: "bg-white border-blue-100 text-rose-400"
     },
     {
       id: 4,
-      title: { ar: "محلل مالي للشركات الصاعدة", fr: "AI Executive Strategic Analyst", en: "AI Executive Strategic Analyst" },
-      desc: { ar: "استشارات مالية مخصصة لتحسين التكاليف وتحقيق الاستقرار تتماشى مع طبيعة النشاط التجاري والمقر.", fr: "Génération de diagnostics de trésorerie sur-mesure et d'opportunités d'optimisation d'impôts.", en: "Tailored strategic reports mapping operating cash flow optimization and active tax credit schemes for SME sectors." },
+      title: { ar: "تحليل القوائم المالية باستخدام الذكاء الاصطناعي وتقديم الاقتراحات", fr: "Analyse des États Financiers par IA avec Recommandations", en: "AI-Powered Financial Statement Analysis & Suggestions" },
+      desc: { ar: "تحليل عميق للقوائم المالية بالذكاء الاصطناعي مع تقديم توصيات واقتراحات استراتيجية لتحسين الأداء المالي.", fr: "Analyse approfondie des états financiers par intelligence artificielle avec recommandations stratégiques pour optimiser la performance financière.", en: "Deep AI-driven analysis of financial statements with strategic recommendations and suggestions to improve financial performance." },
       icon: Cpu,
       color: "bg-white border-blue-100 text-sky-400"
-    },
-    {
-      id: 5,
-      title: { ar: "صندوق تبادل الملفات الآمن المشفر", fr: "Secure Encrypted Document Locker", en: "Secure Encrypted Document Locker" },
-      desc: { ar: "آلية لتبادل الوثائق المحاسبية مع الخبراء والشركاء بتشفير كامل يضمن سرية الأرقام والمكاسب.", fr: "Coffre-fort d'échange de liasses de clôture chiffrées à destination directe de votre expert.", en: "Encrypted upload locker to dispatch sensitive PDF balance sheets to your assigned accounting cabinet." },
-      icon: Eye,
-      color: "bg-white border-blue-100 text-purple-400"
     }
   ];
 
@@ -135,14 +128,6 @@ LOCAL RECOMMENDATIONS:
 1. Agriculture Tax Shield: Agriculture and transformation facilities in Blida benefit from a 10-year IBS/IRG tax holiday. Validate exemption files under Code IBS 54.
 2. VAT Cash Exemption: Apply for local VAT buy-back exemptions (fardeau fiscal) for capital machinery to preserve immediate liquidity reserves.
 3. Payroll CNAS Relief: Benefit from the national employment active premium (ANEM) which reduces employer CNAS wage cost contribution by up to 30% for newly contracted local graduates.`);
-      } else if (toolId === 5) {
-        setSimulationResult(`[SHA-256 DOCUMENT DECK ENVELOPE SEALED]
-- File name: financial_statement_draft_2026.pdf
-- Content Hash: f736ac2913fbcde09a82bbef7eefb3a2a61c
-- Encryption Cipher: AES-256 Symmetric Locker
-- Target recipient: Cabinet Partner Sofiane Benamara (AccorNet Verified Pro)
-
-[Status]: Sealed. Dispatching encrypted relay envelope. Ready for cabinet assessment.`);
       }
     }, 600);
   };
@@ -307,15 +292,6 @@ LOCAL RECOMMENDATIONS:
                         onChange={(e) => setSmeForecastText(e.target.value)}
                         className="w-full border border-blue-200 rounded-lg px-3 py-2 text-xs text-white bg-white/40 focus:outline-none focus:border-brand-primary"
                       />
-                    </div>
-                  )}
-
-                  {/* TOOL 5 INPUT */}
-                  {expandedTool === 5 && (
-                    <div className="bg-white/45 border border-blue-100 rounded-lg p-6 text-center space-y-2">
-                      <span className="text-xl">🔒</span>
-                      <p className="text-xs font-bold text-slate-700">financial_statement_draft_2026.pdf</p>
-                      <p className="text-[10px] text-slate-500 font-mono">{t('fileSizeLockerCapsule')}</p>
                     </div>
                   )}
 
